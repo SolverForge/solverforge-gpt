@@ -1,0 +1,1371 @@
+DOMAIN: swe
+TASK: Build a REST API for user authentication
+SUB: Define API schema and authentication endpoints
+SUB: Implement JWT token generation and validation
+SUB: Add middleware for protected route authorization
+SUB: Write integration tests for auth flows
+
+DOMAIN: swe
+TASK: Set up CI/CD pipeline for a monorepo
+SUB: Choose CI platform and configure repository access
+SUB: Write pipeline definitions for each service or package
+SUB: Configure build caching and dependency management
+SUB: Add deployment stages with environment promotion gates
+
+DOMAIN: swe
+TASK: Migrate a MySQL database to PostgreSQL
+SUB: Audit existing schema and identify incompatible data types
+SUB: Write migration scripts and test against a copy of production data
+SUB: Set up the new PostgreSQL instance with matching configurations
+SUB: Run migration in staging, validate data integrity, then cut over production
+
+DOMAIN: swe
+TASK: Add dark mode to a web application
+SUB: Define a color token system for light and dark themes
+SUB: Implement a theme context or store to hold the active mode
+SUB: Update all components to consume theme tokens
+SUB: Persist user preference and respect OS-level preference setting
+
+DOMAIN: swe
+TASK: Implement a caching layer for an API service
+SUB: Choose a caching backend such as Redis or Memcached
+SUB: Identify which endpoints and data are cacheable
+SUB: Implement cache-aside logic with TTL and invalidation strategy
+SUB: Add monitoring for cache hit rate and latency improvements
+
+DOMAIN: swe
+TASK: Build a real-time chat feature
+SUB: Choose a transport protocol such as WebSockets or Server-Sent Events
+SUB: Implement connection management and message broadcasting on the server
+SUB: Build the client-side chat UI with message history and scroll behavior
+SUB: Handle reconnection, delivery guarantees, and read receipts
+
+DOMAIN: swe
+TASK: Set up observability for a microservices system
+SUB: Deploy a metrics backend such as Prometheus and a dashboard like Grafana
+SUB: Instrument each service with structured logging and trace IDs
+SUB: Set up distributed tracing with OpenTelemetry
+SUB: Define alerting rules for error rates and latency SLOs
+
+DOMAIN: swe
+TASK: Refactor a monolith into microservices
+SUB: Identify bounded contexts and service boundaries in the current codebase
+SUB: Extract the first service and establish inter-service communication patterns
+SUB: Set up a service registry and API gateway
+SUB: Migrate data ownership and handle distributed transactions
+
+DOMAIN: swe
+TASK: Implement full-text search for a web app
+SUB: Choose a search engine such as Elasticsearch or Meilisearch
+SUB: Define the index schema and which fields to index
+SUB: Build an ingestion pipeline to sync data from the primary database
+SUB: Implement search API endpoints with ranking and filtering
+
+DOMAIN: swe
+TASK: Add end-to-end tests to a React application
+SUB: Choose a testing framework such as Playwright or Cypress
+SUB: Write test scenarios for the most critical user flows
+SUB: Configure test environments and CI integration
+SUB: Add visual regression testing for key UI components
+
+DOMAIN: swe
+TASK: Build a file upload and processing service
+SUB: Design the upload endpoint with multipart form handling and size limits
+SUB: Implement background job queue for file processing tasks
+SUB: Store processed files in object storage with signed URL access
+SUB: Handle failure cases and implement retry logic
+
+DOMAIN: swe
+TASK: Create a GraphQL API from an existing REST API
+SUB: Design the GraphQL schema based on existing data models
+SUB: Implement resolvers that call the existing service layer or database
+SUB: Set up authentication and authorization in GraphQL context
+SUB: Add query depth limiting and rate limiting to prevent abuse
+
+DOMAIN: swe
+TASK: Implement rate limiting for an API
+SUB: Choose a rate limiting algorithm such as token bucket or sliding window
+SUB: Implement middleware that checks and updates request counts per client
+SUB: Store rate limit state in a fast backend like Redis
+SUB: Return proper 429 responses with Retry-After headers
+
+DOMAIN: swe
+TASK: Build a data pipeline for analytics
+SUB: Define the data sources and ingestion frequency
+SUB: Implement extraction and transformation steps for each source
+SUB: Load processed data into a data warehouse or analytics database
+SUB: Schedule the pipeline and set up alerting for failures
+
+DOMAIN: swe
+TASK: Add internationalization to a web application
+SUB: Choose an i18n library and set up the translation infrastructure
+SUB: Extract all user-facing strings into translation files
+SUB: Implement locale detection and switching in the application
+SUB: Coordinate with translators and set up a translation management workflow
+
+DOMAIN: swe
+TASK: Secure a web application against common vulnerabilities
+SUB: Run a security audit and check against the OWASP Top 10
+SUB: Implement input validation and output encoding to prevent injection attacks
+SUB: Add CSRF protection, secure cookie flags, and CSP headers
+SUB: Set up dependency scanning and automated security testing in CI
+
+DOMAIN: swe
+TASK: Build a subscription billing system
+SUB: Integrate with a payment processor such as Stripe for subscription management
+SUB: Implement webhook handlers for payment events and subscription lifecycle changes
+SUB: Build customer portal for managing payment methods and plan changes
+SUB: Handle proration, failed payments, and dunning workflows
+
+DOMAIN: swe
+TASK: Implement offline support for a mobile app
+SUB: Design a local database schema mirroring the server data model
+SUB: Implement optimistic UI updates with conflict resolution strategy
+SUB: Build a sync engine that reconciles local and remote state
+SUB: Handle edge cases such as partial syncs and data conflicts
+
+DOMAIN: swe
+TASK: Deploy an application to Kubernetes
+SUB: Containerize the application and publish images to a container registry
+SUB: Write Kubernetes manifests for deployments, services, and ingress
+SUB: Configure resource limits, health checks, and rolling update strategy
+SUB: Set up namespace isolation, network policies, and secret management
+
+DOMAIN: swe
+TASK: Build a recommendation engine
+SUB: Collect and preprocess user interaction data
+SUB: Choose a recommendation algorithm such as collaborative filtering or content-based
+SUB: Train and evaluate the model on historical data
+SUB: Implement an API to serve recommendations with acceptable latency
+
+DOMAIN: swe
+TASK: Implement a feature flag system
+SUB: Choose or build a feature flag service with a management UI
+SUB: Integrate the flag evaluation SDK into application code
+SUB: Define targeting rules for gradual rollouts and A/B tests
+SUB: Add monitoring to track flag state and impact on metrics
+
+DOMAIN: swe
+TASK: Build an admin dashboard for a SaaS product
+SUB: Define the key entities and actions admins need to manage
+SUB: Implement backend endpoints with admin-only authorization
+SUB: Build the frontend UI with tables, filters, and bulk actions
+SUB: Add an audit log for all admin operations
+
+DOMAIN: swe
+TASK: Set up a developer documentation site
+SUB: Choose a documentation framework such as Docusaurus or MkDocs
+SUB: Structure the information architecture into guides, references, and tutorials
+SUB: Write or migrate existing documentation into the new system
+SUB: Configure search, versioning, and automated deployment
+
+DOMAIN: swe
+TASK: Implement a webhook system for third-party integrations
+SUB: Design the webhook event schema and delivery mechanism
+SUB: Build the endpoint registration and management API
+SUB: Implement reliable delivery with retries and exponential backoff
+SUB: Provide a webhook testing interface and delivery logs for developers
+
+DOMAIN: swe
+TASK: Add multi-tenancy to a single-tenant application
+SUB: Choose a data isolation strategy such as schema-per-tenant or row-level filtering
+SUB: Refactor data access layer to scope all queries by tenant
+SUB: Update authentication to include tenant context in sessions and tokens
+SUB: Test tenant isolation thoroughly to prevent data leakage
+
+DOMAIN: swe
+TASK: Build a mobile app with React Native
+SUB: Set up the React Native project with navigation and state management
+SUB: Implement core screens and connect them to the backend API
+SUB: Handle platform differences between iOS and Android
+SUB: Configure push notifications and test on physical devices
+
+DOMAIN: swe
+TASK: Implement audit logging for a financial application
+SUB: Define the set of events that must be logged and their required fields
+SUB: Implement immutable append-only log storage with tamper detection
+SUB: Add structured log emission at every relevant code path
+SUB: Build a query interface for compliance and investigation use cases
+
+DOMAIN: swe
+TASK: Migrate from a self-hosted server to a cloud provider
+SUB: Audit the current infrastructure and map all services and dependencies
+SUB: Choose the target cloud services and design the new architecture
+SUB: Migrate data and services incrementally starting with non-critical workloads
+SUB: Update DNS, monitor the new environment, and decommission old infrastructure
+
+DOMAIN: swe
+TASK: Add two-factor authentication to an application
+SUB: Choose supported 2FA methods such as TOTP, SMS, or hardware keys
+SUB: Implement enrollment flow for users to register their second factor
+SUB: Enforce 2FA at login and add recovery code support
+SUB: Handle edge cases such as lost devices and account recovery
+
+DOMAIN: swe
+TASK: Build a notification service
+SUB: Define notification types, channels, and user preference model
+SUB: Implement delivery adapters for email, push, and in-app channels
+SUB: Build a template system for notification content
+SUB: Add delivery tracking, opt-out management, and rate limiting per user
+
+DOMAIN: swe
+TASK: Optimize database query performance
+SUB: Profile slow queries using the database query analyzer
+SUB: Add missing indexes and rewrite inefficient queries
+SUB: Implement connection pooling if not already in place
+SUB: Set up query performance monitoring to catch regressions
+
+DOMAIN: swe
+TASK: Build a content management system
+SUB: Define the content model and relationship schema
+SUB: Build the authoring interface with rich text editing and media uploads
+SUB: Implement content versioning and publishing workflow with approval states
+SUB: Expose a headless API for frontend consumption
+
+DOMAIN: swe
+TASK: Implement server-side rendering for a React app
+SUB: Set up an SSR framework such as Next.js or a custom Express server
+SUB: Identify which pages need SSR versus static generation
+SUB: Handle data fetching at the server level and pass hydration data to the client
+SUB: Measure and optimize time-to-first-byte and Core Web Vitals
+
+DOMAIN: swe
+TASK: Build a task queue and worker system
+SUB: Choose a message broker such as RabbitMQ, Redis, or SQS
+SUB: Define job schemas and implement producer code to enqueue tasks
+SUB: Build worker processes that consume and execute jobs reliably
+SUB: Add dead letter queues, monitoring, and retry policies
+
+DOMAIN: swe
+TASK: Add accessibility compliance to a web application
+SUB: Run automated accessibility audits using tools like axe or Lighthouse
+SUB: Fix keyboard navigation and focus management issues
+SUB: Add proper ARIA attributes, roles, and semantic HTML where missing
+SUB: Test with screen readers and real users with disabilities
+
+DOMAIN: swe
+TASK: Implement a search autocomplete feature
+SUB: Design the API endpoint to return suggestions based on partial input
+SUB: Implement debouncing and caching on the client side
+SUB: Build the dropdown UI component with keyboard navigation support
+SUB: Track autocomplete usage to improve suggestion quality over time
+
+DOMAIN: swe
+TASK: Set up infrastructure as code with Terraform
+SUB: Organize the Terraform project structure with modules for each environment
+SUB: Write resource definitions for compute, networking, and storage
+SUB: Configure remote state backend and state locking
+SUB: Integrate Terraform plan and apply into the CI/CD pipeline
+
+DOMAIN: swe
+TASK: Build a CSV import feature
+SUB: Design the file upload flow with validation and error reporting
+SUB: Implement a parser that handles common CSV edge cases and encodings
+SUB: Map CSV columns to internal data models with transformation rules
+SUB: Process large files asynchronously and report progress and results to the user
+
+DOMAIN: swe
+TASK: Implement OAuth2 social login
+SUB: Register the application with each identity provider
+SUB: Implement the OAuth2 authorization code flow with PKCE
+SUB: Handle account linking for users who already have a local account
+SUB: Store tokens securely and handle token refresh and revocation
+
+DOMAIN: swe
+TASK: Build a reporting and export system
+SUB: Define the report types and the data each requires
+SUB: Implement report generation with pagination for large datasets
+SUB: Support multiple export formats such as PDF, CSV, and Excel
+SUB: Run heavy reports asynchronously and notify users when ready
+
+DOMAIN: swe
+TASK: Add a public API with developer access
+SUB: Design the API surface, versioning strategy, and authentication model
+SUB: Write comprehensive API documentation with examples
+SUB: Implement API key management and usage tracking per consumer
+SUB: Set up a developer portal with sandbox access and rate limit tiers
+
+DOMAIN: swe
+TASK: Implement data encryption at rest
+SUB: Identify sensitive data fields that require encryption
+SUB: Choose an encryption approach such as field-level or disk-level encryption
+SUB: Implement key management with rotation support
+SUB: Update backup and restore procedures to handle encrypted data
+
+DOMAIN: swe
+TASK: Build a drag-and-drop interface
+SUB: Choose a drag-and-drop library or implement using the HTML5 Drag and Drop API
+SUB: Implement drop zones with visual feedback during drag operations
+SUB: Handle reordering logic and persist state changes to the backend
+SUB: Ensure the feature is accessible with keyboard alternatives
+
+DOMAIN: swe
+TASK: Migrate from a deprecated dependency
+SUB: Identify all usages of the deprecated dependency across the codebase
+SUB: Evaluate replacement options and choose the best fit
+SUB: Implement the migration incrementally updating one module at a time
+SUB: Update tests and documentation after completing the migration
+
+DOMAIN: swe
+TASK: Build a geolocation feature
+SUB: Request location permission from the browser or mobile OS
+SUB: Implement a reverse geocoding call to convert coordinates to human-readable addresses
+SUB: Store and index location data for proximity queries
+SUB: Handle permission denial gracefully with manual address input fallback
+
+DOMAIN: swe
+TASK: Add pagination to API endpoints
+SUB: Choose a pagination strategy such as cursor-based or offset pagination
+SUB: Implement the pagination parameters in the request schema
+SUB: Update database queries to apply limits and offsets or cursor filters
+SUB: Document the pagination behavior and expose metadata in the response
+
+DOMAIN: swe
+TASK: Build a password reset flow
+SUB: Implement a secure token generation and storage mechanism
+SUB: Build the forgot password form and send reset emails with time-limited links
+SUB: Implement the reset form and validate the token before allowing password change
+SUB: Invalidate all existing sessions after a successful password reset
+
+DOMAIN: swe
+TASK: Implement request tracing across microservices
+SUB: Generate a unique trace ID at the API gateway for each incoming request
+SUB: Propagate the trace ID through all downstream service calls via headers
+SUB: Log the trace ID at every service boundary with relevant context
+SUB: Visualize traces in a distributed tracing tool such as Jaeger or Zipkin
+
+DOMAIN: swe
+TASK: Build a progressive web app
+SUB: Create a web app manifest with icons, name, and display configuration
+SUB: Implement a service worker for offline caching and background sync
+SUB: Ensure the app meets PWA installability criteria
+SUB: Test on mobile devices and optimize for performance on slow connections
+
+DOMAIN: swe
+TASK: Add unit testing to an untested codebase
+SUB: Choose a testing framework and set up the test runner in CI
+SUB: Identify the highest-risk business logic modules to test first
+SUB: Write unit tests with good coverage for those modules
+SUB: Establish a coverage threshold and enforce it in the CI pipeline
+
+DOMAIN: swe
+TASK: Build a live dashboard with real-time updates
+SUB: Set up a server-push mechanism such as WebSockets or SSE
+SUB: Design the data model for dashboard widgets and their update frequency
+SUB: Build the frontend components with smooth data updates and loading states
+SUB: Handle stale data gracefully when the connection drops and reconnects
+
+DOMAIN: swe
+TASK: Implement a soft delete pattern for database records
+SUB: Add a deleted_at timestamp column to all relevant tables
+SUB: Update all queries to filter out soft-deleted records by default
+SUB: Build admin tooling to view and restore soft-deleted records
+SUB: Define and implement a hard deletion policy for data retention compliance
+
+DOMAIN: swe
+TASK: Set up a staging environment that mirrors production
+SUB: Provision infrastructure identical to production using the same IaC templates
+SUB: Set up automated deployment from the main branch to staging
+SUB: Populate staging with anonymized production data
+SUB: Document differences between staging and production and keep them in sync
+
+DOMAIN: swe
+TASK: Implement background job processing
+SUB: Choose a job queue library compatible with the existing tech stack
+SUB: Define job types with input schemas and idempotency keys
+SUB: Implement workers that process jobs with proper error handling and logging
+SUB: Set up monitoring for queue depth, job duration, and failure rates
+
+DOMAIN: swe
+TASK: Build an image optimization pipeline
+SUB: Identify all image upload and delivery paths in the application
+SUB: Implement server-side compression and format conversion to WebP
+SUB: Serve images through a CDN with appropriate cache headers
+SUB: Generate responsive image variants for different screen sizes
+
+DOMAIN: swe
+TASK: Build a configuration management system
+SUB: Define the configuration schema and validation rules
+SUB: Implement a layered configuration approach with environment-specific overrides
+SUB: Store sensitive configuration values in a secrets manager
+SUB: Provide a way to reload configuration at runtime without restarting the service
+
+DOMAIN: swe
+TASK: Implement a document signing workflow
+SUB: Integrate with a document signing API such as DocuSign or HelloSign
+SUB: Build the workflow for routing documents to the right signers in sequence
+SUB: Store signed documents securely and generate access-controlled download links
+SUB: Send notifications at each signing step and on completion
+
+DOMAIN: swe
+TASK: Build a coupon and discount system
+SUB: Define the data model for coupon codes, discount types, and validity rules
+SUB: Implement coupon validation at checkout with clear error messages
+SUB: Track coupon usage and enforce per-user and global usage limits
+SUB: Build an admin interface for creating and monitoring coupon campaigns
+
+DOMAIN: swe
+TASK: Implement an event-driven architecture
+SUB: Choose an event broker such as Kafka, RabbitMQ, or AWS EventBridge
+SUB: Define the event schema and versioning strategy
+SUB: Implement producers that publish events at key domain transitions
+SUB: Build consumers for each downstream service with idempotent processing
+
+DOMAIN: swe
+TASK: Add a global error boundary and error reporting
+SUB: Implement React error boundaries around all major page and section components
+SUB: Integrate an error tracking service such as Sentry
+SUB: Add contextual metadata to error reports such as user ID and feature flags
+SUB: Set up alerting for error rate spikes and new error types
+
+DOMAIN: swe
+TASK: Build a multi-step form wizard
+SUB: Design the step flow with state management shared across steps
+SUB: Implement validation at each step before allowing progression
+SUB: Add progress indicators and allow backward navigation without data loss
+SUB: Persist form state to handle browser refresh and session recovery
+
+DOMAIN: swe
+TASK: Implement API versioning
+SUB: Choose a versioning strategy such as URL path, header, or query parameter
+SUB: Refactor existing endpoints to fit the versioning structure
+SUB: Implement a version routing layer that dispatches to the correct handler
+SUB: Document the deprecation policy and communicate breaking changes to consumers
+
+DOMAIN: swe
+TASK: Implement data anonymization for GDPR compliance
+SUB: Identify all personal data fields across the data model
+SUB: Implement anonymization functions for each field type
+SUB: Build a right-to-erasure workflow that triggers anonymization on request
+SUB: Verify that backups and analytics pipelines also honor anonymization
+
+DOMAIN: swe
+TASK: Build a customer support chat widget
+SUB: Design the chat widget UI with open and minimized states
+SUB: Implement real-time messaging between the customer and support agents
+SUB: Build the agent dashboard for managing multiple concurrent conversations
+SUB: Add canned responses, ticket creation, and chat transcript export
+
+DOMAIN: swe
+TASK: Add telemetry and usage analytics to a desktop app
+SUB: Define the events to track and their payload schemas
+SUB: Implement opt-in consent collection before enabling telemetry
+SUB: Send events to an analytics backend with batching and retry logic
+SUB: Build dashboards to monitor feature usage and crash rates
+
+DOMAIN: swe
+TASK: Migrate from REST to gRPC for internal services
+SUB: Define protobuf schemas for each service interface
+SUB: Generate client and server code from the proto definitions
+SUB: Migrate one service at a time and run both REST and gRPC during transition
+SUB: Update service mesh and load balancer configuration to support HTTP/2
+
+DOMAIN: swe
+TASK: Build a user onboarding flow
+SUB: Map the steps a new user needs to complete to get value from the product
+SUB: Implement a checklist or wizard UI to guide users through onboarding
+SUB: Trigger contextual tooltips and empty state prompts at key moments
+SUB: Track onboarding completion rates and drop-off points to improve the flow
+
+DOMAIN: swe
+TASK: Add social sharing functionality
+SUB: Implement Open Graph and Twitter Card meta tags for shared URLs
+SUB: Build share buttons for the most relevant platforms
+SUB: Generate shareable preview images dynamically for each piece of content
+SUB: Track share events and click-through rates from shared links
+
+DOMAIN: swe
+TASK: Build a plugin or extension system
+SUB: Define the plugin interface and lifecycle hooks available to extensions
+SUB: Implement a plugin registry and loading mechanism
+SUB: Sandbox plugin execution to prevent access to internal application state
+SUB: Provide documentation and a sample plugin to help developers get started
+
+DOMAIN: swe
+TASK: Implement end-to-end encryption for messages
+SUB: Choose an encryption protocol such as Signal Protocol or libsodium
+SUB: Generate and manage key pairs on user devices
+SUB: Encrypt messages on the sender device and decrypt only on the recipient device
+SUB: Handle key backup, rotation, and forward secrecy
+
+DOMAIN: swe
+TASK: Build a referral program system
+SUB: Design the referral link generation and tracking mechanism
+SUB: Implement reward attribution when a referred user completes the target action
+SUB: Build the referral dashboard showing invitations sent and rewards earned
+SUB: Add fraud detection to prevent referral abuse
+
+DOMAIN: swe
+TASK: Set up database backups and disaster recovery
+SUB: Configure automated daily backups with point-in-time recovery
+SUB: Store backups in a separate geographic region or cloud account
+SUB: Document and test the restoration procedure regularly
+SUB: Set up monitoring and alerting for backup failures
+
+DOMAIN: swe
+TASK: Build a file versioning system
+SUB: Design the data model to store file versions with metadata and diffs
+SUB: Implement version creation on every save with a configurable retention policy
+SUB: Build a version history UI with preview and restore capabilities
+SUB: Handle concurrent edits and conflict resolution
+
+DOMAIN: swe
+TASK: Implement SSO with SAML
+SUB: Register the application as a SAML service provider with the identity provider
+SUB: Implement the SAML assertion consumer service endpoint
+SUB: Map SAML attributes to internal user roles and attributes
+SUB: Test the SSO flow with major identity providers and handle edge cases
+
+DOMAIN: swe
+TASK: Build a commenting system
+SUB: Design the data model for comments, threads, and reactions
+SUB: Implement the comment API with pagination and ordering options
+SUB: Build the frontend component with reply threading and markdown support
+SUB: Add moderation tools for flagging, hiding, and deleting comments
+
+DOMAIN: swe
+TASK: Add performance monitoring to a production application
+SUB: Integrate an APM tool such as Datadog, New Relic, or Elastic APM
+SUB: Instrument database queries, external HTTP calls, and cache operations
+SUB: Set up dashboards for response time percentiles and throughput
+SUB: Create alerts for latency regressions and error rate increases
+
+DOMAIN: swe
+TASK: Build a batch processing system for large datasets
+SUB: Design the job scheduling and partitioning strategy for large inputs
+SUB: Implement idempotent processing with checkpointing for resumability
+SUB: Add progress tracking and ETA estimation for long-running jobs
+SUB: Monitor job throughput and set up alerts for stalled processing
+
+DOMAIN: swe
+TASK: Implement a role-based access control system
+SUB: Define roles, permissions, and the resources they apply to
+SUB: Implement permission checks at the API layer for every protected action
+SUB: Build an admin interface for managing role assignments
+SUB: Add tests to verify permission enforcement across all role combinations
+
+DOMAIN: swe
+TASK: Build an activity feed feature
+SUB: Define the event types that generate feed items and their display format
+SUB: Implement fan-out on write or fan-out on read depending on scale requirements
+SUB: Build the frontend feed component with infinite scroll and real-time updates
+SUB: Add filtering and muting options so users can customize their feed
+
+DOMAIN: swe
+TASK: Migrate from JavaScript to TypeScript
+SUB: Configure TypeScript with a strict but incremental migration strategy
+SUB: Enable TypeScript in CI and convert the entry points first
+SUB: Migrate files one at a time starting with the most shared utilities
+SUB: Eliminate all type errors and enable strict mode as coverage improves
+
+DOMAIN: swe
+TASK: Build a self-service account deletion flow
+SUB: Design the confirmation flow with clear consequences and a grace period
+SUB: Implement data deletion across all services including third-party integrations
+SUB: Send confirmation email and allow reactivation during the grace period
+SUB: Log deletion events for compliance and audit purposes
+
+DOMAIN: swe
+TASK: Implement connection pooling for a database
+SUB: Choose a connection pooler such as PgBouncer or the built-in pool in the ORM
+SUB: Configure pool size based on database connection limits and application concurrency
+SUB: Monitor pool utilization and wait times
+SUB: Handle connection errors and implement retry logic with exponential backoff
+
+DOMAIN: swe
+TASK: Build a usage-based billing system
+SUB: Define the metrics to measure and how to aggregate them per billing period
+SUB: Instrument all billable actions with metering events
+SUB: Implement the billing calculation and invoice generation at period end
+SUB: Provide a usage dashboard so customers can track consumption in real time
+
+DOMAIN: swe
+TASK: Build an API mocking server for frontend development
+SUB: Define the mock API contract using an OpenAPI specification
+SUB: Set up a mock server that serves realistic example data for each endpoint
+SUB: Add configurable delay and error scenarios to simulate real conditions
+SUB: Integrate the mock server into the frontend development workflow via proxy
+
+DOMAIN: swe
+TASK: Implement a retry mechanism for external API calls
+SUB: Identify all external service calls in the codebase
+SUB: Implement exponential backoff with jitter for transient failures
+SUB: Add circuit breaker logic to stop retrying after repeated failures
+SUB: Log retry attempts and outcomes for observability
+
+DOMAIN: swe
+TASK: Build a data export feature for users
+SUB: Define the scope of data included in user exports
+SUB: Implement asynchronous export generation to handle large data volumes
+SUB: Package the export as a structured archive such as JSON or CSV in a ZIP file
+SUB: Send the user a secure time-limited download link when the export is ready
+
+DOMAIN: swe
+TASK: Add a keyboard shortcut system to a web app
+SUB: Define the shortcut map and resolve conflicts with browser defaults
+SUB: Implement a global event listener that dispatches actions based on key combinations
+SUB: Build a shortcut help overlay that users can discover via the question mark key
+SUB: Ensure shortcuts are disabled when focus is inside text inputs
+
+DOMAIN: swe
+TASK: Implement graceful shutdown for a server application
+SUB: Listen for SIGTERM and SIGINT signals in the process
+SUB: Stop accepting new connections and wait for in-flight requests to complete
+SUB: Flush pending writes and close database connections cleanly
+SUB: Set a shutdown timeout after which the process exits forcefully
+
+DOMAIN: swe
+TASK: Add multi-language support to a mobile app
+SUB: Extract all UI strings into localization resource files
+SUB: Implement a locale selection screen and persist the user choice
+SUB: Handle right-to-left layout for RTL languages
+SUB: Test all supported locales and coordinate translation reviews
+
+DOMAIN: swe
+TASK: Implement structured logging across a backend service
+SUB: Choose a structured logging library and define the log schema
+SUB: Replace all unstructured log statements with structured equivalents
+SUB: Add request ID, user ID, and service name to every log entry
+SUB: Configure log shipping to a centralized log aggregation platform
+
+DOMAIN: swe
+TASK: Build a waitlist and invite system
+SUB: Create the waitlist signup form and store submissions with timestamps
+SUB: Build an admin interface to manage the waitlist and send invitations
+SUB: Implement invitation tokens with expiry and single-use enforcement
+SUB: Send confirmation and invitation emails with clear calls to action
+
+DOMAIN: swe
+TASK: Implement content moderation for user-generated content
+SUB: Define the moderation policy and the types of content that require review
+SUB: Integrate an automated moderation API for initial filtering
+SUB: Build a moderation queue UI for human reviewers
+SUB: Implement appeals, strikes, and account suspension workflows
+
+DOMAIN: swe
+TASK: Set up a canary deployment strategy
+SUB: Configure the load balancer to route a small percentage of traffic to the new version
+SUB: Define the metrics and thresholds that determine whether the canary is healthy
+SUB: Automate promotion to full deployment when thresholds are met
+SUB: Implement automatic rollback if error rates exceed the defined threshold
+
+DOMAIN: swe
+TASK: Build a financial transaction ledger
+SUB: Design an append-only ledger schema with double-entry accounting principles
+SUB: Implement atomic balance updates using database transactions
+SUB: Build reconciliation tooling to detect and investigate discrepancies
+SUB: Add auditing so every balance change can be traced to an originating event
+
+DOMAIN: swe
+TASK: Implement lazy loading for a large React application
+SUB: Identify the largest modules and routes that can be code-split
+SUB: Use React.lazy and Suspense to load components on demand
+SUB: Add loading skeleton components during async chunk loading
+SUB: Measure bundle size before and after and verify performance improvements
+
+DOMAIN: swe
+TASK: Build a data deduplication system
+SUB: Define the entity matching criteria and similarity thresholds
+SUB: Implement a deduplication pipeline that runs on ingestion or as a batch job
+SUB: Build a review interface for human confirmation of ambiguous duplicates
+SUB: Merge duplicates cleanly and update all references to the merged record
+
+DOMAIN: swe
+TASK: Add push notifications to a web app
+SUB: Implement Web Push API subscription flow and store subscription tokens
+SUB: Build the server-side notification dispatch service
+SUB: Create notification templates for each notification type
+SUB: Handle subscription management and user preferences for notification types
+
+DOMAIN: swe
+TASK: Build a self-hosted status page
+SUB: Define the components and services to monitor on the status page
+SUB: Implement health check endpoints for each monitored service
+SUB: Build the public status page UI showing current status and incident history
+SUB: Set up automated incident creation when health checks fail
+
+DOMAIN: swe
+TASK: Implement horizontal scaling for a stateful service
+SUB: Identify what state is currently held in process memory
+SUB: Move all shared state to an external store such as Redis
+SUB: Configure the load balancer with session affinity or stateless token design
+SUB: Test behavior under multiple replicas including failover scenarios
+
+DOMAIN: swe
+TASK: Add a CSV export to an existing data table
+SUB: Implement a server-side endpoint that serializes query results to CSV format
+SUB: Handle large exports asynchronously to avoid request timeouts
+SUB: Add a download button to the table UI with a loading indicator
+SUB: Include all visible columns and apply the current filters in the export
+
+DOMAIN: swe
+TASK: Build a secure internal tool for customer support
+SUB: Implement strict authentication and authorization with support role scoping
+SUB: Build lookup interfaces for customers, orders, and account history
+SUB: Implement supervised actions such as refunds and account modifications with approval
+SUB: Log all support actions with the agent identity for accountability
+
+DOMAIN: swe
+TASK: Implement a multi-region deployment
+SUB: Choose the target regions based on latency and compliance requirements
+SUB: Design data replication strategy with a primary and read replicas per region
+SUB: Update DNS with latency-based routing to direct users to the nearest region
+SUB: Test failover behavior and document the runbook for region outages
+
+DOMAIN: swe
+TASK: Build a browser extension
+SUB: Set up the extension manifest with required permissions and content scripts
+SUB: Implement the popup UI and background service worker
+SUB: Handle communication between the content script and background using message passing
+SUB: Package and submit the extension to the Chrome Web Store and Firefox Add-ons
+
+DOMAIN: swe
+TASK: Add automated dependency updates
+SUB: Configure Dependabot or Renovate to open PRs for outdated dependencies
+SUB: Define update policies such as auto-merge for patch versions only
+SUB: Ensure the CI pipeline runs the full test suite on dependency update PRs
+SUB: Review and act on major version updates that require manual migration
+
+DOMAIN: swe
+TASK: Build a machine learning model serving endpoint
+SUB: Package the trained model with its preprocessing pipeline
+SUB: Build an inference API with input validation and output schema
+SUB: Optimize for latency using batching or model quantization if needed
+SUB: Monitor prediction latency, throughput, and model drift in production
+
+DOMAIN: swe
+TASK: Implement a scheduled task runner
+SUB: Define the task schedule using cron expressions or a higher-level DSL
+SUB: Implement distributed locking to prevent duplicate execution across replicas
+SUB: Log task execution history with start time, duration, and outcome
+SUB: Set up alerting for missed or failed scheduled tasks
+
+DOMAIN: swe
+TASK: Build a WYSIWYG rich text editor
+SUB: Choose an editor framework such as ProseMirror, Slate, or TipTap
+SUB: Implement the toolbar with formatting options relevant to the use case
+SUB: Handle paste from external sources with content sanitization
+SUB: Implement autosave and conflict resolution for collaborative editing
+
+DOMAIN: swe
+TASK: Add support for multiple payment methods
+SUB: Integrate the payment provider SDK that supports all required methods
+SUB: Build a payment method selection UI at checkout
+SUB: Handle method-specific flows such as redirect-based payments and bank transfers
+SUB: Store payment method preferences for returning customers
+
+DOMAIN: swe
+TASK: Build a headless CMS integration
+SUB: Evaluate and select the headless CMS that fits the content model
+SUB: Set up the CMS workspace and define content types
+SUB: Implement the content fetching layer using the CMS API or SDK
+SUB: Configure webhooks to trigger cache invalidation on content publish
+
+DOMAIN: swe
+TASK: Implement A/B testing infrastructure
+SUB: Build or integrate an experiment assignment service
+SUB: Instrument the application to call the assignment service and log exposures
+SUB: Set up the metrics pipeline to measure outcomes per experiment variant
+SUB: Build an experiment management UI for creating and monitoring experiments
+
+DOMAIN: swe
+TASK: Build a time series data store
+SUB: Choose a time series database such as InfluxDB or TimescaleDB
+SUB: Design the measurement schema with appropriate tags and fields
+SUB: Implement a write path with batching and buffering for high-throughput ingestion
+SUB: Build query APIs with time range filtering, aggregation, and downsampling
+
+DOMAIN: swe
+TASK: Implement cross-origin resource sharing correctly
+SUB: Identify all origins that need to access the API
+SUB: Configure CORS headers on the server with an explicit allow-list
+SUB: Handle preflight OPTIONS requests correctly
+SUB: Test CORS behavior from all client origins including subdomains
+
+DOMAIN: swe
+TASK: Build a contact form with spam protection
+SUB: Implement server-side validation for all form fields
+SUB: Add CAPTCHA or honeypot fields to filter automated submissions
+SUB: Rate limit submissions per IP address
+SUB: Send confirmation to the submitter and route submissions to the right team
+
+DOMAIN: swe
+TASK: Build a developer sandbox environment
+SUB: Provision an isolated environment with separate credentials and data
+SUB: Populate the sandbox with realistic but synthetic test data
+SUB: Expose sandbox API keys through the developer portal
+SUB: Add usage limits and automatic cleanup to prevent runaway costs
+
+DOMAIN: swe
+TASK: Implement a distributed lock mechanism
+SUB: Choose a locking backend such as Redis with SET NX or a database advisory lock
+SUB: Implement lock acquisition with a configurable timeout and TTL
+SUB: Add automatic lock renewal for long-running operations
+SUB: Handle lock expiry gracefully to avoid split-brain scenarios
+
+DOMAIN: swe
+TASK: Implement content security policy headers
+SUB: Audit all the external resources the application loads
+SUB: Define a strict CSP policy that allows only the required sources
+SUB: Deploy the CSP in report-only mode first and collect violations
+SUB: Iteratively tighten the policy based on violation reports
+
+DOMAIN: swe
+TASK: Build a markdown preview editor
+SUB: Choose a markdown parsing library and render output in a sanitized container
+SUB: Implement a split-pane layout with editor on the left and preview on the right
+SUB: Sync scroll position between the editor and preview
+SUB: Add toolbar shortcuts for common markdown syntax
+
+DOMAIN: swe
+TASK: Implement health check endpoints for a service
+SUB: Define liveness and readiness check criteria for the service
+SUB: Implement the health check endpoint returning structured JSON status
+SUB: Include dependency health checks for database and external services
+SUB: Register the health checks with Kubernetes probes or the load balancer
+
+DOMAIN: swe
+TASK: Add biometric authentication to a mobile app
+SUB: Request biometric permission and check device capability at startup
+SUB: Implement authentication using the platform biometric API
+SUB: Store the session token securely in the device keychain after biometric success
+SUB: Provide a fallback to PIN or password when biometrics fail or are unavailable
+
+DOMAIN: swe
+TASK: Build an API gateway
+SUB: Define routing rules that map public URLs to internal service endpoints
+SUB: Implement authentication and authorization at the gateway layer
+SUB: Add request and response transformation for legacy clients
+SUB: Set up rate limiting, logging, and circuit breaking at the gateway level
+
+DOMAIN: swe
+TASK: Implement zero-downtime deployments
+SUB: Set up a rolling deployment strategy in the container orchestrator
+SUB: Configure readiness probes so traffic is only routed to healthy instances
+SUB: Implement database migrations that are backward-compatible with the previous version
+SUB: Test the deployment procedure and verify that active requests are not interrupted
+
+DOMAIN: swe
+TASK: Build a developer CLI tool
+SUB: Choose a CLI framework and set up the command structure
+SUB: Implement the core commands with clear help text and error messages
+SUB: Add shell completion scripts for bash, zsh, and fish
+SUB: Package and publish the CLI to a package manager with getting-started documentation
+
+DOMAIN: swe
+TASK: Add support for file attachments in a messaging app
+SUB: Implement a secure file upload endpoint with type and size validation
+SUB: Store attachments in object storage with access controlled by signed URLs
+SUB: Display attachment previews inline in the message thread
+SUB: Implement attachment deletion and access revocation
+
+DOMAIN: swe
+TASK: Implement request deduplication for idempotent APIs
+SUB: Define the idempotency key scheme and where clients should include it
+SUB: Store processed request keys with their responses in a fast cache
+SUB: Return the cached response for duplicate requests without reprocessing
+SUB: Set an appropriate TTL on cached responses and handle key conflicts
+
+DOMAIN: swe
+TASK: Build a user feedback and bug reporting widget
+SUB: Implement a floating feedback button accessible from every page
+SUB: Build the feedback form with category selection, description, and optional screenshot
+SUB: Capture browser metadata and console logs automatically on submission
+SUB: Route submissions to the appropriate team inbox or issue tracker
+
+DOMAIN: swe
+TASK: Add a command palette to a web application
+SUB: Build a fuzzy search index over all available actions and navigation targets
+SUB: Implement the command palette modal triggered by a keyboard shortcut
+SUB: Render results with icons, descriptions, and keyboard shortcut hints
+SUB: Record recent and frequently used commands for faster access
+
+DOMAIN: swe
+TASK: Implement GDPR data subject request handling
+SUB: Build an intake form for data subject access, deletion, and correction requests
+SUB: Implement automated data lookup across all systems that hold personal data
+SUB: Generate a structured report of held data for access requests
+SUB: Complete deletion or correction within the legally required timeframe and notify the requester
+
+DOMAIN: swe
+TASK: Build a tenant provisioning system for a SaaS app
+SUB: Define the resources and configurations created for each new tenant
+SUB: Implement the provisioning workflow triggered on account creation
+SUB: Handle provisioning failures with rollback and alerting
+SUB: Track provisioning status and expose it in the admin dashboard
+
+DOMAIN: swe
+TASK: Build a load testing harness
+SUB: Define realistic load scenarios based on production traffic patterns
+SUB: Implement the test scripts using a tool such as k6, Locust, or JMeter
+SUB: Run load tests in a staging environment and collect latency and throughput metrics
+SUB: Identify bottlenecks and set performance benchmarks to track over releases
+
+DOMAIN: swe
+TASK: Implement request signing for webhook delivery
+SUB: Generate an HMAC signature using a shared secret and the request payload
+SUB: Include the signature in a request header such as X-Signature
+SUB: Document the verification process for webhook receivers
+SUB: Rotate signing secrets with a transition period to avoid dropped webhooks
+
+DOMAIN: swe
+TASK: Build a user avatar upload and management system
+SUB: Implement an image upload endpoint with format and size validation
+SUB: Resize and crop the image to standard avatar dimensions on the server
+SUB: Store the processed image in object storage and update the user profile record
+SUB: Serve avatars through a CDN and handle default avatar fallback
+
+DOMAIN: swe
+TASK: Add search functionality to a documentation site
+SUB: Index all documentation pages with a full-text search engine
+SUB: Implement a search UI with instant results and keyboard navigation
+SUB: Highlight matching terms in the search results
+SUB: Track search queries to identify documentation gaps
+
+DOMAIN: swe
+TASK: Implement message queuing for order processing
+SUB: Set up a durable message queue for incoming orders
+SUB: Implement consumer workers that process orders and update order status
+SUB: Handle partial failures with dead letter queues and manual retry UI
+SUB: Monitor queue depth and processing latency with alerts for backlogs
+
+DOMAIN: swe
+TASK: Build a live collaboration editing feature
+SUB: Implement operational transformation or CRDT-based conflict resolution
+SUB: Set up a collaboration server that broadcasts changes to all connected clients
+SUB: Show presence indicators for active users in the document
+SUB: Handle network interruptions and re-sync state on reconnection
+
+DOMAIN: swe
+TASK: Add an undo and redo system to an application
+SUB: Define the command pattern for all user actions that modify state
+SUB: Maintain a history stack with configurable maximum depth
+SUB: Implement undo and redo by reversing and replaying commands from the history
+SUB: Persist undo history across sessions for long-running editing workflows
+
+DOMAIN: swe
+TASK: Build a cross-platform desktop app with Tauri
+SUB: Set up the Tauri project with a Rust backend and web frontend
+SUB: Define the Tauri command interface for frontend-to-backend calls
+SUB: Implement platform-specific features such as system tray and file system access
+SUB: Package and distribute the app for Windows, macOS, and Linux
+
+DOMAIN: swe
+TASK: Implement server-sent events for real-time notifications
+SUB: Create an SSE endpoint that keeps the HTTP connection open and streams events
+SUB: Implement a pub-sub mechanism to broadcast events to connected clients
+SUB: Handle client reconnection with the Last-Event-ID header to replay missed events
+SUB: Gracefully close connections after a timeout and release server resources
+
+DOMAIN: swe
+TASK: Build a custom form builder
+SUB: Design the form schema format supporting text, select, checkbox, and date fields
+SUB: Build a drag-and-drop form editor for creating and arranging fields
+SUB: Implement a form renderer that builds the form dynamically from the schema
+SUB: Store submissions and provide a response management interface
+
+DOMAIN: swe
+TASK: Set up secret management for a production environment
+SUB: Choose a secrets manager such as AWS Secrets Manager, HashiCorp Vault, or Doppler
+SUB: Migrate all hardcoded secrets and environment variables to the secrets manager
+SUB: Configure automatic secret injection at deployment time
+SUB: Set up secret rotation and audit logging for all secret access
+
+DOMAIN: swe
+TASK: Build a mobile deep linking system
+SUB: Define the URL scheme and universal link configuration for the app
+SUB: Implement route handling in the app for all deep link paths
+SUB: Test deep links from email, SMS, and social media contexts
+SUB: Set up a fallback web page for users who do not have the app installed
+
+DOMAIN: swe
+TASK: Implement token refresh for long-lived sessions
+SUB: Issue short-lived access tokens and long-lived refresh tokens at login
+SUB: Implement automatic token refresh in the API client before access tokens expire
+SUB: Rotate refresh tokens on use to detect token theft
+SUB: Invalidate all tokens on logout and implement a token family revocation mechanism
+
+DOMAIN: swe
+TASK: Build a data visualization dashboard
+SUB: Define the key metrics and charts to display for the target user
+SUB: Choose a charting library such as Recharts, D3, or Chart.js
+SUB: Implement data fetching with appropriate refresh intervals for each widget
+SUB: Make all charts responsive and accessible with keyboard navigation and alt text
+
+DOMAIN: swe
+TASK: Add full-page caching for a content-heavy site
+SUB: Identify pages that are safe to cache at the CDN or reverse proxy layer
+SUB: Configure cache-control headers with appropriate max-age values
+SUB: Implement cache purging on content updates
+SUB: Monitor cache hit rates and verify that dynamic content is not incorrectly cached
+
+DOMAIN: swe
+TASK: Implement a multi-step checkout flow
+SUB: Design the step sequence covering cart review, shipping, payment, and confirmation
+SUB: Implement state persistence across steps with URL-based navigation
+SUB: Validate inputs at each step before proceeding and surface errors inline
+SUB: Optimize for conversion by minimizing friction and supporting autofill
+
+DOMAIN: swe
+TASK: Build a data synchronization service between two systems
+SUB: Define the sync direction, frequency, and conflict resolution rules
+SUB: Implement the initial full sync and ongoing incremental sync
+SUB: Track sync state with a cursor or timestamp to handle resumability
+SUB: Log sync operations and alert on sync failures or data divergence
+
+DOMAIN: swe
+TASK: Implement a service locator pattern for dependency injection
+SUB: Define the service registry interface and registration mechanism
+SUB: Implement lazy initialization for expensive service instances
+SUB: Replace direct constructor calls with service locator lookups throughout the codebase
+SUB: Write tests using mock registrations to isolate components under test
+
+DOMAIN: swe
+TASK: Build a message threading system
+SUB: Design the data model for threads, messages, and participant relationships
+SUB: Implement the API for creating threads, posting replies, and fetching history
+SUB: Build the threaded message UI with collapsible reply chains
+SUB: Add unread tracking and notifications for new replies in watched threads
+
+DOMAIN: swe
+TASK: Implement database read replicas for scaling
+SUB: Set up one or more read replicas synchronized with the primary database
+SUB: Update the data access layer to route read queries to replicas
+SUB: Handle replication lag by routing consistency-sensitive reads to primary
+SUB: Monitor replication lag and alert if it exceeds acceptable thresholds
+
+DOMAIN: swe
+TASK: Implement blue-green deployments
+SUB: Provision two identical production environments designated blue and green
+SUB: Deploy new releases to the inactive environment and run smoke tests
+SUB: Switch traffic to the new environment by updating the load balancer
+SUB: Keep the old environment running briefly for rapid rollback if issues arise
+
+DOMAIN: swe
+TASK: Add gesture support to a mobile app
+SUB: Identify which interactions benefit from swipe, pinch, or long-press gestures
+SUB: Implement gesture handlers using the platform gesture recognizer or a library
+SUB: Provide visual affordances so users discover the available gestures
+SUB: Ensure gestures do not conflict with system gestures and have accessible alternatives
+
+DOMAIN: swe
+TASK: Build a compliance reporting module
+SUB: Identify the compliance standards the report must satisfy
+SUB: Collect and aggregate the required data points from across the system
+SUB: Generate the report in the required format with proper attestations
+SUB: Schedule automated report generation and deliver to the compliance team
+
+DOMAIN: swe
+TASK: Implement a document template engine
+SUB: Design the template schema with variable placeholders and conditional sections
+SUB: Build the template rendering engine that substitutes values at runtime
+SUB: Create a template editing UI with live preview
+SUB: Support multiple output formats such as HTML, PDF, and DOCX
+
+DOMAIN: swe
+TASK: Build an API rate limiter with tiered plans
+SUB: Define rate limit quotas per plan tier such as free, pro, and enterprise
+SUB: Implement quota enforcement in the API gateway using the client API key
+SUB: Return clear error responses with usage information when limits are hit
+SUB: Expose a usage endpoint so clients can monitor their own consumption
+
+DOMAIN: swe
+TASK: Add social login with Apple Sign In
+SUB: Register the app with Apple Developer and configure Sign In with Apple
+SUB: Implement the Apple OAuth flow including nonce validation
+SUB: Handle the Apple identity token verification server-side
+SUB: Store the Apple user identifier and handle account linking with existing accounts
+
+DOMAIN: swe
+TASK: Build a type-safe API client library
+SUB: Define request and response types from the API specification
+SUB: Implement a base client with authentication, retries, and error normalization
+SUB: Generate typed method wrappers for each API endpoint
+SUB: Publish the client to a package registry and write documentation with examples
+
+DOMAIN: swe
+TASK: Implement database connection failover
+SUB: Configure a primary-replica setup with automatic failover support
+SUB: Update application connection strings to support failover endpoints
+SUB: Test failover by simulating primary failure and measure recovery time
+SUB: Monitor replication health and set up alerts for failover events
+
+DOMAIN: swe
+TASK: Build a product tour for new users
+SUB: Define the tour steps and the UI elements they should highlight
+SUB: Implement the tour overlay with arrows and positioning logic
+SUB: Trigger the tour for first-time users and allow dismissal and replay
+SUB: Track tour completion and skip rates to optimize the content
+
+DOMAIN: swe
+TASK: Add server-side pagination to a large table
+SUB: Implement cursor or page-based pagination in the backend query
+SUB: Build the UI controls for navigating between pages
+SUB: Prefetch the next page in the background for perceived performance
+SUB: Handle URL-based pagination state so results are shareable and bookmarkable
+
+DOMAIN: swe
+TASK: Implement soft real-time features with polling
+SUB: Identify the data that needs to stay fresh and the acceptable staleness window
+SUB: Implement a polling loop with configurable interval and exponential backoff on errors
+SUB: Show a freshness indicator or last-updated timestamp in the UI
+SUB: Switch to a push-based approach if polling proves too expensive under load
+
+DOMAIN: swe
+TASK: Build an embeddable widget for third-party sites
+SUB: Create a standalone JavaScript bundle that can be embedded with a script tag
+SUB: Implement a sandboxed iframe to isolate the widget from the host page
+SUB: Expose a configuration API for the host to customize widget behavior
+SUB: Minimize the initial bundle size and lazy-load non-essential features
+
+DOMAIN: swe
+TASK: Implement image cropping and editing before upload
+SUB: Integrate a client-side image cropping library such as Cropper.js
+SUB: Allow the user to set the crop area with a configurable aspect ratio
+SUB: Apply the crop and any adjustments client-side before sending to the server
+SUB: Preview the final result before confirming the upload
+
+DOMAIN: swe
+TASK: Build a custom logging pipeline
+SUB: Define the log format and required fields for all log levels
+SUB: Implement log aggregation from all service instances
+SUB: Route logs to different destinations based on level and source
+SUB: Add log retention policies and archival to cold storage
+
+DOMAIN: swe
+TASK: Implement a multi-currency support system
+SUB: Store prices in a canonical base currency and conversion rates in the database
+SUB: Fetch and update exchange rates from a reliable external source on a schedule
+SUB: Display prices in the user preferred currency with appropriate formatting
+SUB: Handle currency conversion in checkout and ensure amounts are consistent end-to-end
+
+DOMAIN: swe
+TASK: Add support for bulk operations in an admin UI
+SUB: Implement multi-select with checkboxes in the data table
+SUB: Build a bulk action toolbar that appears when items are selected
+SUB: Process bulk operations asynchronously and show a progress indicator
+SUB: Handle partial failures and report which items succeeded and which failed
+
+DOMAIN: swe
+TASK: Build an email delivery system
+SUB: Integrate with an email service provider such as SendGrid, Postmark, or SES
+SUB: Implement a template system for transactional email content
+SUB: Handle bounce, complaint, and unsubscribe webhooks
+SUB: Monitor delivery rates and set up alerts for deliverability issues
+
+DOMAIN: swe
+TASK: Implement a changelog-driven database migration workflow
+SUB: Set up a migration tool such as Flyway or Liquibase
+SUB: Write versioned migration scripts for every schema change
+SUB: Run migrations automatically on deployment as a pre-deploy step
+SUB: Test rollback scripts for each migration before applying to production
+
+DOMAIN: swe
+TASK: Add support for server-side analytics events
+SUB: Define the analytics event schema for server-side events
+SUB: Instrument key server-side actions such as purchases and API calls
+SUB: Send events to the analytics platform using the server-side SDK
+SUB: Validate that server-side events appear correctly in the analytics dashboard
+
+DOMAIN: swe
+TASK: Build a custom authentication provider
+SUB: Implement user registration with email verification
+SUB: Build the login flow with secure password hashing using bcrypt or argon2
+SUB: Issue session tokens and implement token validation middleware
+SUB: Add brute force protection with account lockout after repeated failures
+
+DOMAIN: swe
+TASK: Implement a feature that works without JavaScript
+SUB: Build the core functionality using progressive enhancement principles
+SUB: Implement server-side form handling for all user interactions
+SUB: Add JavaScript as an enhancement layer that improves the experience
+SUB: Test the feature with JavaScript disabled to verify baseline functionality
+
+DOMAIN: swe
+TASK: Build a dynamic pricing engine
+SUB: Define the pricing rules including base price, modifiers, and capping rules
+SUB: Implement a rule evaluation engine that computes the final price at checkout
+SUB: Cache computed prices to avoid redundant recalculation under load
+SUB: Build an admin interface for creating and testing pricing rules
+
+DOMAIN: swe
+TASK: Add real-time presence indicators to a collaboration tool
+SUB: Implement a presence server that tracks connected users per document or room
+SUB: Broadcast join and leave events to all participants in real time
+SUB: Display avatar stacks or cursor positions for active participants
+SUB: Handle disconnections gracefully and remove stale presence after a timeout
+
+DOMAIN: swe
+TASK: Implement a custom error handling middleware
+SUB: Define error categories and their corresponding HTTP status codes
+SUB: Implement a centralized error handler that normalizes all thrown errors
+SUB: Add error codes and human-readable messages to all error responses
+SUB: Log full error details server-side while exposing only safe information to clients
+
+DOMAIN: swe
+TASK: Build a subscription upgrade and downgrade flow
+SUB: Define the proration rules for mid-cycle plan changes
+SUB: Implement the plan change API that communicates with the billing provider
+SUB: Build the upgrade and downgrade UI with clear feature comparisons
+SUB: Send a confirmation email summarizing the change and new billing terms
+
+DOMAIN: swe
+TASK: Add dark mode support to a native iOS app
+SUB: Adopt semantic system colors and dynamic color assets throughout the app
+SUB: Test every screen in both light and dark mode using the Xcode simulator
+SUB: Handle custom colors and images that need dark mode variants
+SUB: Respect the user appearance setting and respond to runtime mode changes
+
+DOMAIN: swe
+TASK: Build a feature request and voting system
+SUB: Implement a form for users to submit feature requests
+SUB: Build a public board showing requests ordered by vote count
+SUB: Allow users to vote on existing requests without creating duplicates
+SUB: Notify voters when a requested feature is delivered or updated in status
+
+DOMAIN: swe
+TASK: Implement adaptive bitrate streaming for video
+SUB: Encode video into multiple quality levels using FFmpeg or a media service
+SUB: Generate HLS or DASH manifests referencing all quality levels
+SUB: Implement a player that switches quality based on available bandwidth
+SUB: Monitor buffer health and quality level switches in analytics
+
+DOMAIN: swe
+TASK: Build an automated testing framework for an API
+SUB: Define test cases covering happy paths, edge cases, and error scenarios
+SUB: Implement a test runner that sends requests and validates responses
+SUB: Set up contract testing to catch breaking API changes early
+SUB: Run the test suite on every PR and publish results to the pull request
+
+DOMAIN: swe
+TASK: Add support for importing data from third-party tools
+SUB: Build connectors for each supported source including authentication flows
+SUB: Implement a data mapping layer to normalize imported data to the internal schema
+SUB: Run imports asynchronously and report errors with row-level detail
+SUB: Allow users to preview and confirm the mapped data before committing the import
+
+DOMAIN: swe
+TASK: Implement a streaming API endpoint
+SUB: Design the streaming protocol using chunked transfer encoding or WebSockets
+SUB: Implement backpressure handling to avoid overwhelming slow clients
+SUB: Build the client-side consumer that processes chunks as they arrive
+SUB: Document the streaming API with examples and connection management guidelines
+
+DOMAIN: swe
+TASK: Build a search-as-you-type feature
+SUB: Implement a debounced search input that triggers queries after a pause
+SUB: Display a loading indicator during the search request
+SUB: Render results in a dropdown with keyboard navigation support
+SUB: Track which results users click to improve ranking over time
+
+DOMAIN: swe
+TASK: Add support for exporting charts as images
+SUB: Implement a server-side chart rendering endpoint using a headless browser or charting library
+SUB: Add export buttons to each chart component
+SUB: Generate high-resolution PNG or SVG output with appropriate dimensions
+SUB: Allow users to choose the format and optionally add a watermark or title
+
+DOMAIN: swe
+TASK: Build a lightweight feature analytics system
+SUB: Define the features to track and instrument them with event calls
+SUB: Aggregate event counts and unique user metrics per feature per time period
+SUB: Build an internal dashboard to view feature adoption over time
+SUB: Use adoption data to prioritize development and identify underused features
+
+DOMAIN: swe
+TASK: Implement webhook signature verification
+SUB: Document the expected signature header format for webhook consumers
+SUB: Implement verification middleware that rejects requests with invalid signatures
+SUB: Provide code samples in multiple languages for webhook consumers to verify signatures
+SUB: Test signature verification with valid, invalid, and replayed requests
+
+DOMAIN: swe
+TASK: Build a multi-file code editor in the browser
+SUB: Integrate a code editor library such as Monaco or CodeMirror
+SUB: Implement a file tree sidebar for navigating between files
+SUB: Support syntax highlighting for multiple programming languages
+SUB: Add live collaboration support so multiple users can edit simultaneously
+
+DOMAIN: swe
+TASK: Add automated screenshot testing
+SUB: Set up a screenshot testing tool such as Percy or Chromatic
+SUB: Capture baseline screenshots of all critical UI states
+SUB: Integrate screenshot comparisons into the CI pipeline on every PR
+SUB: Review and approve visual diffs before merging changes
+
+DOMAIN: swe
+TASK: Implement a background data sync for a mobile app
+SUB: Register a background fetch task with the platform scheduler
+SUB: Implement incremental sync that fetches only changes since the last sync
+SUB: Handle sync conflicts with a defined resolution strategy
+SUB: Respect battery and network constraints by throttling sync frequency
+
+DOMAIN: swe
+TASK: Build a custom metrics aggregation service
+SUB: Define the metric types including counters, gauges, and histograms
+SUB: Implement a collection endpoint that receives metric reports from services
+SUB: Aggregate metrics over configurable time windows in memory
+SUB: Expose query APIs and persist rollups to the database for historical views
+
+DOMAIN: swe
+TASK: Add in-app purchase support to a mobile app
+SUB: Configure products in the App Store and Google Play consoles
+SUB: Implement the purchase flow using the platform store SDK
+SUB: Validate receipts server-side to prevent fraud
+SUB: Handle restore purchases and subscription status checks across devices
+
+DOMAIN: swe
+TASK: Build a conversation history search
+SUB: Index all message content with the user identifier and timestamp
+SUB: Implement a search endpoint that queries the index and returns relevant messages
+SUB: Build the search UI with result highlighting and context snippets
+SUB: Handle large message volumes by running searches asynchronously
+
+DOMAIN: swe
+TASK: Implement a dead letter queue handler
+SUB: Configure a dead letter queue destination for all failed message queues
+SUB: Build a monitoring dashboard showing dead letter queue depth and message age
+SUB: Implement a manual retry UI for selectively reprocessing failed messages
+SUB: Alert on-call engineers when dead letter queue depth exceeds a threshold
+
+DOMAIN: swe
+TASK: Build a QR code generation feature
+SUB: Implement server-side QR code generation with configurable size and error correction
+SUB: Design the API endpoint and caching strategy for generated codes
+SUB: Add QR codes to relevant user-facing surfaces such as profile or checkout pages
+SUB: Implement QR code scanning for mobile clients
+
+DOMAIN: swe
+TASK: Add email open and click tracking to transactional emails
+SUB: Inject a tracking pixel into outgoing emails for open tracking
+SUB: Rewrite links to route through a tracking redirect before the destination
+SUB: Store events in the database and associate them with the original email record
+SUB: Display engagement metrics in the email campaign dashboard
+
+DOMAIN: swe
+TASK: Implement a session recording feature with user consent
+SUB: Integrate a session recording library and implement the consent gate
+SUB: Store recordings securely with access controls for support and product teams
+SUB: Build a playback interface with timeline annotations for key events
+SUB: Define and enforce a retention policy to delete old recordings automatically
+
+DOMAIN: swe
+TASK: Build a localization management workflow
+SUB: Set up a localization platform such as Crowdin or Lokalise
+SUB: Integrate the platform with the code repository via webhooks or CLI
+SUB: Define the workflow for submitting new strings and reviewing translations
+SUB: Automate delivery of approved translations to the application at build time
+
+DOMAIN: swe
+TASK: Implement API request validation with a schema
+SUB: Define request schemas for all API endpoints using JSON Schema or a validation library
+SUB: Implement validation middleware that rejects invalid requests with descriptive errors
+SUB: Generate API documentation automatically from the schemas
+SUB: Test validation with boundary inputs and malformed payloads
+
+DOMAIN: swe
+TASK: Build a data masking service for non-production environments
+SUB: Identify sensitive data fields that must be masked in staging and development
+SUB: Implement masking functions for each field type preserving format where needed
+SUB: Automate masking as part of the database refresh pipeline for non-production environments
+SUB: Audit masked environments to verify that no real data is present

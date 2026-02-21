@@ -1,0 +1,1532 @@
+DOMAIN: creative
+TASK: Launch a podcast
+SUB: Define the show concept, target audience, and episode format
+SUB: Set up recording equipment and audio editing software
+SUB: Record and edit the first three episodes as a launch batch
+SUB: Publish on major platforms and promote across social channels
+
+DOMAIN: creative
+TASK: Write and publish a technical blog series
+SUB: Choose the topic and map out the series arc with titles and outlines
+SUB: Research and draft the first article with supporting examples
+SUB: Edit for clarity, add visuals or code samples, and get feedback
+SUB: Publish with SEO optimization and promote to relevant communities
+
+DOMAIN: creative
+TASK: Produce a YouTube tutorial video
+SUB: Write a detailed script and create a visual outline or storyboard
+SUB: Record the screen capture and voiceover with proper audio levels
+SUB: Edit the video with cuts, captions, and intro and outro sequences
+SUB: Export, upload with optimized title and description, and promote
+
+DOMAIN: creative
+TASK: Design a brand identity for a new product
+SUB: Define the brand values, personality, and target audience
+SUB: Research competitors and identify visual differentiation opportunities
+SUB: Design logo, color palette, typography, and core visual elements
+SUB: Create a brand guidelines document and apply to key touchpoints
+
+DOMAIN: creative
+TASK: Create a social media content strategy
+SUB: Define the target audience and the platforms where they are most active
+SUB: Develop content pillars and a posting cadence for each platform
+SUB: Create a content calendar for the first month with specific post ideas
+SUB: Establish metrics to track performance and a review cadence
+
+DOMAIN: creative
+TASK: Produce a company announcement video
+SUB: Write a script that clearly communicates the key message
+SUB: Plan the shoot including location, on-camera talent, and shot list
+SUB: Record footage and collect B-roll to support the narrative
+SUB: Edit, add music and captions, and get stakeholder approval before publishing
+
+DOMAIN: creative
+TASK: Write a white paper on an industry topic
+SUB: Define the thesis, target reader, and key arguments to make
+SUB: Research the topic thoroughly and gather supporting data and case studies
+SUB: Draft the white paper with a clear structure and compelling narrative
+SUB: Design the layout, get it reviewed, and distribute through relevant channels
+
+DOMAIN: creative
+TASK: Build a personal portfolio website
+SUB: Define the goals of the site and the audience you want to attract
+SUB: Select the best projects to showcase and write case study descriptions
+SUB: Design the visual layout and build the site using your preferred tools
+SUB: Deploy the site, add a custom domain, and promote to your network
+
+DOMAIN: creative
+TASK: Run a design sprint for a new feature
+SUB: Define the design challenge and invite the right cross-functional participants
+SUB: Map the problem space and identify the most important question to answer
+SUB: Sketch and prototype the most promising solution approaches
+SUB: Test prototypes with real users and synthesize learnings into a decision
+
+DOMAIN: creative
+TASK: Create an email newsletter
+SUB: Define the newsletter's purpose, audience, and cadence
+SUB: Choose an email platform and design a template that fits the brand
+SUB: Write the first issue with valuable and engaging content
+SUB: Build the initial subscriber list and set up a growth strategy
+
+DOMAIN: creative
+TASK: Develop a conference talk proposal
+SUB: Choose a compelling topic that matches the conference audience and theme
+SUB: Write an abstract that clearly states the problem, approach, and takeaways
+SUB: Submit to multiple relevant conferences to maximize acceptance odds
+SUB: Prepare slides and rehearse the talk thoroughly before the event
+
+DOMAIN: creative
+TASK: Produce a product demo for sales
+SUB: Identify the key pain points and desired outcomes of the target buyer
+SUB: Script a demo flow that tells a clear before and after story
+SUB: Record a polished demo video and prepare a live demo environment
+SUB: Train the sales team on how to customize and deliver the demo
+
+DOMAIN: creative
+TASK: Create an online course
+SUB: Define the learning outcomes and identify the target student
+SUB: Outline the course curriculum into modules and individual lessons
+SUB: Record lessons with clear explanations, examples, and exercises
+SUB: Publish on a course platform and plan the launch promotion strategy
+
+DOMAIN: creative
+TASK: Write a book
+SUB: Develop the central idea, target reader, and chapter outline
+SUB: Set a writing schedule and establish a daily or weekly word count goal
+SUB: Write a complete first draft without stopping to over-edit
+SUB: Revise, get feedback from beta readers, and prepare for publishing
+
+DOMAIN: creative
+TASK: Launch a photography project
+SUB: Define the visual theme, subject matter, and intended audience
+SUB: Plan shooting locations, equipment needs, and a production schedule
+SUB: Shoot a substantial body of work and cull the best images
+SUB: Edit and sequence the photos, then publish or exhibit the final collection
+
+DOMAIN: creative
+TASK: Compose an original music track
+SUB: Decide on genre, mood, tempo, and key before touching any instrument
+SUB: Develop the core melody and harmonic structure through experimentation
+SUB: Arrange the full track with instrumentation, dynamics, and transitions
+SUB: Mix and master the final audio and distribute to streaming platforms
+
+DOMAIN: creative
+TASK: Write a short film screenplay
+SUB: Develop the central conflict, main character arc, and setting
+SUB: Outline the three-act structure with scene-by-scene beats
+SUB: Write the full first draft following proper screenplay format
+SUB: Revise through multiple drafts, get notes, and lock the final script
+
+DOMAIN: creative
+TASK: Produce an illustrated children's book
+SUB: Develop the story concept, age range, and key characters
+SUB: Write and refine the manuscript to match the target reading level
+SUB: Create rough illustrations for each spread and refine the visual style
+SUB: Finalize artwork, design the layout, and prepare files for print or digital publishing
+
+DOMAIN: creative
+TASK: Design a mobile app UI
+SUB: Define user goals and create personas to guide design decisions
+SUB: Sketch wireframes for all key screens and map the user flows
+SUB: Build high-fidelity mockups with final colors, typography, and components
+SUB: Create an interactive prototype and run usability tests to refine the design
+
+DOMAIN: creative
+TASK: Launch an Instagram account for a brand
+SUB: Define the visual aesthetic, tone of voice, and content themes
+SUB: Create a bank of 12 polished posts before publishing anything
+SUB: Write an optimized bio, set up highlights, and publish the initial grid
+SUB: Engage with the community daily and analyze performance weekly
+
+DOMAIN: creative
+TASK: Write a long-form investigative article
+SUB: Choose a compelling angle and identify the central unanswered question
+SUB: Conduct interviews, gather documents, and build a source library
+SUB: Draft the narrative with a clear structure and evidence-backed claims
+SUB: Fact-check every claim, get legal review if needed, and publish with promotion
+
+DOMAIN: creative
+TASK: Build a Twitch streaming channel
+SUB: Choose a niche and define the content format and streaming schedule
+SUB: Set up streaming software, overlays, and audio and video quality
+SUB: Stream consistently and engage actively with viewers in chat
+SUB: Grow the community through clips, social promotion, and collaborations
+
+DOMAIN: creative
+TASK: Create a motion graphics explainer video
+SUB: Write a tight script that explains the concept in under two minutes
+SUB: Design character or icon assets and define the visual style
+SUB: Animate the scenes in sync with voiceover and music
+SUB: Export in multiple formats and distribute across digital channels
+
+DOMAIN: creative
+TASK: Produce a documentary film
+SUB: Identify the central subject, thesis, and key characters to follow
+SUB: Conduct pre-interviews and plan a shoot schedule across multiple locations
+SUB: Shoot all primary footage including interviews, b-roll, and observational scenes
+SUB: Edit the story arc, add narration or titles, mix audio, and submit to festivals
+
+DOMAIN: creative
+TASK: Start a Substack newsletter
+SUB: Define the niche topic, publication frequency, and value proposition
+SUB: Write and publish the first three issues before promoting widely
+SUB: Build the initial audience through social sharing and personal outreach
+SUB: Set up a paid tier with a clear benefit structure for subscribers
+
+DOMAIN: creative
+TASK: Design and sell a merchandise line
+SUB: Develop the design concepts and select the product types to offer
+SUB: Source print-on-demand vendors or manufacturers and order samples
+SUB: Set up an online storefront with product photos and compelling descriptions
+SUB: Launch with a promotional campaign and gather customer feedback
+
+DOMAIN: creative
+TASK: Create a brand style guide
+SUB: Audit all existing brand assets and identify inconsistencies
+SUB: Define the official logo usage rules, color codes, and typography system
+SUB: Document tone of voice guidelines with examples of correct and incorrect usage
+SUB: Package the guide in a shareable format and distribute to all stakeholders
+
+DOMAIN: creative
+TASK: Produce a live event or show
+SUB: Define the concept, format, venue requirements, and target audience size
+SUB: Book the venue, confirm talent or performers, and build a production schedule
+SUB: Sell tickets, promote the event, and coordinate all logistics and vendors
+SUB: Run the event day-of, capture content for reuse, and do a post-event debrief
+
+DOMAIN: creative
+TASK: Write and record an audiobook
+SUB: Finalize the manuscript and break it into recording chapters
+SUB: Set up a quiet recording environment with proper microphone and software
+SUB: Record each chapter cleanly and edit out mistakes, noise, and long pauses
+SUB: Master the audio to ACX or distributor standards and upload for sale
+
+DOMAIN: creative
+TASK: Design an infographic
+SUB: Define the core data story and the single key insight to communicate
+SUB: Gather and verify all underlying data from credible sources
+SUB: Design the visual hierarchy, chart types, and layout using a design tool
+SUB: Export in web and print formats and publish with appropriate attribution
+
+DOMAIN: creative
+TASK: Launch a TikTok content series
+SUB: Choose a repeatable format that suits short-form vertical video
+SUB: Batch-produce the first ten episodes before posting anything
+SUB: Publish consistently and engage with comments to build early momentum
+SUB: Analyze retention and completion rates and iterate on the format
+
+DOMAIN: creative
+TASK: Create a photo book
+SUB: Select and sequence the final images that tell a coherent visual story
+SUB: Write captions or text to accompany the photographs where needed
+SUB: Design the layout using a book template or design tool
+SUB: Order a proof copy, review it, and finalize for print or digital distribution
+
+DOMAIN: creative
+TASK: Develop a creative writing workshop
+SUB: Define the workshop goals, audience skill level, and session format
+SUB: Write exercises, prompts, and reading examples for each session
+SUB: Plan how participants will share and give feedback on their work
+SUB: Schedule and promote the workshop, then gather feedback to improve it
+
+DOMAIN: creative
+TASK: Produce a music album
+SUB: Finalize the tracklist concept and the overall sonic arc of the album
+SUB: Record and produce each track to a finished instrumental standard
+SUB: Record and mix vocals and finalize all tracks with mastering
+SUB: Create artwork, write liner notes, and distribute to all streaming platforms
+
+DOMAIN: creative
+TASK: Build a UX research report
+SUB: Define the research questions and choose the appropriate study methods
+SUB: Recruit participants and conduct interviews, surveys, or usability tests
+SUB: Synthesize findings into themes and map them to user needs
+SUB: Write the report with clear recommendations and present to stakeholders
+
+DOMAIN: creative
+TASK: Write and launch a fiction novel
+SUB: Develop the world, cast of characters, and central narrative conflict
+SUB: Plot the full story arc with chapter-level beats before drafting
+SUB: Write the complete first draft at a steady daily pace
+SUB: Revise, hire a professional editor, design the cover, and self-publish or query agents
+
+DOMAIN: creative
+TASK: Create a podcast trailer
+SUB: Write a punchy script that captures the show's tone and value proposition
+SUB: Record the host voiceover and select a signature music bed
+SUB: Edit to under 90 seconds with tight pacing and a clear call to action
+SUB: Publish the trailer first on all platforms before the first full episode
+
+DOMAIN: creative
+TASK: Produce a webinar
+SUB: Define the topic, learning objectives, and target attendee profile
+SUB: Build the slide deck and prepare any live demos or interactive elements
+SUB: Promote the webinar and manage registrations with a confirmation sequence
+SUB: Host the session, record it for replay, and follow up with attendees
+
+DOMAIN: creative
+TASK: Design a product packaging concept
+SUB: Research the competitive shelf environment and identify differentiation opportunities
+SUB: Define structural requirements such as material, dimensions, and print specs
+SUB: Design multiple concepts and present them for stakeholder feedback
+SUB: Finalize the selected design and prepare production-ready print files
+
+DOMAIN: creative
+TASK: Write a grant proposal for a creative project
+SUB: Research available grants and identify the best fit for your project
+SUB: Write a compelling project narrative with clear goals and intended impact
+SUB: Prepare a realistic budget breakdown and timeline for the work
+SUB: Submit before the deadline and follow up with the funder as appropriate
+
+DOMAIN: creative
+TASK: Build a YouTube channel from scratch
+SUB: Define the channel niche, content format, and upload schedule
+SUB: Create channel art, write an optimized about section, and set up playlists
+SUB: Produce and publish the first ten videos before heavily promoting
+SUB: Analyze audience retention and click-through rates and refine the content strategy
+
+DOMAIN: creative
+TASK: Create a comic strip or webcomic
+SUB: Develop recurring characters, the visual style, and the comedic or narrative voice
+SUB: Write and sketch the first ten strips or pages as a proof of concept
+SUB: Ink, color, and letter each strip to a consistent publishable standard
+SUB: Launch on a dedicated site or platform and establish a consistent release schedule
+
+DOMAIN: creative
+TASK: Produce a product photography shoot
+SUB: Define the visual style, mood, and specific shots needed for each product
+SUB: Source or build props, backgrounds, and lighting setups
+SUB: Shoot all products following the style guide and capture multiple angles
+SUB: Cull and retouch final images and deliver in the required formats
+
+DOMAIN: creative
+TASK: Develop a content marketing strategy
+SUB: Define the business goals, target audience, and key buyer journey stages
+SUB: Audit existing content and identify gaps and high-performing formats
+SUB: Build a content calendar aligned to campaigns and SEO opportunities
+SUB: Set up tracking and a monthly review process to measure content ROI
+
+DOMAIN: creative
+TASK: Write a feature-length screenplay
+SUB: Develop the premise, protagonist, antagonist, and central dramatic question
+SUB: Outline the full three-act structure with sequence and scene breakdowns
+SUB: Write the complete first draft aiming for 90 to 110 pages
+SUB: Rewrite through multiple passes focusing on character, dialogue, and pacing
+
+DOMAIN: creative
+TASK: Launch a Patreon for a creative project
+SUB: Define the tier structure and what exclusive benefits each tier receives
+SUB: Create a compelling page with a video pitch, bio, and sample content
+SUB: Promote the launch to your existing audience across all channels
+SUB: Deliver on tier promises consistently and grow through referrals and updates
+
+DOMAIN: creative
+TASK: Create a brand activation campaign
+SUB: Define the campaign objective, target audience, and key emotional message
+SUB: Develop the activation concept and the channels through which it will run
+SUB: Produce all creative assets including copy, visuals, and video
+SUB: Execute the campaign, track engagement metrics, and report on outcomes
+
+DOMAIN: creative
+TASK: Design and launch a mobile game
+SUB: Define the core game loop, mechanics, and target player persona
+SUB: Prototype the gameplay in a simple build and test it with real players
+SUB: Produce final art, sound, and levels, then build the release version
+SUB: Submit to app stores, run soft launch testing, and execute a launch campaign
+
+DOMAIN: creative
+TASK: Write a children's picture book
+SUB: Develop the story idea, main character, and the simple emotional arc
+SUB: Write the manuscript in the cadence and vocabulary of the target age group
+SUB: Work with an illustrator or create rough sketches for each spread
+SUB: Refine text and art together, then prepare for self-publishing or agent submission
+
+DOMAIN: creative
+TASK: Produce a brand sizzle reel
+SUB: Define the purpose of the reel and what feeling it should leave viewers with
+SUB: Gather or shoot footage that captures the best of the brand's story and product
+SUB: Edit to upbeat music with kinetic pacing, keeping the reel under 90 seconds
+SUB: Export in social, broadcast, and web formats and deploy across channels
+
+DOMAIN: creative
+TASK: Develop a visual identity system for an event
+SUB: Define the event theme, audience, and the tone the visuals should convey
+SUB: Design a logo mark, color palette, and typographic system for the event
+SUB: Apply the identity to all collateral including signage, tickets, and digital assets
+SUB: Create a production file package so vendors can reproduce assets accurately
+
+DOMAIN: creative
+TASK: Write a personal essay for publication
+SUB: Identify the core truth or insight you want the essay to express
+SUB: Draft a narrative structure that moves through scene, reflection, and meaning
+SUB: Revise heavily for voice, specificity, and emotional honesty
+SUB: Research target publications, write a pitch letter, and submit
+
+DOMAIN: creative
+TASK: Produce a company culture video
+SUB: Interview employees and leaders to capture authentic stories and values
+SUB: Plan and shoot b-roll of the workspace, team activities, and product in use
+SUB: Edit into a narrative arc that conveys energy, values, and mission
+SUB: Publish on the careers page, LinkedIn, and during recruiting conversations
+
+DOMAIN: creative
+TASK: Launch a design agency
+SUB: Define the agency's niche, service offerings, and target client profile
+SUB: Build a portfolio site showcasing three to five strong case studies
+SUB: Set pricing, create proposal templates, and define the client onboarding process
+SUB: Reach out to your network, publish thought leadership, and win the first three clients
+
+DOMAIN: creative
+TASK: Create a branded podcast series for a company
+SUB: Define the show's editorial angle and how it connects to the company's audience
+SUB: Develop episode formats, episode arc, and a season plan with guests
+SUB: Record, edit, and produce each episode to a high audio standard
+SUB: Distribute, promote through owned channels, and measure listener growth
+
+DOMAIN: creative
+TASK: Write and direct a music video
+SUB: Analyze the song's lyrics and mood to develop a visual concept and treatment
+SUB: Scout locations, cast talent, and build a one-day or two-day shoot schedule
+SUB: Direct the shoot and capture all performance and narrative footage needed
+SUB: Edit the video in sync with the audio track and deliver in broadcast quality
+
+DOMAIN: creative
+TASK: Create a zine or self-published magazine
+SUB: Define the theme, aesthetic, and number of pages for the issue
+SUB: Recruit contributors or write and design all content yourself
+SUB: Design the layout in a desktop publishing tool and prepare print-ready files
+SUB: Print a run, distribute through shops or mail orders, and promote online
+
+DOMAIN: creative
+TASK: Build a Behance or Dribbble portfolio
+SUB: Select the ten strongest pieces that represent your current skill level
+SUB: Write project descriptions that explain the brief, process, and outcome
+SUB: Present work with high-quality mockups and process shots
+SUB: Share portfolio links in bio sections, cold outreach, and job applications
+
+DOMAIN: creative
+TASK: Develop a game narrative and lore bible
+SUB: Define the world's history, factions, geography, and core conflicts
+SUB: Write character backstories and establish each character's voice and motivation
+SUB: Create a continuity document that writers and designers can reference
+SUB: Review the lore bible with the full team and iterate based on design feedback
+
+DOMAIN: creative
+TASK: Write and publish a poetry collection
+SUB: Select and sequence the poems that form a cohesive thematic arc
+SUB: Revise each poem individually and test them by reading aloud
+SUB: Design the interior layout and cover, ensuring the book feels intentional
+SUB: Self-publish through a platform or submit the manuscript to poetry presses
+
+DOMAIN: creative
+TASK: Produce a live-stream event
+SUB: Define the format, duration, and interactive elements for the stream
+SUB: Set up streaming hardware, software, graphics, and multi-camera if needed
+SUB: Promote the event and open registration or reminders in advance
+SUB: Run the stream with a producer monitoring chat and technical quality
+
+DOMAIN: creative
+TASK: Design a typeface or font
+SUB: Define the typeface's personality, use case, and character set scope
+SUB: Sketch the core letters that define the style such as n, o, a, and H
+SUB: Draw all characters digitally, set spacing and kerning, and test in use
+SUB: Generate font files, write documentation, and publish or sell the typeface
+
+DOMAIN: creative
+TASK: Create an animated explainer for a product
+SUB: Write a concise script that explains the problem, solution, and call to action
+SUB: Design storyboard frames that map the narrative to specific visual moments
+SUB: Animate the scenes and sync to recorded voiceover and sound effects
+SUB: Deliver in web-optimized MP4 and publish on the homepage and sales pages
+
+DOMAIN: creative
+TASK: Develop a UX writing style guide
+SUB: Audit all existing in-product copy and identify inconsistencies in voice and terminology
+SUB: Define the product voice, tone principles, and core vocabulary
+SUB: Write usage examples for buttons, errors, empty states, and onboarding flows
+SUB: Distribute the guide to product and engineering teams and build a review process
+
+DOMAIN: creative
+TASK: Run a photography workshop
+SUB: Define the curriculum, skill level of participants, and session length
+SUB: Prepare lecture materials, shooting exercises, and critique frameworks
+SUB: Book a venue or outdoor location and prepare any equipment for participants
+SUB: Run the workshop, collect feedback, and iterate the curriculum for future sessions
+
+DOMAIN: creative
+TASK: Write a memoir
+SUB: Identify the central theme or transformation arc that gives the story meaning
+SUB: Map the key scenes and chronological structure before drafting
+SUB: Write the full draft leaning into sensory detail and honest interiority
+SUB: Revise with a developmental editor, get legal review on named individuals, and publish
+
+DOMAIN: creative
+TASK: Design a board game
+SUB: Define the theme, player count, game length, and core mechanic
+SUB: Prototype using paper and index cards and playtest the core loop
+SUB: Balance the rules, design the components and board art, and test extensively
+SUB: Produce a print-ready file set and launch via crowdfunding or direct manufacturing
+
+DOMAIN: creative
+TASK: Create a social media video series
+SUB: Define the series topic, episode length, and target platform constraints
+SUB: Develop a repeatable production template for scripting and filming
+SUB: Batch-produce and schedule multiple episodes in advance
+SUB: Analyze view duration and shares to refine format and pacing
+
+DOMAIN: creative
+TASK: Write a song
+SUB: Identify the emotional core and perspective you want the song to convey
+SUB: Develop the chord progression, melody, and song structure
+SUB: Write lyrics that are specific, imagistic, and true to the song's emotional center
+SUB: Record a demo, share it for feedback, and revise before final production
+
+DOMAIN: creative
+TASK: Build a creative agency pitch deck
+SUB: Define the narrative arc from problem to solution to proof of capability
+SUB: Develop the case study section with measurable outcomes from past work
+SUB: Design the deck visually so it demonstrates the agency's aesthetic quality
+SUB: Practice the verbal pitch and prepare answers to likely client questions
+
+DOMAIN: creative
+TASK: Produce a how-to article series
+SUB: Identify a cluster of related how-to topics that serve the same reader need
+SUB: Research and outline each article with a consistent step-by-step structure
+SUB: Write and edit each article with clear instructions and illustrative examples
+SUB: Publish with internal linking between articles and optimize each for search
+
+DOMAIN: creative
+TASK: Create a travel photography blog
+SUB: Define the voice, visual style, and the geographic or thematic focus
+SUB: Write and illustrate the first five posts before launching the site
+SUB: Set up the blog platform, design the layout, and configure SEO basics
+SUB: Promote posts through Instagram, Pinterest, and travel communities
+
+DOMAIN: creative
+TASK: Develop a brand mascot
+SUB: Define the personality traits the mascot should embody and the audience it speaks to
+SUB: Sketch multiple concept directions exploring different character types and styles
+SUB: Refine the chosen concept into a fully rendered character with expression sheets
+SUB: Create usage guidelines and apply the mascot across key brand touchpoints
+
+DOMAIN: creative
+TASK: Produce an event recap video
+SUB: Gather all footage shot during the event and organize it by session or moment
+SUB: Select the best clips that tell the story of the event's energy and highlights
+SUB: Edit into a two to three minute video with music and lower-third titles
+SUB: Publish within 48 hours of the event to maximize engagement while buzz is fresh
+
+DOMAIN: creative
+TASK: Write a case study for your business
+SUB: Select a client result that is measurable, compelling, and representative of your best work
+SUB: Interview the client and gather before and after data and quotes
+SUB: Write a narrative that leads with the problem, explains the approach, and showcases the result
+SUB: Design the layout, get client approval, and publish on your website and in proposals
+
+DOMAIN: creative
+TASK: Create an interactive art installation
+SUB: Define the concept, the sensory experience intended, and the technical requirements
+SUB: Prototype the interactive elements and test the physical and digital components
+SUB: Build the full installation and run technical rehearsals before the public opening
+SUB: Document the installation through photography and video for portfolio use
+
+DOMAIN: creative
+TASK: Design a print advertising campaign
+SUB: Define the campaign message, target reader, and the publications or formats it will run in
+SUB: Develop multiple creative concepts and present them with rationale
+SUB: Refine the chosen concept into print-ready art with correct specifications
+SUB: Submit files to publications and track readership response where possible
+
+DOMAIN: creative
+TASK: Build a recipe blog
+SUB: Define the cuisine focus, audience, and the tone of the writing
+SUB: Develop and test ten original recipes before publishing any content
+SUB: Photograph each dish with good lighting and compose the recipe posts with SEO in mind
+SUB: Launch the site, promote on Pinterest and Instagram, and build an email list
+
+DOMAIN: creative
+TASK: Write a comic book script
+SUB: Develop the story arc, cast of characters, and visual world
+SUB: Break the story into issues and outline each issue page by page
+SUB: Write the full script in panel-by-panel format with dialogue and action descriptions
+SUB: Share with an artist collaborator and iterate based on visual feasibility feedback
+
+DOMAIN: creative
+TASK: Produce a brand anthem video
+SUB: Define the emotional feeling and brand values the video must communicate
+SUB: Develop a cinematic concept that relies on imagery and music rather than product features
+SUB: Direct and produce the shoot with attention to lighting, talent, and locations
+SUB: Edit to a final cut that feels emotionally resonant and shareable
+
+DOMAIN: creative
+TASK: Create a podcast network
+SUB: Define the thematic or audience umbrella that connects the shows in the network
+SUB: Recruit or develop two to three shows as founding members of the network
+SUB: Set up shared infrastructure including hosting, branding, and cross-promotion systems
+SUB: Pursue sponsorship deals and advertising packages at the network level
+
+DOMAIN: creative
+TASK: Write a business book
+SUB: Define the central framework or argument and the target professional reader
+SUB: Outline the chapter structure so each chapter builds the argument progressively
+SUB: Write each chapter with stories, data, and actionable frameworks
+SUB: Work with a developmental editor, get endorsements, and decide on publishing path
+
+DOMAIN: creative
+TASK: Design a user onboarding experience
+SUB: Map the new user's mental model, goals, and likely points of confusion
+SUB: Design the onboarding flow as a series of progressive steps that build confidence
+SUB: Write the microcopy for each screen to be encouraging and action-oriented
+SUB: Test the flow with new users, measure activation rates, and iterate
+
+DOMAIN: creative
+TASK: Produce a thought leadership article series for LinkedIn
+SUB: Identify three to five core themes that reflect your expertise and audience interests
+SUB: Write a content calendar mapping one article per week for the next quarter
+SUB: Draft each article with a strong hook, a clear argument, and a memorable close
+SUB: Publish consistently and engage with every comment to build reach
+
+DOMAIN: creative
+TASK: Create an audio drama or fiction podcast
+SUB: Write the full script with distinct character voices, sound design notes, and scene descriptions
+SUB: Cast voice actors and record each role with proper studio conditions
+SUB: Edit audio with sound effects, music, and room tone to create a cinematic experience
+SUB: Release episodes on a schedule and market through podcast communities and trailers
+
+DOMAIN: creative
+TASK: Design a packaging insert or unboxing experience
+SUB: Define the emotional moment you want the customer to have when opening the package
+SUB: Design the insert with brand-appropriate copy, visuals, and any offers or QR codes
+SUB: Specify materials, finishes, and print specs for production
+SUB: Test the unboxing experience physically before finalizing for mass production
+
+DOMAIN: creative
+TASK: Write a narrative nonfiction book
+SUB: Identify the true story, central characters, and the narrative arc
+SUB: Research deeply through interviews, documents, and on-the-ground reporting
+SUB: Write in scene-based chapters with novelistic detail while remaining factually accurate
+SUB: Revise with an editor, obtain permissions for quotes and images, and submit to publishers
+
+DOMAIN: creative
+TASK: Produce a short documentary series
+SUB: Identify the overarching theme and the individual subjects for each episode
+SUB: Interview each subject and shoot supporting visuals for their story
+SUB: Edit each episode to stand alone while contributing to the series arc
+SUB: Distribute on a streaming platform, YouTube, or festival circuit
+
+DOMAIN: creative
+TASK: Build a food photography portfolio
+SUB: Define the style direction by studying reference work and identifying a visual signature
+SUB: Cook and style ten to fifteen dishes specifically for the portfolio shoot
+SUB: Shoot each dish with consistent lighting and composition and cull the best frames
+SUB: Retouch the final selects and present them on a portfolio site with a contact form
+
+DOMAIN: creative
+TASK: Create a recurring live Q and A show
+SUB: Define the topic, format, and platform where the show will air live
+SUB: Set a recurring schedule and promote it consistently before each episode
+SUB: Prepare a bank of seed questions in case audience participation is slow at the start
+SUB: Archive each episode as replay content and use highlights for short-form clips
+
+DOMAIN: creative
+TASK: Write a video game narrative
+SUB: Develop the world premise, player character, and the central dramatic stakes
+SUB: Write branching dialogue trees for key NPC interactions
+SUB: Create environmental storytelling cues, journal entries, and collectible lore
+SUB: Review narrative with the game design team and revise for pacing and interactivity
+
+DOMAIN: creative
+TASK: Design an exhibition for an art gallery
+SUB: Define the curatorial concept and select the works that express the theme
+SUB: Plan the spatial layout, flow, and how each work will be mounted or displayed
+SUB: Write wall text, labels, and a catalog or press release for the exhibition
+SUB: Install the show, host an opening event, and document the exhibition for portfolio use
+
+DOMAIN: creative
+TASK: Produce a live podcast recording event
+SUB: Select a format that works with a live audience such as interview or panel discussion
+SUB: Book a venue, sell tickets, and promote the event to your existing listeners
+SUB: Set up a stage-quality recording rig to capture clean audio during the live show
+SUB: Edit the live recording for release as a standard episode and share event highlights
+
+DOMAIN: creative
+TASK: Build a personal brand on Twitter or X
+SUB: Define your niche, the three to five topics you will own, and your distinct voice
+SUB: Write and publish ten strong standalone posts to establish the tone before promoting
+SUB: Engage daily with other accounts in your niche through replies and quote posts
+SUB: Analyze what post formats drive the most followers and double down on those
+
+DOMAIN: creative
+TASK: Create an illustrated explainer series
+SUB: Identify a complex topic that your audience struggles with and break it into episodes
+SUB: Script each episode with a clear logical flow and a single main idea per piece
+SUB: Illustrate each episode in a consistent visual style that aids comprehension
+SUB: Publish as a series with strong internal linking and promote to relevant communities
+
+DOMAIN: creative
+TASK: Write a pitch deck for a creative project
+SUB: Define the core idea, the audience it serves, and the market opportunity
+SUB: Build the narrative arc from problem through solution to ask
+SUB: Design slides that are visually compelling and reinforce rather than repeat the spoken narrative
+SUB: Practice delivering the pitch out loud and refine based on real feedback
+
+DOMAIN: creative
+TASK: Develop a children's educational video series
+SUB: Define the learning objectives, age range, and episode length
+SUB: Write scripts with age-appropriate language, repetition, and engaging characters
+SUB: Produce each episode with bright visuals, clear audio, and paced delivery
+SUB: Distribute on YouTube Kids or a dedicated platform and measure completion rates
+
+DOMAIN: creative
+TASK: Create a brand voice document
+SUB: Audit existing written content across all channels and identify the current tone
+SUB: Define four to six voice attributes with descriptions and do and do not examples
+SUB: Write sample copy in the new voice for email, social, and web to illustrate the guidelines
+SUB: Share with the full team, run a writing workshop to embed the voice, and review quarterly
+
+DOMAIN: creative
+TASK: Produce a behind-the-scenes content series
+SUB: Identify the creative process or craft element that your audience finds most interesting
+SUB: Plan a simple filming approach that captures authentic moments without being disruptive
+SUB: Edit clips into short engaging episodes that feel genuine rather than produced
+SUB: Release consistently across social channels and use as top-of-funnel content
+
+DOMAIN: creative
+TASK: Design a logo
+SUB: Brief the design by defining the brand personality, audience, and any constraints
+SUB: Sketch twenty or more rough concepts before moving to digital tools
+SUB: Develop three distinct directions into refined digital executions
+SUB: Present to stakeholders with rationale, gather feedback, and finalize with full deliverable set
+
+DOMAIN: creative
+TASK: Write a sales page for a creative product
+SUB: Define the ideal buyer, their pain, and the transformation your product delivers
+SUB: Write a headline and opening that immediately captures the reader's attention
+SUB: Build the body with benefits, proof elements, objection handling, and a clear call to action
+SUB: Test multiple versions of the headline and call to action to optimize conversion
+
+DOMAIN: creative
+TASK: Produce an interview podcast series
+SUB: Define the guest profile and the questions you will explore in every conversation
+SUB: Build a guest pipeline by reaching out to ten potential guests before launching
+SUB: Record and edit each interview to tighten the pacing and remove dead air
+SUB: Publish consistently and use guest networks to grow the audience
+
+DOMAIN: creative
+TASK: Create a stop-motion animation
+SUB: Develop the concept, characters made of physical materials, and the scene design
+SUB: Build sets and props and set up a camera rig with consistent framing and lighting
+SUB: Shoot frame by frame according to an animatic guide for timing
+SUB: Import frames, compile the animation, add audio and music, and export the final video
+
+DOMAIN: creative
+TASK: Develop a creative brief template
+SUB: Identify all the information designers and writers need before starting any project
+SUB: Structure the template into logical sections from context through objectives to deliverables
+SUB: Write clear prompts and example answers for each field to guide the person filling it in
+SUB: Test the template on a real project and refine based on what information was missing
+
+DOMAIN: creative
+TASK: Write a series of op-eds for industry publications
+SUB: Identify three to five provocative or underexplored perspectives in your field
+SUB: Research each position thoroughly so the argument is credible and evidence-based
+SUB: Write each op-ed with a clear thesis, a narrative hook, and a decisive conclusion
+SUB: Identify the right outlets for each piece and submit with a targeted pitch letter
+
+DOMAIN: creative
+TASK: Launch a creative community or forum
+SUB: Define the niche, membership criteria, and the core value the community offers
+SUB: Set up a platform and design the initial channel or category structure
+SUB: Seed the community with ten founding members before opening it publicly
+SUB: Establish moderation norms, host regular programming, and grow through referrals
+
+DOMAIN: creative
+TASK: Produce a brand ambassador program
+SUB: Define what an ideal ambassador looks like in terms of audience and alignment
+SUB: Design the program structure including incentives, content expectations, and duration
+SUB: Recruit the first cohort through outreach to engaged community members
+SUB: Provide ambassadors with content kits and track their performance monthly
+
+DOMAIN: creative
+TASK: Design an interactive PDF or digital magazine
+SUB: Define the content sections and the interactive elements such as links, video embeds, or quizzes
+SUB: Design the layout in a tool that exports interactive PDFs or web-based documents
+SUB: Write and edit all content to fit the format and flow naturally between sections
+SUB: Distribute via email, a landing page download, or a digital publishing platform
+
+DOMAIN: creative
+TASK: Write a year-in-review blog post
+SUB: Gather data, milestones, lessons learned, and notable moments from the year
+SUB: Choose a narrative frame such as what worked, what did not, and what is next
+SUB: Write the post with personal honesty and specific detail rather than vague reflection
+SUB: Publish at year end, share widely, and use it to seed conversations with your audience
+
+DOMAIN: creative
+TASK: Produce a product launch video
+SUB: Define the story the video must tell and the single emotion it should leave viewers with
+SUB: Write a script or develop a narrative concept that introduces the problem and reveals the product
+SUB: Direct the shoot or oversee the animation with close attention to brand alignment
+SUB: Edit, add music, and publish in sync with the broader product launch campaign
+
+DOMAIN: creative
+TASK: Create a visual essay or photo story
+SUB: Identify a subject or social theme that rewards deep visual observation
+SUB: Plan a shooting approach and timeline that allows you to build a body of work
+SUB: Edit and sequence the images so they build narrative tension and resolution
+SUB: Publish with a written introduction and submit to editorial outlets or exhibitions
+
+DOMAIN: creative
+TASK: Develop a brand activation for a trade show
+SUB: Define the booth objective, the visitor experience, and the lead capture mechanism
+SUB: Design the booth layout, signage, and any interactive or demonstration elements
+SUB: Prepare giveaways, collateral, and talking points for the booth team
+SUB: Staff the booth, capture contacts, and follow up within 48 hours after the show
+
+DOMAIN: creative
+TASK: Write an explainer blog post for a technical product
+SUB: Identify the specific confusion or misconception the post should resolve
+SUB: Outline the explanation from first principles without assuming prior knowledge
+SUB: Write with plain language, concrete analogies, and illustrative examples
+SUB: Publish with relevant internal links and promote to the product's user community
+
+DOMAIN: creative
+TASK: Produce a corporate training video
+SUB: Work with subject matter experts to define the learning objectives and key scenarios
+SUB: Write a script that uses realistic workplace situations to illustrate each lesson
+SUB: Shoot with professional actors or staff and ensure clear audio and clean visuals
+SUB: Edit, add chapter markers and quizzes if needed, and upload to the LMS
+
+DOMAIN: creative
+TASK: Create a custom illustration set for a product
+SUB: Define the illustration style, use cases, and the full list of scenes or icons needed
+SUB: Sketch rough concepts for a representative sample and get team approval
+SUB: Illustrate the full set in a consistent style with organized and labeled files
+SUB: Deliver source files with usage documentation and a style reference sheet
+
+DOMAIN: creative
+TASK: Build a newsletter sponsorship program
+SUB: Define your audience demographics, open rates, and reach in a media kit
+SUB: Set pricing for different ad units such as primary, secondary, and classified slots
+SUB: Create a prospecting list of relevant advertisers and send personalized outreach
+SUB: Manage sponsor deliverables, track performance, and renew successful partnerships
+
+DOMAIN: creative
+TASK: Write a series of LinkedIn posts for a thought leader
+SUB: Interview the thought leader to extract their strongest opinions and personal stories
+SUB: Develop a posting cadence and a mix of post formats such as lists, stories, and takes
+SUB: Draft posts in the leader's authentic voice and get their approval before scheduling
+SUB: Analyze performance monthly and adjust the content mix based on engagement data
+
+DOMAIN: creative
+TASK: Produce a documentary-style brand film
+SUB: Identify the authentic story within the brand worth telling such as founding story or craft
+SUB: Conduct pre-interviews to find the compelling voices and narratives
+SUB: Shoot with a cinematic approach prioritizing observational and interview footage
+SUB: Edit into a film that feels genuine rather than promotional and distribute widely
+
+DOMAIN: creative
+TASK: Design a product catalog
+SUB: Define the catalog structure, page count, and the range of products to include
+SUB: Write product descriptions that balance technical specifications with benefits
+SUB: Lay out each spread with consistent product photography and clear hierarchy
+SUB: Prepare print-ready and digital versions and distribute to relevant audiences
+
+DOMAIN: creative
+TASK: Launch a spoken word or storytelling event series
+SUB: Define the theme, format, and ideal audience size for each event
+SUB: Recruit storytellers or performers for the first three events before promoting
+SUB: Book venues and set a recurring date such as the first Monday of each month
+SUB: Promote each event, record performances for online distribution, and build a loyal audience
+
+DOMAIN: creative
+TASK: Write a technical tutorial for a developer audience
+SUB: Choose a specific problem or workflow that developers frequently encounter
+SUB: Outline the tutorial from prerequisites through to a working final result
+SUB: Write with working code samples, screenshots where needed, and clear explanations
+SUB: Publish on a developer platform or personal site and share in relevant communities
+
+DOMAIN: creative
+TASK: Create an augmented reality filter for social media
+SUB: Define the concept, brand alignment, and the platform such as Instagram or Snapchat
+SUB: Design the visual assets and build the filter in the platform's AR creation tool
+SUB: Test the filter on multiple device types and lighting conditions before publishing
+SUB: Publish the filter, promote it with an example video, and track usage and impressions
+
+DOMAIN: creative
+TASK: Produce a virtual summit
+SUB: Define the theme, speaker lineup, and session format for the multi-day event
+SUB: Set up the virtual event platform, registration page, and session scheduling
+SUB: Coordinate with all speakers on their session format, slides, and rehearsal time
+SUB: Host the summit, record all sessions for replay, and follow up with attendees afterward
+
+DOMAIN: creative
+TASK: Write copy for a product landing page
+SUB: Define the primary conversion goal and the buyer persona the page must convert
+SUB: Write a headline and subheadline that communicate the core value proposition immediately
+SUB: Structure the body copy to move the reader from awareness through desire to action
+SUB: A/B test the headline and call-to-action copy and iterate based on conversion data
+
+DOMAIN: creative
+TASK: Develop a brand storytelling framework
+SUB: Identify the origin story, mission, and the conflict the brand exists to resolve
+SUB: Define the hero of the brand story as the customer rather than the company
+SUB: Map the story arc from the customer's struggle through to transformation with the brand's help
+SUB: Document the framework and train the marketing and sales teams to use it consistently
+
+DOMAIN: creative
+TASK: Produce a highlight reel for an athlete or performer
+SUB: Review all available footage and identify the strongest individual moments
+SUB: Select clips that demonstrate range, peak performance, and personality
+SUB: Edit to high-energy music with clean cuts and accurate timing on impact moments
+SUB: Deliver in a format suitable for agents, sponsors, or college recruiters
+
+DOMAIN: creative
+TASK: Create a knowledge base for a creative team
+SUB: Audit what undocumented knowledge exists across the team that slows work down
+SUB: Define the structure and categories for the knowledge base before adding content
+SUB: Write and upload the most critical articles first prioritizing high-frequency questions
+SUB: Establish an ownership model and a quarterly review process to keep content current
+
+DOMAIN: creative
+TASK: Design a pitch competition presentation
+SUB: Define the judging criteria and tailor the narrative to address each criterion directly
+SUB: Structure the deck to cover problem, solution, traction, team, and ask in that order
+SUB: Design slides that are sparse, visual, and leave room for verbal elaboration
+SUB: Rehearse until the delivery is fluid, timing is tight, and you can answer any question
+
+DOMAIN: creative
+TASK: Write a monthly content report
+SUB: Gather data from all content channels including traffic, engagement, and conversions
+SUB: Identify the top and bottom performing pieces and extract the patterns behind each
+SUB: Write a summary with clear takeaways and concrete recommendations for next month
+SUB: Present the report to stakeholders and tie findings to business goals
+
+DOMAIN: creative
+TASK: Produce an audio course
+SUB: Define the learning journey and break it into focused audio lessons of ten to twenty minutes each
+SUB: Write full scripts for each lesson ensuring the content works without any visuals
+SUB: Record in a quiet environment with a broadcast-quality microphone and edit out mistakes
+SUB: Package and distribute through a course platform or as a podcast feed for subscribers
+
+DOMAIN: creative
+TASK: Create a video testimonial campaign
+SUB: Identify three to five customers with strong results stories who are willing to be filmed
+SUB: Send each customer a brief prep guide with the key points to cover in the recording
+SUB: Shoot or receive self-recorded videos and edit each to two minutes with clean audio
+SUB: Deploy testimonials across the sales funnel on the website, in emails, and in ads
+
+DOMAIN: creative
+TASK: Design a brand refresh
+SUB: Audit the current visual identity and gather stakeholder input on what is and is not working
+SUB: Research where the brand sits in the competitive landscape and identify the refresh opportunity
+SUB: Develop two or three design directions and present with rationale and application mockups
+SUB: Roll out the approved refresh with an updated style guide and a phased transition plan
+
+DOMAIN: creative
+TASK: Write a series of email welcome sequences for a creator
+SUB: Map the new subscriber journey and define what each email should accomplish
+SUB: Write each email with a personal tone, a single clear focus, and a soft call to action
+SUB: Build the automation sequence in the email platform and test the full flow end to end
+SUB: Monitor open and click rates for each email and refine the weakest performers
+
+DOMAIN: creative
+TASK: Produce a music playlist for a brand
+SUB: Define the brand's personality and the specific contexts where the playlist will be used
+SUB: Curate fifty or more tracks that match the mood, tempo, and audience taste profile
+SUB: Organize into a logical flow with attention to energy arc and transitions
+SUB: Publish on Spotify or Apple Music and embed or link across brand touchpoints
+
+DOMAIN: creative
+TASK: Create a character design sheet
+SUB: Define the character's personality, role, and the visual archetypes they draw from
+SUB: Sketch multiple silhouette variations to explore form before adding detail
+SUB: Render the final character from multiple angles with color and texture notes
+SUB: Deliver a turnaround sheet with expression guide and any costume variations
+
+DOMAIN: creative
+TASK: Write a collection of short stories
+SUB: Identify the unifying theme or world that connects all the stories in the collection
+SUB: Outline each story individually ensuring variety in character, setting, and conflict
+SUB: Write and revise each story independently to a high standard
+SUB: Sequence the collection for maximum emotional impact and prepare for publication
+
+DOMAIN: creative
+TASK: Produce a live cooking show on social media
+SUB: Define the show concept, cuisine focus, and the recurring format for each episode
+SUB: Set up a filming rig that captures both the chef and the cooking surface clearly
+SUB: Rehearse the recipe and timing so the live show runs smoothly within the time limit
+SUB: Go live on a consistent schedule and save replays for on-demand viewing
+
+DOMAIN: creative
+TASK: Design a creative workspace
+SUB: Define the primary activities that need to happen in the space and their ergonomic requirements
+SUB: Develop a floor plan that prioritizes focus, flow, and collaborative surfaces
+SUB: Select furniture, lighting, and materials that support the intended creative mood
+SUB: Implement the design, test it through a real work week, and adjust based on experience
+
+DOMAIN: creative
+TASK: Develop a fan engagement strategy for an artist
+SUB: Map the existing fan base by platform, engagement level, and geographic distribution
+SUB: Define the exclusive experiences and content that will deepen the most engaged fans' connection
+SUB: Build a content and event calendar with a mix of free and premium fan touchpoints
+SUB: Track fan growth, merch sales, and stream numbers and adjust the strategy quarterly
+
+DOMAIN: creative
+TASK: Write a product review series for a niche blog
+SUB: Define the product category, review criteria, and the scoring methodology
+SUB: Research and purchase or obtain samples of the products to be reviewed
+SUB: Write detailed honest reviews with comparison context and clear verdict summaries
+SUB: Publish with affiliate links, SEO-optimized titles, and structured data for rich results
+
+DOMAIN: creative
+TASK: Produce a multilingual content adaptation
+SUB: Identify the target markets and the languages and cultural nuances required
+SUB: Hire native-speaking translators with subject matter expertise in the content area
+SUB: Review translations for cultural appropriateness and brand voice consistency
+SUB: Publish localized versions and track performance against the original language baseline
+
+DOMAIN: creative
+TASK: Create a creative brief for an ad campaign
+SUB: Define the campaign objective, target audience, and the single most important message
+SUB: Describe the tone, visual style, and what the audience should feel after seeing the ad
+SUB: Specify deliverables, formats, deadlines, and any mandatory inclusions or exclusions
+SUB: Review the brief with creative, strategy, and client stakeholders before briefing the team
+
+DOMAIN: creative
+TASK: Launch a street photography project
+SUB: Define the city, neighborhood, or theme that will give the project a unifying perspective
+SUB: Shoot regularly over several months to build a large enough body of work to edit from
+SUB: Edit a final sequence of thirty to fifty images that tell a coherent visual story
+SUB: Publish online, submit to competitions, or exhibit the work in a public space
+
+DOMAIN: creative
+TASK: Write an artist statement
+SUB: Reflect on what drives your work and the questions or themes you return to most often
+SUB: Write a first draft in plain language without jargon or pretension
+SUB: Revise to be specific, honest, and to give the reader insight into how you think
+SUB: Tailor different length versions for grant applications, portfolio sites, and exhibition materials
+
+DOMAIN: creative
+TASK: Produce a remix or mashup creative project
+SUB: Define the source material and the creative angle that makes the remix meaningful
+SUB: Clear any necessary rights or use material with appropriate licenses
+SUB: Produce the remix with quality equal to original work rather than treating it as derivative
+SUB: Publish and credit source material appropriately while framing your creative contribution
+
+DOMAIN: creative
+TASK: Design a reading group or book club program
+SUB: Define the reading list theme, meeting cadence, and target participant count
+SUB: Write a discussion guide with questions that push beyond plot summary into theme and meaning
+SUB: Promote the program and onboard the first cohort before the first meeting
+SUB: Host consistently, gather feedback, and build a community archive of discussions
+
+DOMAIN: creative
+TASK: Write a narrative annual report
+SUB: Gather key metrics, milestones, stories, and quotes from across the organization
+SUB: Develop a narrative frame that connects the data to a meaningful story of progress
+SUB: Write each section with a journalistic approach that makes statistics feel human
+SUB: Design the report with strong visual hierarchy and print or publish in digital format
+
+DOMAIN: creative
+TASK: Create a guided meditation or mindfulness audio product
+SUB: Define the target listener, the specific mental state to induce, and the session length
+SUB: Write a script with careful attention to pacing, imagery, and breathing cue placement
+SUB: Record with a calm, warm voice in a treated acoustic environment with soft background music
+SUB: Distribute through a wellness app, podcast, or direct download and gather listener feedback
+
+DOMAIN: creative
+TASK: Produce a branded editorial magazine
+SUB: Define the editorial concept, tone, and the reader the magazine is designed for
+SUB: Commission or write articles, select photography, and build a full issue worth of content
+SUB: Design the layout with a strong visual system that supports the editorial content
+SUB: Print and distribute or publish digitally and promote to the target readership
+
+DOMAIN: creative
+TASK: Write a video essay
+SUB: Choose a topic with a clear argument or reframing that rewards the long-form video format
+SUB: Write a script that builds the argument with evidence, examples, and a compelling narrative voice
+SUB: Gather or create all visual materials that will accompany the narration
+SUB: Edit the video so visuals and narration work in concert, then publish and promote
+
+DOMAIN: creative
+TASK: Develop an immersive experience design
+SUB: Define the emotional journey participants should experience from entry to exit
+SUB: Design the physical or digital environment to guide that journey through space and stimuli
+SUB: Build and test the experience with a small group before the public opening
+SUB: Document the experience design for future reproduction and gather participant feedback
+
+DOMAIN: creative
+TASK: Create a content repurposing system
+SUB: Audit your highest-performing long-form content to identify repurposing candidates
+SUB: Map each piece to the derivative formats it can become such as clips, quotes, or threads
+SUB: Build a repeatable production workflow for each repurposing format
+SUB: Implement the system, track reach per piece, and review monthly to refine the approach
+
+DOMAIN: creative
+TASK: Launch a creative residency program
+SUB: Define the program goals, duration, eligibility criteria, and what residents receive
+SUB: Design the application process and the selection criteria used to choose participants
+SUB: Secure funding, a physical or virtual space, and any materials or resources provided
+SUB: Run the first cohort, document outcomes, and publish a report to attract future applicants
+
+DOMAIN: creative
+TASK: Write a brand manifesto
+SUB: Identify the core belief or conviction that the brand stands for beyond its product
+SUB: Write in a bold declarative voice that takes a clear stance and does not hedge
+SUB: Revise until every sentence earns its place and the piece can be read aloud with conviction
+SUB: Publish on the website, use in onboarding new employees, and embed in brand pitches
+
+DOMAIN: creative
+TASK: Produce a podcast season finale
+SUB: Review the season's themes and identify the narrative threads worth closing or escalating
+SUB: Plan a longer or more ambitious format than a standard episode to mark the occasion
+SUB: Record and edit to a higher production standard with special guests or musical elements
+SUB: Promote the finale in advance, release with a season recap, and tease the next season
+
+DOMAIN: creative
+TASK: Create a series of explainer animations for a course
+SUB: Write concise scripts for each concept that would be hard to grasp from text alone
+SUB: Design a simple consistent visual style that does not distract from the learning
+SUB: Animate each script with accurate timing and clear visual metaphors
+SUB: Embed animations in the course at the right point in the learning sequence
+
+DOMAIN: creative
+TASK: Design a custom font pairing guide for a brand
+SUB: Audit the brand's current typeface usage and identify inconsistency or visual friction
+SUB: Research and test typeface combinations that reinforce the brand's personality
+SUB: Define the primary and secondary pairing with usage rules for headings, body, and UI
+SUB: Document the pairings with visual examples and distribute as part of the brand toolkit
+
+DOMAIN: creative
+TASK: Write a series of product description pages for an ecommerce site
+SUB: Define the ideal buyer persona and the information they need to make a purchase decision
+SUB: Write each description with a benefit-first structure followed by specifications
+SUB: Optimize each description for relevant search terms without sacrificing readability
+SUB: Test descriptions against conversion data and improve the lowest-performing pages
+
+DOMAIN: creative
+TASK: Produce a content audit and strategy reset
+SUB: Crawl and catalog all existing content with metadata on traffic, age, and quality
+SUB: Categorize each piece as keep, update, consolidate, or delete based on performance and relevance
+SUB: Update high-potential pieces with fresh data, improved structure, and better SEO
+SUB: Publish the revised content, redirect deleted pages, and set a recurring audit schedule
+
+DOMAIN: creative
+TASK: Create a crowdfunding campaign for a creative project
+SUB: Define the project story, funding goal, and the reward tiers backers will receive
+SUB: Produce a campaign video that authentically communicates your vision and credibility
+SUB: Write the campaign page copy with a compelling narrative and clear call to action
+SUB: Launch with a seeded audience, run daily updates, and mobilize your network to share widely
+
+DOMAIN: creative
+TASK: Develop a personal essay collection
+SUB: Identify the essays that share a thematic or experiential thread worth collecting
+SUB: Revise each essay independently and then consider how they speak to each other in sequence
+SUB: Write an introduction that frames the collection and explains the author's perspective
+SUB: Submit to literary presses or self-publish and promote to essay-loving audiences
+
+DOMAIN: creative
+TASK: Produce a branded content series for social media
+SUB: Define the series concept, episode cadence, and how it serves the brand's audience
+SUB: Develop a production template that keeps quality consistent with manageable effort
+SUB: Produce a full season of episodes before releasing so you can publish on schedule
+SUB: Track engagement and community growth and use performance data to greenlight season two
+
+DOMAIN: creative
+TASK: Write a ghost-written blog post for an executive
+SUB: Interview the executive to extract their genuine perspective and specific anecdotes
+SUB: Draft the post in the executive's voice using their vocabulary and sentence rhythm
+SUB: Edit for clarity, add supporting data or examples, and get the executive's approval
+SUB: Publish under the executive's byline and promote through their personal channels
+
+DOMAIN: creative
+TASK: Create a logo animation for digital use
+SUB: Analyze the static logo to identify which elements have animation potential
+SUB: Develop two or three concept directions with animatics or rough timing sketches
+SUB: Produce the final animation in After Effects or equivalent with clean easing curves
+SUB: Export in all required formats including MP4, GIF, and Lottie JSON for web and app use
+
+DOMAIN: creative
+TASK: Design a brand photography style guide
+SUB: Define the visual language including lighting style, color grading, subject matter, and composition rules
+SUB: Create a reference board with approved examples and clear descriptions of each element
+SUB: Produce a set of sample photographs shot to the guide's specifications as concrete references
+SUB: Distribute the guide to photographers and marketing team members with a review process
+
+DOMAIN: creative
+TASK: Write a series of social media caption templates
+SUB: Identify the recurring post types your brand publishes such as product features, tips, or stories
+SUB: Write three to five caption formulas for each post type with clearly marked fill-in sections
+SUB: Include guidance on hashtag strategy, emoji use, and call-to-action variations
+SUB: Test the templates with your team and update based on what produces the best engagement
+
+DOMAIN: creative
+TASK: Develop an editorial calendar for a media brand
+SUB: Map out the publication's content categories, format mix, and publishing frequency
+SUB: Plan coverage around seasonal hooks, industry events, and recurring series
+SUB: Assign ownership for each content slot and build in review and production lead times
+SUB: Review the calendar monthly with the editorial team and adjust based on performance
+
+DOMAIN: creative
+TASK: Create a micro-documentary about a local business
+SUB: Conduct a pre-interview to find the most compelling story angle and key characters
+SUB: Plan a one-day shoot with a shot list covering interviews, process footage, and environment
+SUB: Edit into a five to eight minute film that captures the human story behind the business
+SUB: Deliver to the business for their website and social channels and submit to local film showcases
+
+DOMAIN: creative
+TASK: Write a script for a product demonstration webinar
+SUB: Define the audience knowledge level and the specific outcome they should leave with
+SUB: Structure the script into a problem framing, live demo walkthrough, and Q and A
+SUB: Write transition phrases and fallback talking points for technical difficulties
+SUB: Rehearse the full webinar with timing and slide coordination before going live
+
+DOMAIN: creative
+TASK: Produce a vinyl record or physical music release
+SUB: Finalize the tracklist, mastered audio files, and the correct audio format for vinyl cutting
+SUB: Commission artwork for the sleeve and write liner notes and credits
+SUB: Work with a pressing plant on specifications, timeline, and quantity
+SUB: Launch with a pre-order campaign, ship on time, and promote with behind-the-scenes content
+
+DOMAIN: creative
+TASK: Design an interactive data visualization
+SUB: Define the dataset, the key insight to communicate, and the audience's technical level
+SUB: Choose the chart types and interaction model that best serve the data story
+SUB: Build the visualization in a tool such as D3 or Flourish and test across browsers
+SUB: Publish with an explanatory narrative and share in data journalism and creative communities
+
+DOMAIN: creative
+TASK: Create a content localization workflow
+SUB: Map all the content types that need localization and the target languages for each
+SUB: Define the translation review process including who approves cultural appropriateness
+SUB: Build a translation memory and glossary to ensure consistency across all future content
+SUB: Pilot with one content type, measure quality and turnaround time, and scale the process
+
+DOMAIN: creative
+TASK: Produce a creative retrospective presentation
+SUB: Gather examples of the work produced over the period being reviewed
+SUB: Identify the strategic decisions, pivots, and learnings that shaped the work
+SUB: Structure the presentation as a story arc from where you started to where you are now
+SUB: Present to stakeholders and use the retrospective to frame the creative strategy for next period
+
+DOMAIN: creative
+TASK: Write a brand origin story
+SUB: Interview the founders to extract the specific moment or frustration that led to the brand
+SUB: Identify the emotional truth that makes the story relatable to the target audience
+SUB: Write in a narrative form that reads like a story rather than a corporate biography
+SUB: Publish on the about page, use in pitch decks, and train the sales team to tell it conversationally
+
+DOMAIN: creative
+TASK: Create a visual content system for a blog
+SUB: Define the types of images the blog needs such as hero images, inline diagrams, and thumbnails
+SUB: Establish a consistent visual style with rules for color, typography overlays, and photography
+SUB: Build a set of reusable templates in Figma or Canva for each image type
+SUB: Train the content team on the templates and run a quarterly audit to ensure consistency
+
+DOMAIN: creative
+TASK: Develop a personal creative practice
+SUB: Define the creative discipline you want to develop and the specific skill gap to close
+SUB: Set a daily or weekly practice session with a specific focus for each session
+SUB: Create a system for saving and reviewing your practice output to track progress
+SUB: Share work publicly at regular intervals to build accountability and community feedback
+
+DOMAIN: creative
+TASK: Produce a brand collaborator content series
+SUB: Identify three to five collaborators whose audience overlaps with yours but is not identical
+SUB: Define the co-creation format and ensure both parties have a clear role and equal value
+SUB: Produce the content series with quality standards that serve both audiences well
+SUB: Cross-promote across all collaborators' channels and measure combined reach and new followers
+
+DOMAIN: creative
+TASK: Write documentation for a design system
+SUB: Audit all existing components and identify what is undocumented or inconsistently described
+SUB: Write usage guidelines for each component covering when to use it and when not to
+SUB: Include code snippets, accessibility notes, and visual examples for every component
+SUB: Publish in a searchable format and integrate into the team's design and development workflow
+
+DOMAIN: creative
+TASK: Create a pitch video for a creative project
+SUB: Write a script that communicates the vision, your qualifications, and why it matters now
+SUB: Record on camera with good lighting, clean audio, and a simple uncluttered background
+SUB: Edit to under three minutes with supporting visuals or footage where relevant
+SUB: Include a clear ask and call to action at the end and publish on your campaign or pitch page
+
+DOMAIN: creative
+TASK: Launch a creative challenge or contest
+SUB: Define the creative brief, the submission format, and the judging criteria clearly
+SUB: Set a compelling prize or incentive structure that motivates the target participant
+SUB: Promote the challenge across all channels and to relevant communities
+SUB: Review submissions, announce winners publicly, and publish a curated selection of the best entries
+
+DOMAIN: creative
+TASK: Produce a brand sound identity
+SUB: Define the emotional associations and contexts where the sound will be heard
+SUB: Commission or compose a suite of audio assets including a logo sonic, hold music, and notification sounds
+SUB: Test the sounds with the target audience and measure emotional response
+SUB: Document usage guidelines and integrate the sound system across all audio touchpoints
+
+DOMAIN: creative
+TASK: Write a series of product education emails
+SUB: Map the key features or use cases that new users fail to discover on their own
+SUB: Write one focused email per feature with a clear benefit statement and a single action to take
+SUB: Build the sequence in the email platform with appropriate timing between sends
+SUB: Track feature adoption rates per email and improve the emails with the lowest activation
+
+DOMAIN: creative
+TASK: Design a street mural concept
+SUB: Research the neighborhood's history, culture, and community identity to inform the concept
+SUB: Develop a design that can be executed at scale on the wall's specific dimensions and surface
+SUB: Obtain permits and community approval before any production work begins
+SUB: Execute the mural, document the process, and organize a community unveiling event
+
+DOMAIN: creative
+TASK: Develop an illustration style guide
+SUB: Audit how illustrations are currently used across the brand and identify inconsistencies
+SUB: Define the style attributes including line weight, color palette, shading approach, and subject matter
+SUB: Create a reference sheet with approved examples and notes on common mistakes to avoid
+SUB: Distribute the guide to all illustrators and review new work against it before publishing
+
+DOMAIN: creative
+TASK: Write a press release for a creative launch
+SUB: Identify the most newsworthy angle and lead with it in the headline and first paragraph
+SUB: Include a strong quote from a founder or creative lead that adds personality and perspective
+SUB: Add factual supporting details including date, availability, and where to learn more
+SUB: Distribute to a targeted media list and follow up personally with top-tier contacts
+
+DOMAIN: creative
+TASK: Create a pitch for a TV show or podcast concept
+SUB: Develop the show's premise, tone, target audience, and episode format
+SUB: Write a one-page pitch document with a logline, character descriptions, and sample episode outline
+SUB: Produce a sizzle reel or pilot episode to demonstrate the concept in action
+SUB: Research and target the right production companies, networks, or platforms to approach
+
+DOMAIN: creative
+TASK: Produce a fashion lookbook
+SUB: Define the collection theme, mood, and the story each look should tell
+SUB: Plan the shoot including model casting, location, styling, and photographer briefing
+SUB: Direct the shoot to ensure each look is captured with the right energy and composition
+SUB: Edit and sequence the images into a designed lookbook for digital and print distribution
+
+DOMAIN: creative
+TASK: Write an about page for a creative professional
+SUB: Identify the key facts, accomplishments, and personality traits that matter most to the target client
+SUB: Write in first or third person with a tone that matches the creative's brand and market positioning
+SUB: Structure from hook through credentials to a personal closing that makes the reader want to reach out
+SUB: Pair with a professional photo and link to portfolio and contact information
+
+DOMAIN: creative
+TASK: Design an ebook for lead generation
+SUB: Choose a topic that solves a specific pain point for the ideal customer
+SUB: Outline chapters and write content that delivers genuine value rather than a veiled sales pitch
+SUB: Design the layout with clear headings, visuals, and a consistent brand aesthetic
+SUB: Gate the ebook on a landing page and promote it to drive email list signups
+
+DOMAIN: creative
+TASK: Build a brand activation at a festival
+SUB: Design an experience that fits the festival environment and draws foot traffic naturally
+SUB: Produce all physical materials including signage, structures, giveaways, and interactive elements
+SUB: Staff the activation with trained brand representatives who can deliver the key message
+SUB: Capture photos and video during the event and publish content within 24 hours
+
+DOMAIN: creative
+TASK: Write a series of evergreen social posts
+SUB: Identify topics that stay relevant year-round and align with the brand's core themes
+SUB: Write posts in multiple formats including questions, tips, facts, and quotes
+SUB: Build a library of at least fifty posts that can be scheduled and recycled
+SUB: Rotate the posts on a schedule and refresh the lowest-performing ones quarterly
+
+DOMAIN: creative
+TASK: Produce a podcast episode about a controversial topic
+SUB: Research the topic deeply from multiple perspectives before forming a narrative angle
+SUB: Book a guest who can speak credibly and who holds a view that creates productive tension
+SUB: Record and edit with extra care to ensure nuance is preserved and the discussion is fair
+SUB: Write show notes that acknowledge the complexity and invite listener response
+
+DOMAIN: creative
+TASK: Create an animated title sequence
+SUB: Define the tone and visual language the sequence should establish for the show or brand
+SUB: Storyboard the sequence with timing notes and transitions between each visual beat
+SUB: Animate in a motion design tool with frame-accurate lip sync to the theme music if applicable
+SUB: Export in broadcast and web formats and test on multiple screen sizes
+
+DOMAIN: creative
+TASK: Launch a merchandise drop for an artist
+SUB: Design a limited collection that reflects the artist's current creative direction
+SUB: Produce samples, confirm print quality, and photograph products on model and flat lay
+SUB: Build product pages with compelling copy and a clear scarcity or limited-edition framing
+SUB: Launch to the fan email list first then open to the public with a countdown and social push
+
+DOMAIN: creative
+TASK: Write a creative retrospective blog post
+SUB: Review the projects completed over the period and identify what made each one succeed or fall short
+SUB: Extract two or three honest lessons that will be useful to readers in similar creative work
+SUB: Write with vulnerability and specificity rather than vague positive framing
+SUB: Publish and share in communities where other creatives can engage with the learnings
+
+DOMAIN: creative
+TASK: Develop a content series around a trending topic
+SUB: Validate that the trend has enough staying power to justify a multi-part series
+SUB: Map out five to ten episodes that explore different facets of the topic
+SUB: Produce the first three before publishing so you can maintain a release schedule
+SUB: Time publication to coincide with peak search and social interest in the trend
+
+DOMAIN: creative
+TASK: Create a photo series documenting a creative process
+SUB: Identify the process, craft, or transformation that is most visually compelling to document
+SUB: Plan a multi-session shooting schedule that captures progression over time
+SUB: Edit images that show genuine stages including failure and iteration not just polished outcomes
+SUB: Sequence and publish with captions that give context and invite the audience inside the work
+
+DOMAIN: creative
+TASK: Produce a brand guidelines video
+SUB: Identify the brand elements that are most commonly misapplied by partners or vendors
+SUB: Script a short video walkthrough of logo usage, color rules, typography, and tone of voice
+SUB: Record with screen capture and voiceover supplemented by visual examples on screen
+SUB: Publish internally in the brand portal and share with all external partners and agencies
+
+DOMAIN: creative
+TASK: Write and record a guided journal prompt series
+SUB: Define the thematic arc for the series and the emotional territory each prompt explores
+SUB: Write prompts that are specific enough to spark reflection but open enough to allow personal interpretation
+SUB: Record each prompt with a warm unhurried delivery that gives listeners time to think
+SUB: Distribute as a podcast, a download, or a subscription product with regular new releases
+
+DOMAIN: creative
+TASK: Design a creative portfolio book for print
+SUB: Curate the work that best represents your range and the type of clients you want to attract
+SUB: Design the layout with generous white space, strong image hierarchy, and clean typography
+SUB: Write project captions that describe the brief, your role, and the outcome
+SUB: Order a high-quality print run and distribute at client meetings and industry events
+
+DOMAIN: creative
+TASK: Develop a brand partnership content program
+SUB: Identify partner brands with a shared audience and complementary rather than competing positioning
+SUB: Design a co-branded content format that delivers value to both audiences equally
+SUB: Produce and distribute the content across both brands' channels simultaneously
+SUB: Measure cross-audience growth and engagement and use it to pitch future partnership opportunities
+
+DOMAIN: creative
+TASK: Write a script for a live corporate event
+SUB: Work with event producers to understand the run of show and the key messages to land
+SUB: Write speaker scripts and transitional remarks that feel natural when spoken aloud
+SUB: Include audience engagement moments and timing cues throughout the script
+SUB: Rehearse with speakers and revise based on their feedback before the event
+
+DOMAIN: creative
+TASK: Create a podcast sponsorship pitch package
+SUB: Compile listener demographics, download numbers, and engagement data into a clean media kit
+SUB: Define the sponsorship tiers and what each includes such as ad reads, episodes, and social posts
+SUB: Write a one-page pitch letter that explains why the show's audience matches the sponsor's customer
+SUB: Send to a targeted list of relevant brands and follow up with a call within two weeks
+
+DOMAIN: creative
+TASK: Produce a theatrical production
+SUB: Select the script or develop an original work and secure the rights if applicable
+SUB: Cast the production, hire the creative team, and build a rehearsal and production schedule
+SUB: Run rehearsals, design sets and costumes, and coordinate all technical elements
+SUB: Open the production, manage the run, and document the work for future applications and portfolios
+
+DOMAIN: creative
+TASK: Write a content strategy for a nonprofit
+SUB: Understand the mission, the key audiences, and the action each audience needs to take
+SUB: Define content pillars that educate, inspire, and convert across all stages of donor or volunteer journey
+SUB: Build a realistic calendar given the team's capacity and the organization's key moments
+SUB: Set metrics aligned to organizational goals such as donations, volunteer signups, or petition signatures
+
+DOMAIN: creative
+TASK: Design a sketchbook or creative journal product
+SUB: Define the intended user, the primary use case, and what makes this product distinct
+SUB: Specify paper weight, binding style, page layout, and cover material
+SUB: Develop the graphic design for the cover and any interior page headers or prompts
+SUB: Source a manufacturer, order a prototype, and refine before finalizing the production run
+
+DOMAIN: creative
+TASK: Produce a brand documentary for internal culture
+SUB: Interview team members across roles and tenure levels to surface honest stories
+SUB: Identify the narrative thread that connects individual stories to the company's mission
+SUB: Shoot with an observational style that captures candid moments alongside formal interviews
+SUB: Screen internally at an all-hands and use in new employee onboarding
+
+DOMAIN: creative
+TASK: Write a visual storytelling guide for a content team
+SUB: Define what visual storytelling means in the context of the brand and its content goals
+SUB: Provide frameworks for building tension, resolution, and emotional arc in short-form content
+SUB: Include annotated examples of strong and weak visual storytelling from the brand's own archive
+SUB: Run a workshop using the guide and iterate based on what concepts the team finds most useful
+
+DOMAIN: creative
+TASK: Launch a community art project
+SUB: Define the concept, the public or community it involves, and the outcome you are working toward
+SUB: Partner with local organizations, venues, or institutions to provide legitimacy and access
+SUB: Facilitate contribution from community members through workshops, submissions, or collaborative sessions
+SUB: Install or publish the final work and celebrate contributors with an event or publication
+
+DOMAIN: creative
+TASK: Create an ambassador content kit
+SUB: Define the key messages, talking points, and the brand story ambassadors should convey
+SUB: Produce templates for social posts, stories, and video content in the ambassador's own voice
+SUB: Include usage guidelines, approved hashtags, disclosure requirements, and contact information
+SUB: Deliver the kit with a briefing call and check in on ambassador content quality monthly
+
+DOMAIN: creative
+TASK: Write a series of micro-fiction stories for social media
+SUB: Define the format such as 280-character stories or six-word narratives that suits the platform
+SUB: Develop a recurring world, character, or theme that gives the series continuity
+SUB: Write fifty or more pieces so you can publish consistently without running dry
+SUB: Publish on a schedule and engage with readers who respond or share
+
+DOMAIN: creative
+TASK: Produce a narrated portfolio presentation
+SUB: Select six to eight projects that tell a clear story about your creative strengths and evolution
+SUB: Write narration for each project that explains the challenge, your thinking, and the outcome
+SUB: Record the narration and pair it with visuals in a video or interactive slideshow format
+SUB: Share the presentation with prospective clients and use it in pitches as an alternative to a live portfolio walk-through
+
+DOMAIN: creative
+TASK: Design a seasonal campaign visual identity
+SUB: Define the campaign theme and the seasonal references that should inform the visual direction
+SUB: Develop a cohesive color palette, typographic treatment, and illustration or photography approach
+SUB: Apply the identity to all campaign touchpoints including social, email, and in-store or digital ads
+SUB: Archive the campaign assets and capture performance data to inform future seasonal campaigns
+
+DOMAIN: creative
+TASK: Write a live event talk
+SUB: Define the single most important idea you want the audience to leave with
+SUB: Structure the talk with an opening hook, a personal story, the core argument, and a memorable close
+SUB: Write the full script and then convert it to speaker notes so the delivery feels natural
+SUB: Rehearse until you can deliver it without reading and have it timed precisely
+
+DOMAIN: creative
+TASK: Create a mood board for a creative project
+SUB: Define the project's intended emotional tone and visual register before gathering references
+SUB: Collect images, colors, typography samples, and texture references from diverse sources
+SUB: Curate the mood board to remove anything that dilutes or contradicts the core direction
+SUB: Present to stakeholders with verbal framing of what each element is meant to evoke
+
+DOMAIN: creative
+TASK: Develop a podcast content calendar
+SUB: Define the episode types such as solo, interview, panel, or documentary that will fill the calendar
+SUB: Plan one full season of episodes with topic, guest, and release date for each
+SUB: Build in production lead time between recording and publish dates for editing and review
+SUB: Review the calendar monthly and adjust based on guest availability and listener feedback trends
+
+DOMAIN: creative
+TASK: Produce a brand awareness ad campaign
+SUB: Define the target audience, the awareness goal, and what success looks like in measurable terms
+SUB: Develop creative concepts that prioritize memorability and emotional resonance over product features
+SUB: Produce the ad assets in all required formats for the chosen channels
+SUB: Launch, monitor brand lift metrics, and optimize placements based on performance data
+
+DOMAIN: creative
+TASK: Write a series of customer success stories
+SUB: Identify customers with diverse use cases and measurable outcomes who are willing to participate
+SUB: Conduct structured interviews covering the before state, the decision to buy, and the after state
+SUB: Write each story with a narrative arc that leads with the customer's challenge not the product
+SUB: Publish on the website, share in sales conversations, and promote through email and social
+
+DOMAIN: creative
+TASK: Create a cross-platform content distribution plan
+SUB: Map the content types you produce to the platforms where each format performs best
+SUB: Define how each piece of content will be adapted for each platform rather than posted identically
+SUB: Build a weekly distribution checklist so nothing falls through the cracks after production
+SUB: Track reach and engagement by platform and shift distribution emphasis based on data quarterly

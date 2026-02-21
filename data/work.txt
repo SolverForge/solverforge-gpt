@@ -1,0 +1,839 @@
+DOMAIN: work
+TASK: Plan and execute a product launch
+SUB: Define launch goals, target audience, and success metrics
+SUB: Coordinate with marketing, sales, and support to align messaging
+SUB: Prepare launch assets including demos, press kit, and documentation
+SUB: Execute the launch and monitor feedback channels for rapid response
+
+DOMAIN: work
+TASK: Hire a senior software engineer
+SUB: Write a clear job description and define the ideal candidate profile
+SUB: Post the role on relevant platforms and activate referral networks
+SUB: Screen applications and conduct structured technical interviews
+SUB: Make an offer, negotiate terms, and plan onboarding
+
+DOMAIN: work
+TASK: Prepare a quarterly business review presentation
+SUB: Gather performance data against quarterly OKRs and key metrics
+SUB: Identify key wins, misses, and lessons learned
+SUB: Develop forward-looking projections and updated plans for next quarter
+SUB: Create slides and rehearse the presentation with stakeholders
+
+DOMAIN: work
+TASK: Onboard a new team member
+SUB: Set up accounts, tools, and workspace access before their first day
+SUB: Create a structured first-week schedule with introductions and training
+SUB: Assign a buddy or mentor for day-to-day questions
+SUB: Schedule 30-60-90 day check-ins and set initial goals
+
+DOMAIN: work
+TASK: Run an effective team retrospective
+SUB: Choose a retrospective format and prepare the facilitation materials
+SUB: Create a safe space for open and honest discussion
+SUB: Identify the top issues to address and assign ownership to action items
+SUB: Follow up on action items from the previous retrospective
+
+DOMAIN: work
+TASK: Launch a customer research initiative
+SUB: Define the research questions and hypotheses to validate
+SUB: Identify and recruit the right participants
+SUB: Conduct interviews or surveys and document findings
+SUB: Synthesize insights and share with the broader team
+
+DOMAIN: work
+TASK: Set annual team goals and OKRs
+SUB: Review company-level strategy and how the team contributes
+SUB: Facilitate a goal-setting session with the full team
+SUB: Draft measurable key results for each objective
+SUB: Get alignment from leadership and communicate goals to the team
+
+DOMAIN: work
+TASK: Manage a vendor contract negotiation
+SUB: Define your requirements, constraints, and walk-away criteria
+SUB: Research market rates and alternatives to strengthen your position
+SUB: Open negotiations and iterate on terms through multiple rounds
+SUB: Finalize the contract and set up a process for performance monitoring
+
+DOMAIN: work
+TASK: Expand the business into a new market
+SUB: Research the target market including customer needs, competitors, and regulations
+SUB: Adapt the product or service offering for the local context
+SUB: Build local partnerships and establish distribution channels
+SUB: Plan and execute the go-to-market strategy with localized messaging
+
+DOMAIN: work
+TASK: Improve team meeting culture
+SUB: Audit current meetings for purpose, frequency, and effectiveness
+SUB: Establish clear guidelines for when to meet versus use async communication
+SUB: Introduce structured agendas and action item tracking for all meetings
+SUB: Collect feedback regularly and iterate on the meeting cadence
+
+DOMAIN: work
+TASK: Build a data-driven reporting dashboard for leadership
+SUB: Identify the key metrics and decisions the dashboard needs to support
+SUB: Gather data sources and assess data quality and availability
+SUB: Design and build the dashboard with appropriate visualizations
+SUB: Present the dashboard to stakeholders and iterate based on feedback
+
+DOMAIN: work
+TASK: Develop a training program for the sales team
+SUB: Identify skill gaps and performance improvement areas through assessment
+SUB: Design curriculum covering product knowledge, sales process, and objection handling
+SUB: Deliver training through a mix of live sessions, recorded content, and role plays
+SUB: Track performance improvements and gather feedback to refine the program
+
+DOMAIN: work
+TASK: Manage an office relocation
+SUB: Define requirements for the new space including size, location, and amenities
+SUB: Evaluate and select a new location with input from the team
+SUB: Coordinate logistics including lease agreements, fit-out, and IT setup
+SUB: Communicate the move plan and timeline clearly to all staff
+
+DOMAIN: work
+TASK: Launch an internal knowledge base
+SUB: Define the structure and categories that match how people work
+SUB: Identify content owners and establish a contribution workflow
+SUB: Populate the knowledge base with the most critical documents first
+SUB: Promote adoption and establish a process to keep content up to date
+
+DOMAIN: work
+TASK: Reduce customer churn
+SUB: Analyze churn data to identify patterns and at-risk customer segments
+SUB: Conduct exit interviews with recently churned customers
+SUB: Design interventions such as proactive outreach or feature improvements
+SUB: Implement changes and track impact on churn rate over time
+
+DOMAIN: work
+TASK: Build a partner program
+SUB: Define partner tiers, benefits, and qualification criteria
+SUB: Develop partner enablement materials including training and sales collateral
+SUB: Recruit initial partners through outreach and events
+SUB: Set up a partner portal and ongoing communication cadence
+
+DOMAIN: work
+TASK: Execute a company-wide all-hands meeting
+SUB: Gather updates from all departments and define the narrative arc
+SUB: Book the venue or set up the video conferencing infrastructure
+SUB: Prepare slides, demos, and Q-and-A format
+SUB: Collect questions in advance and follow up with a recording and summary
+
+DOMAIN: work
+TASK: Create an employee recognition program
+SUB: Gather input from employees on what recognition means to them
+SUB: Design the recognition criteria, cadence, and reward options
+SUB: Launch the program with clear communication and manager training
+SUB: Review program effectiveness quarterly and adjust based on participation
+
+DOMAIN: work
+TASK: Develop an annual marketing plan
+SUB: Review last year's performance and identify what worked and what did not
+SUB: Define campaign themes, channels, and budget allocation
+SUB: Build a month-by-month content and activity calendar
+SUB: Establish measurement frameworks and reporting cadence
+
+DOMAIN: work
+TASK: Conduct a competitive analysis
+SUB: Identify the top competitors and gather publicly available information
+SUB: Evaluate each competitor on product, pricing, positioning, and customer sentiment
+SUB: Identify your differentiation and areas where competitors have an advantage
+SUB: Present findings to the team and incorporate into strategy
+
+DOMAIN: work
+TASK: Build a customer advisory board
+SUB: Define the purpose, meeting cadence, and member profile for the board
+SUB: Identify and recruit customers who represent key segments and are advocates
+SUB: Prepare the first meeting agenda including product roadmap and open discussion
+SUB: Maintain ongoing engagement with board members between meetings
+
+DOMAIN: work
+TASK: Improve the customer onboarding experience
+SUB: Map the current onboarding journey and identify friction points
+SUB: Interview recently onboarded customers about their experience
+SUB: Redesign the onboarding flow to reach the aha moment faster
+SUB: Measure time-to-value and onboarding completion rates after the changes
+
+DOMAIN: work
+TASK: Launch a company blog
+SUB: Define the blog's audience, voice, and content pillars
+SUB: Create an editorial calendar with the first twelve post ideas
+SUB: Set up the blogging platform and establish the publishing workflow
+SUB: Promote early posts through email and social media to build an audience
+
+DOMAIN: work
+TASK: Run a design sprint
+SUB: Define the challenge to solve and assemble a cross-functional team
+SUB: Map the problem space and identify the most critical question to answer
+SUB: Sketch and prototype the most promising solution in one day
+SUB: Test the prototype with real users and use learnings to make a decision
+
+DOMAIN: work
+TASK: Create a company crisis communication plan
+SUB: Identify the types of crises that could affect the company
+SUB: Define roles, communication channels, and escalation procedures for each scenario
+SUB: Draft holding statements and initial response templates for common crisis types
+SUB: Train the leadership team and test the plan with a tabletop exercise
+
+DOMAIN: work
+TASK: Build an account-based marketing campaign
+SUB: Identify the target accounts based on fit, intent, and potential value
+SUB: Research each account to understand their priorities and stakeholders
+SUB: Create personalized content and outreach sequences for each account
+SUB: Coordinate with sales on timing and messaging and track pipeline influence
+
+DOMAIN: work
+TASK: Develop a pricing strategy for a new product
+SUB: Conduct market research to understand customer willingness to pay
+SUB: Analyze competitor pricing and positioning in the market
+SUB: Define pricing tiers, bundles, and packaging options
+SUB: Test pricing with pilot customers before a full launch
+
+DOMAIN: work
+TASK: Run a customer satisfaction survey
+SUB: Define the metrics to measure such as NPS, CSAT, or CES
+SUB: Design the survey with a short, focused set of questions
+SUB: Distribute the survey to a representative sample of customers
+SUB: Analyze results and present key themes and action items to the team
+
+DOMAIN: work
+TASK: Create a sales playbook
+SUB: Document the ideal customer profile and qualification criteria
+SUB: Map the sales process from discovery to close with key actions at each stage
+SUB: Write objection handling scripts for the most common customer objections
+SUB: Package the playbook with supporting tools and train the sales team on it
+
+DOMAIN: work
+TASK: Implement a performance management process
+SUB: Define the performance criteria and rating framework
+SUB: Train managers on conducting effective performance conversations
+SUB: Roll out the review cycle with clear timelines and tooling
+SUB: Calibrate ratings across teams to ensure consistency and fairness
+
+DOMAIN: work
+TASK: Launch a referral marketing program
+SUB: Define the incentive structure for both the referrer and the new customer
+SUB: Build or integrate referral tracking into the product and marketing site
+SUB: Promote the program through email, in-product, and social channels
+SUB: Track referral conversion rates and optimize incentives based on data
+
+DOMAIN: work
+TASK: Build a customer success program
+SUB: Define customer segments and assign success managers to each segment
+SUB: Create health score models to identify at-risk and thriving accounts
+SUB: Design the success playbooks for onboarding, adoption, and renewal
+SUB: Track retention, expansion revenue, and NPS as program outcomes
+
+DOMAIN: work
+TASK: Develop a thought leadership content strategy
+SUB: Identify the topics where the company has genuine expertise and a distinct point of view
+SUB: Choose the formats and channels that reach the target audience
+SUB: Build a content calendar and assign subject matter experts to each piece
+SUB: Measure reach, engagement, and influence on pipeline
+
+DOMAIN: work
+TASK: Prepare a board meeting presentation
+SUB: Gather key financial, operational, and product metrics for the period
+SUB: Identify the strategic decisions that require board input or approval
+SUB: Structure the presentation with a clear narrative and supporting data
+SUB: Send materials in advance and prepare for detailed questions
+
+DOMAIN: work
+TASK: Implement a data governance policy
+SUB: Identify all data assets and classify them by sensitivity and criticality
+SUB: Define ownership, access controls, and retention policies for each data type
+SUB: Document the policies and train staff on compliance obligations
+SUB: Conduct regular audits to verify policy adherence
+
+DOMAIN: work
+TASK: Build an employer brand strategy
+SUB: Survey current employees to understand what they value about working there
+SUB: Define the employee value proposition and key messaging themes
+SUB: Create content such as culture videos, employee stories, and career pages
+SUB: Distribute employer brand content through social media and job platforms
+
+DOMAIN: work
+TASK: Execute a price increase for existing customers
+SUB: Develop the pricing rationale and determine the new rates and effective date
+SUB: Draft customer communications that lead with value and provide clear notice
+SUB: Prepare the customer success team with talking points for conversations
+SUB: Monitor churn and customer sentiment following the announcement
+
+DOMAIN: work
+TASK: Create a go-to-market strategy for a new feature
+SUB: Define the target audience and the specific problem the feature solves
+SUB: Develop positioning and messaging that differentiates the feature
+SUB: Plan the launch activities across marketing, sales, and support
+SUB: Set launch goals and define the metrics for evaluating success
+
+DOMAIN: work
+TASK: Implement a hybrid work policy
+SUB: Survey employees on their work location preferences and needs
+SUB: Define the principles governing when in-office presence is required
+SUB: Update facilities to support hybrid collaboration including video conferencing rooms
+SUB: Communicate the policy clearly and gather ongoing feedback to refine it
+
+DOMAIN: work
+TASK: Run a hackathon for the engineering team
+SUB: Define the hackathon theme, format, and judging criteria
+SUB: Form teams and provide access to necessary resources and APIs
+SUB: Run the event over one or two days with defined check-in points
+SUB: Demo projects to the company and celebrate top submissions with prizes
+
+DOMAIN: work
+TASK: Build a company culture survey process
+SUB: Select or design a survey instrument that measures the most important culture factors
+SUB: Communicate the survey purpose and guarantee anonymity to maximize participation
+SUB: Analyze results and identify the top themes by team and department
+SUB: Share findings transparently and create an action plan with accountable owners
+
+DOMAIN: work
+TASK: Launch a customer education program
+SUB: Define the learning outcomes for each customer segment
+SUB: Develop curriculum including live webinars, recorded courses, and documentation
+SUB: Build or integrate a learning management system to host the content
+SUB: Track completion rates and correlate education participation with retention
+
+DOMAIN: work
+TASK: Manage a cross-functional project
+SUB: Define the project scope, success criteria, and timeline with all stakeholders
+SUB: Identify the representatives from each function and establish decision-making authority
+SUB: Set up a regular cadence for status updates and issue escalation
+SUB: Track dependencies and actively manage risks throughout the project
+
+DOMAIN: work
+TASK: Create a diversity and inclusion strategy
+SUB: Assess current representation data and identify gaps across the organization
+SUB: Set measurable goals for diversity at every level
+SUB: Design initiatives covering hiring, retention, and inclusion programs
+SUB: Report progress publicly and hold leadership accountable for outcomes
+
+DOMAIN: work
+TASK: Build a customer win-loss analysis program
+SUB: Define the process for conducting win-loss interviews after every deal close
+SUB: Recruit a third party to conduct interviews for unbiased results
+SUB: Synthesize insights across deals by segment, competitor, and deal size
+SUB: Share findings monthly with product, marketing, and sales leadership
+
+DOMAIN: work
+TASK: Develop a remote work toolkit for employees
+SUB: Identify the tools and equipment employees need to be effective remotely
+SUB: Create guides covering communication norms, meeting etiquette, and productivity tips
+SUB: Build templates for async project updates and decision documentation
+SUB: Run a workshop to align the team on remote work expectations and practices
+
+DOMAIN: work
+TASK: Set up a sales development representative function
+SUB: Define the SDR role, quota, and handoff process to account executives
+SUB: Hire and onboard the first cohort of SDRs
+SUB: Build outbound sequences and talking points for the target personas
+SUB: Track SDR metrics including activity volume, qualified pipeline, and conversion rates
+
+DOMAIN: work
+TASK: Launch a podcast for the company
+SUB: Define the target audience, format, and episode cadence
+SUB: Acquire recording equipment and editing software
+SUB: Record and publish the first three episodes before announcing the show
+SUB: Submit the podcast to directories and promote through owned channels
+
+DOMAIN: work
+TASK: Create a company values refresh
+SUB: Survey employees about what values they believe the company lives and aspires to
+SUB: Facilitate workshops to co-create a revised set of values with diverse input
+SUB: Define concrete behaviors that exemplify each value
+SUB: Embed the new values in hiring, performance, and recognition processes
+
+DOMAIN: work
+TASK: Build a customer community
+SUB: Choose a platform such as Slack, Discord, or a purpose-built community tool
+SUB: Seed the community with valuable content and initial discussions before launch
+SUB: Recruit early members from your most engaged customers
+SUB: Establish moderation guidelines and a regular events and content calendar
+
+DOMAIN: work
+TASK: Prepare for a fundraising round
+SUB: Build a compelling narrative around the opportunity and traction
+SUB: Prepare a data room with financial models, metrics, and legal documents
+SUB: Identify and prioritize target investors based on fit and portfolio
+SUB: Run the process in parallel with multiple investors to create competitive dynamics
+
+DOMAIN: work
+TASK: Launch a free trial program
+SUB: Define the trial length, feature scope, and conversion goal
+SUB: Build the trial activation flow and automated nurture sequence
+SUB: Set up tracking for key trial engagement milestones
+SUB: Analyze trial-to-paid conversion and run experiments to improve it
+
+DOMAIN: work
+TASK: Build a sales forecasting process
+SUB: Define the pipeline stages and the probability of close at each stage
+SUB: Train the sales team on consistent opportunity qualification and data hygiene
+SUB: Build a forecast model that aggregates bottoms-up deal data with top-down adjustments
+SUB: Review and discuss the forecast weekly with sales leadership
+
+DOMAIN: work
+TASK: Develop an SEO strategy
+SUB: Conduct keyword research to identify high-value terms for the target audience
+SUB: Audit the existing site for technical SEO issues and fix priority problems
+SUB: Create an editorial plan for content that targets identified keyword clusters
+SUB: Build backlinks through outreach, guest posting, and digital PR
+
+DOMAIN: work
+TASK: Run a product roadmap review with customers
+SUB: Select a representative group of customers across segments for the session
+SUB: Present the current roadmap and the thinking behind prioritization decisions
+SUB: Collect structured feedback on importance and urgency for upcoming items
+SUB: Incorporate customer input into the next roadmap planning cycle
+
+DOMAIN: work
+TASK: Build an annual budgeting process
+SUB: Set the planning timeline and communicate it to all department heads
+SUB: Gather bottoms-up budget requests from each team
+SUB: Review requests against strategic priorities and financial constraints
+SUB: Finalize the budget and communicate allocations with clear rationale
+
+DOMAIN: work
+TASK: Create a digital marketing analytics framework
+SUB: Define the KPIs for each marketing channel and campaign type
+SUB: Set up tracking and attribution across all digital touchpoints
+SUB: Build a unified dashboard that shows performance across channels
+SUB: Review analytics weekly and use insights to shift budget and strategy
+
+DOMAIN: work
+TASK: Implement a customer feedback loop
+SUB: Collect feedback through multiple channels including support tickets, NPS, and in-app surveys
+SUB: Route feedback to the relevant product, support, or success team automatically
+SUB: Tag and categorize feedback to identify themes and frequency
+SUB: Close the loop by notifying customers when their feedback leads to a change
+
+DOMAIN: work
+TASK: Build a user research repository
+SUB: Define a taxonomy for tagging research by topic, method, and customer segment
+SUB: Choose a tool such as Dovetail or Airtable to store and organize research artifacts
+SUB: Migrate existing research into the repository and tag it consistently
+SUB: Train the team on how to search and add new research to the repository
+
+DOMAIN: work
+TASK: Plan a company offsite
+SUB: Define the goals of the offsite and the decisions that need to be made
+SUB: Choose a venue and plan the logistics including travel and accommodation
+SUB: Design the agenda balancing structured sessions with social time
+SUB: Capture decisions and action items during the event and distribute a summary
+
+DOMAIN: work
+TASK: Build a content operations workflow
+SUB: Map the current content creation process and identify bottlenecks
+SUB: Define roles and responsibilities for ideation, creation, review, and publishing
+SUB: Set up project management tooling to track content from idea to publication
+SUB: Establish quality standards and a review checklist for all published content
+
+DOMAIN: work
+TASK: Create a competitive intelligence program
+SUB: Identify the sources for competitive information including reviews, job postings, and news
+SUB: Assign responsibility for monitoring each competitor on a regular cadence
+SUB: Synthesize weekly competitive updates into a shared briefing document
+SUB: Review competitive landscape quarterly and update positioning accordingly
+
+DOMAIN: work
+TASK: Develop a customer segmentation model
+SUB: Define the segmentation criteria based on company size, industry, and use case
+SUB: Analyze the customer base to identify natural clusters
+SUB: Create personas for each segment that capture their goals, pains, and buying behavior
+SUB: Apply the segmentation to marketing campaigns, product development, and customer success
+
+DOMAIN: work
+TASK: Launch an affiliate marketing program
+SUB: Define commission structure, qualifying actions, and payment terms
+SUB: Build or integrate affiliate tracking and payment infrastructure
+SUB: Recruit affiliates through direct outreach and affiliate networks
+SUB: Monitor affiliate performance and enforce program quality standards
+
+DOMAIN: work
+TASK: Build a product feedback process
+SUB: Define the channels through which product feedback is collected
+SUB: Implement a tagging and scoring system to prioritize incoming feedback
+SUB: Hold a regular review session with the product team to assess top feedback themes
+SUB: Communicate product decisions back to the customers who submitted feedback
+
+DOMAIN: work
+TASK: Run an account review meeting with a key customer
+SUB: Prepare a business review deck with usage data, goals, and outcomes achieved
+SUB: Research the customer's current priorities and recent company news
+SUB: Conduct the meeting with a focus on their strategic objectives and how you can help
+SUB: Follow up with a summary email and clear next steps
+
+DOMAIN: work
+TASK: Create an internal newsletter
+SUB: Define the audience, cadence, and content sections for the newsletter
+SUB: Gather updates from each team on a regular submission schedule
+SUB: Write and edit the newsletter with a consistent voice and format
+SUB: Distribute through email and measure open and click rates to improve over time
+
+DOMAIN: work
+TASK: Build a sales territory plan
+SUB: Define the geographic or account-based boundaries for each territory
+SUB: Assign territories to reps based on experience, capacity, and market opportunity
+SUB: Set territory-level quotas and document the expected coverage plan
+SUB: Review territory performance monthly and rebalance as needed
+
+DOMAIN: work
+TASK: Develop an executive communication strategy
+SUB: Define the audiences and channels for executive communication
+SUB: Create a regular cadence of written and video updates from leadership
+SUB: Gather employee questions in advance and address them transparently
+SUB: Measure employee sentiment before and after initiatives to track impact
+
+DOMAIN: work
+TASK: Plan a demand generation campaign
+SUB: Define the target audience, campaign theme, and pipeline goals
+SUB: Create the content and assets for the campaign across email, ads, and events
+SUB: Set up lead capture, nurture sequences, and routing to sales
+SUB: Run the campaign, report on MQL volume and quality, and optimize weekly
+
+DOMAIN: work
+TASK: Build a compensation benchmarking process
+SUB: Source compensation data from surveys such as Radford, Option Impact, or Levels.fyi
+SUB: Map internal roles to survey benchmarks using consistent job leveling criteria
+SUB: Analyze how current compensation compares to market percentiles
+SUB: Develop a compensation adjustment plan and communicate the outcomes to employees
+
+DOMAIN: work
+TASK: Create a product positioning document
+SUB: Define the target customer and the specific problem you solve for them
+SUB: Articulate your unique value proposition and key differentiators
+SUB: Write positioning statements for each customer segment
+SUB: Validate the positioning with customers and the sales team before finalizing
+
+DOMAIN: work
+TASK: Run a beta program for a new feature
+SUB: Define the beta criteria, participant count, and success metrics
+SUB: Recruit beta participants from the existing customer base
+SUB: Collect structured feedback through surveys and usage data during the beta
+SUB: Synthesize learnings and make the decision to launch, iterate, or pull back
+
+DOMAIN: work
+TASK: Develop a brand messaging framework
+SUB: Define the core brand promise and the problems the brand solves
+SUB: Create a messaging hierarchy with taglines, value statements, and proof points
+SUB: Develop tone of voice guidelines with examples of on-brand and off-brand writing
+SUB: Train marketing and sales teams on the messaging and how to apply it
+
+DOMAIN: work
+TASK: Plan a regional sales kickoff
+SUB: Define the event goals including skill development, motivation, and alignment on targets
+SUB: Book the venue and arrange travel and accommodation for attendees
+SUB: Design the agenda with a mix of keynotes, breakouts, and team activities
+SUB: Collect feedback after the event and apply learnings to future kickoffs
+
+DOMAIN: work
+TASK: Create an enterprise sales motion
+SUB: Define the ideal enterprise customer profile and the qualifying criteria
+SUB: Map the enterprise buying process and identify all decision-making stakeholders
+SUB: Develop multi-threaded outreach strategies to reach economic buyers and champions
+SUB: Build proof of concept and security review playbooks for common enterprise requirements
+
+DOMAIN: work
+TASK: Launch an in-app upgrade campaign
+SUB: Identify the user segments most likely to convert to a higher plan
+SUB: Design in-app messaging that highlights the value of upgrading at the right moments
+SUB: Set up A/B tests for different upgrade prompts and CTAs
+SUB: Track upgrade conversion rates and optimize based on results
+
+DOMAIN: work
+TASK: Build a strategic partnership
+SUB: Identify potential partners whose customers and capabilities complement yours
+SUB: Define the partnership model including co-selling, integration, or co-marketing
+SUB: Negotiate the terms of the partnership agreement
+SUB: Launch the partnership with a joint announcement and activate co-marketing activities
+
+DOMAIN: work
+TASK: Develop a product discovery process
+SUB: Establish a regular cadence of customer interviews and user research
+SUB: Create a shared system for capturing and organizing customer insights
+SUB: Define the criteria for moving from discovery to definition for new initiatives
+SUB: Train product managers and designers on the discovery methodology
+
+DOMAIN: work
+TASK: Implement a sales compensation plan
+SUB: Define quota levels, commission rates, and accelerators for overperformance
+SUB: Model the comp plan against historical performance to validate fairness and cost
+SUB: Document the plan in detail and train the sales team on how it works
+SUB: Track attainment weekly and ensure commissions are paid accurately and on time
+
+DOMAIN: work
+TASK: Run a hiring process improvement project
+SUB: Audit the current process to identify bottlenecks and sources of candidate drop-off
+SUB: Define the target time-to-hire and interview-to-offer conversion rate
+SUB: Redesign the process stages, interview formats, and evaluation rubrics
+SUB: Roll out the new process and measure impact on speed, quality, and candidate experience
+
+DOMAIN: work
+TASK: Create a market entry strategy
+SUB: Define the target market and the beachhead segment to focus on first
+SUB: Analyze the regulatory, competitive, and distribution landscape
+SUB: Choose the market entry mode such as direct sales, partnership, or acquisition
+SUB: Execute the entry plan and establish local presence with initial customers
+
+DOMAIN: work
+TASK: Build a customer health scoring model
+SUB: Identify the behavioral signals that correlate with retention and expansion
+SUB: Assign weights to each signal based on their predictive importance
+SUB: Implement the health score calculation in the customer success platform
+SUB: Use scores to prioritize customer success activities and trigger automated interventions
+
+DOMAIN: work
+TASK: Develop an internal mobility program
+SUB: Define the process for employees to express interest in open internal roles
+SUB: Establish guidelines for minimum tenure before internal transfers
+SUB: Build a system for managers to post roles and for employees to apply internally
+SUB: Track internal mobility rates and promotion rates to measure program impact
+
+DOMAIN: work
+TASK: Create a press and media relations strategy
+SUB: Define your key narratives and the journalists and publications that cover your space
+SUB: Build relationships with key reporters through regular briefings and exclusives
+SUB: Develop a press release workflow for major announcements
+SUB: Measure media coverage volume, sentiment, and share of voice
+
+DOMAIN: work
+TASK: Plan a user conference
+SUB: Define the conference format, audience size, and program goals
+SUB: Identify the venue and negotiate the contract including AV and catering
+SUB: Build the speaker program with a mix of company, customer, and industry voices
+SUB: Manage registration, communications, and logistics in the lead-up to the event
+
+DOMAIN: work
+TASK: Build a product analytics practice
+SUB: Define the key user behaviors to track and the metrics that matter
+SUB: Implement event tracking across the product using an analytics tool
+SUB: Build dashboards for activation, retention, and feature adoption
+SUB: Establish a weekly product analytics review ritual with the product team
+
+DOMAIN: work
+TASK: Develop a channel sales strategy
+SUB: Identify the types of channel partners that can reach your target customers
+SUB: Define the value proposition for partners and the margin and incentive structure
+SUB: Build partner enablement materials and onboarding programs
+SUB: Recruit initial partners and track channel pipeline and revenue contribution
+
+DOMAIN: work
+TASK: Create a user journey map
+SUB: Define the scope of the journey and the persona you are mapping for
+SUB: Research the journey through interviews, surveys, and data analysis
+SUB: Map touchpoints, emotions, and pain points across each phase of the journey
+SUB: Identify priority opportunities and present findings to the product and design teams
+
+DOMAIN: work
+TASK: Run a leadership development program
+SUB: Assess leadership capability gaps through 360-degree feedback and manager surveys
+SUB: Design a curriculum combining workshops, coaching, and stretch assignments
+SUB: Identify internal mentors and external coaches for program participants
+SUB: Measure impact through before-and-after assessments and promotion rates
+
+DOMAIN: work
+TASK: Create a product messaging matrix
+SUB: Define the key benefits and proof points for each customer segment
+SUB: Map messaging to the stages of the buyer journey from awareness to decision
+SUB: Identify the objections each segment raises and the responses that address them
+SUB: Validate the matrix with sales and customer-facing teams
+
+DOMAIN: work
+TASK: Build a revenue operations function
+SUB: Define the scope of rev ops including sales, marketing, and customer success systems
+SUB: Audit the current tech stack and data flows for gaps and redundancies
+SUB: Standardize the data model and pipeline definitions across go-to-market teams
+SUB: Build reporting that gives leadership a unified view of revenue performance
+
+DOMAIN: work
+TASK: Design a customer renewal process
+SUB: Define the renewal timeline and the actions required at each stage before renewal date
+SUB: Train customer success managers on the renewal conversation and negotiation tactics
+SUB: Build automated alerts for accounts approaching renewal with low health scores
+SUB: Track renewal rates by segment and identify patterns in at-risk accounts
+
+DOMAIN: work
+TASK: Develop a product update communication process
+SUB: Define the communication channels and cadence for sharing product updates
+SUB: Write update announcements that focus on customer outcomes rather than features
+SUB: Distribute updates through email, in-product banners, and a changelog page
+SUB: Track open rates and user engagement with the updates
+
+DOMAIN: work
+TASK: Build a customer interview program
+SUB: Define the interview format and the questions that generate the most insight
+SUB: Set a weekly target for customer interviews across the product and success team
+SUB: Create a shared repository for interview notes and key quotes
+SUB: Review interview themes monthly and connect insights to roadmap priorities
+
+DOMAIN: work
+TASK: Plan a company acquisition integration
+SUB: Form a dedicated integration management office with representatives from both companies
+SUB: Map the organizational structures and identify redundancies and gaps
+SUB: Prioritize the integrations with the highest business impact such as systems, teams, and customers
+SUB: Communicate frequently with employees on both sides to manage uncertainty
+
+DOMAIN: work
+TASK: Create a thought leadership speaking strategy
+SUB: Identify the conferences and events where your target audience gathers
+SUB: Develop two or three signature talk topics that align with your brand narrative
+SUB: Submit proposals to events and build relationships with conference organizers
+SUB: Repurpose talk content into blog posts, social clips, and downloadable assets
+
+DOMAIN: work
+TASK: Launch a product certification program
+SUB: Define the certification tracks and the competencies each track validates
+SUB: Build the curriculum and assessment materials for each track
+SUB: Deploy the program on a learning management system with digital credential issuance
+SUB: Market the certification to customers and track enrollment and completion rates
+
+DOMAIN: work
+TASK: Develop a business continuity plan
+SUB: Identify the critical business processes and the impact of their disruption
+SUB: Define the recovery time objectives and recovery point objectives for each process
+SUB: Document the procedures for maintaining operations during disruptions
+SUB: Test the plan annually with realistic scenarios and update it based on findings
+
+DOMAIN: work
+TASK: Create an experiment culture in the product team
+SUB: Define the criteria for deciding when to run an experiment versus ship directly
+SUB: Build the tooling and templates for designing and running experiments
+SUB: Train the team on statistical significance and how to interpret experiment results
+SUB: Create a shared experiment log to capture learnings across all tests
+
+DOMAIN: work
+TASK: Run a user onboarding audit
+SUB: Map every step of the current onboarding experience including emails, in-app prompts, and calls
+SUB: Measure drop-off rates at each step using product analytics
+SUB: Conduct user testing sessions with new users going through onboarding
+SUB: Prioritize the highest-impact improvements and run experiments to validate them
+
+DOMAIN: work
+TASK: Build a sales prospecting process
+SUB: Define the ideal customer profile with firmographic and behavioral criteria
+SUB: Build a prospecting list using data tools and enrichment sources
+SUB: Design multi-touch outreach sequences combining email, phone, and LinkedIn
+SUB: Track reply rates and meetings booked per sequence and optimize continuously
+
+DOMAIN: work
+TASK: Create an internal product roadmap communication process
+SUB: Define the audience for roadmap communications and their information needs
+SUB: Establish a quarterly roadmap review where priorities and rationale are shared
+SUB: Build a lightweight roadmap artifact that balances transparency with flexibility
+SUB: Create a feedback mechanism so internal stakeholders can flag gaps or concerns
+
+DOMAIN: work
+TASK: Implement a project portfolio management process
+SUB: Inventory all active and proposed projects across the organization
+SUB: Define the evaluation criteria for prioritizing projects including strategic value and resource requirements
+SUB: Build a portfolio view that gives leadership visibility into all in-flight work
+SUB: Review the portfolio monthly and make explicit decisions about trade-offs
+
+DOMAIN: work
+TASK: Build an employee onboarding program
+SUB: Design the onboarding journey from offer acceptance through the first ninety days
+SUB: Create role-specific learning paths for each function
+SUB: Set up a buddy program and manager check-in cadence
+SUB: Measure new hire time-to-productivity and satisfaction with the onboarding experience
+
+DOMAIN: work
+TASK: Develop a product growth strategy
+SUB: Identify the primary growth lever among acquisition, activation, retention, revenue, and referral
+SUB: Run experiments targeting the highest-impact part of the growth funnel
+SUB: Build a growth model that shows how changes in key metrics affect long-term revenue
+SUB: Establish a growth team with clear ownership and a regular experiment cadence
+
+DOMAIN: work
+TASK: Create a social media strategy
+SUB: Define the target audience and the platforms where they are most active
+SUB: Develop content pillars and a posting cadence for each platform
+SUB: Create a content calendar with specific post ideas for the first month
+SUB: Establish metrics such as reach, engagement, and follower growth to track performance
+
+DOMAIN: work
+TASK: Build a customer upsell and cross-sell program
+SUB: Identify the products and tiers with the highest expansion potential
+SUB: Define the signals that indicate a customer is ready for an expansion conversation
+SUB: Train customer success managers on identifying and executing expansion opportunities
+SUB: Track expansion revenue and net revenue retention as program outcomes
+
+DOMAIN: work
+TASK: Plan a major product announcement
+SUB: Define the announcement narrative and the proof points that support it
+SUB: Coordinate the timing across PR, marketing, and sales for a simultaneous launch
+SUB: Prepare assets including press release, blog post, demo video, and customer quotes
+SUB: Brief investors, analysts, and key customers before the public announcement
+
+DOMAIN: work
+TASK: Develop a health and wellness program for employees
+SUB: Survey employees to understand their wellness priorities and preferences
+SUB: Design a program covering physical, mental, and financial wellness
+SUB: Partner with vendors and negotiate corporate rates for wellness services
+SUB: Communicate the program clearly and track participation rates over time
+
+DOMAIN: work
+TASK: Build a product operations function
+SUB: Define the scope of product operations including tooling, processes, and data management
+SUB: Standardize product planning processes across all product teams
+SUB: Build dashboards that give product leaders visibility into team health and delivery
+SUB: Identify and eliminate recurring operational bottlenecks in the product lifecycle
+
+DOMAIN: work
+TASK: Create a PR crisis response playbook
+SUB: Define the types of situations that require a PR response and the severity levels
+SUB: Assign a response owner and supporting roles for each severity level
+SUB: Draft initial holding statements for the most likely scenarios
+SUB: Establish an approval and publishing workflow that balances speed and accuracy
+
+DOMAIN: work
+TASK: Run a market sizing analysis
+SUB: Define the market boundaries and the customer segments you are targeting
+SUB: Estimate total addressable market using top-down and bottoms-up approaches
+SUB: Assess serviceable addressable market based on your current reach and distribution
+SUB: Present the analysis with assumptions clearly stated and sensitivities modeled
+
+DOMAIN: work
+TASK: Build a learning and development program
+SUB: Survey employees to identify the skills they want to develop
+SUB: Create a catalog of learning resources including courses, books, and workshops
+SUB: Allocate a learning stipend and establish clear reimbursement policies
+SUB: Track participation and measure the impact of learning on performance
+
+DOMAIN: work
+TASK: Design a product feedback session with stakeholders
+SUB: Define the goal of the session and which decisions or validations you need input on
+SUB: Prepare prototypes or examples that make the concepts concrete and testable
+SUB: Structure the session to gather reactions and prioritization input rather than feature requests
+SUB: Synthesize the feedback and communicate the decisions that result from it
+
+DOMAIN: work
+TASK: Create a social proof strategy
+SUB: Identify customers who are willing to provide testimonials, case studies, and reviews
+SUB: Build a request workflow that makes it easy for happy customers to share their story
+SUB: Distribute social proof across the website, sales collateral, and ad campaigns
+SUB: Track the influence of social proof assets on conversion rates
+
+DOMAIN: work
+TASK: Plan a product deprecation
+SUB: Identify all customers using the feature or product to be deprecated
+SUB: Define the sunset timeline and communicate it with adequate notice
+SUB: Build a migration path and provide tooling to help customers move to the replacement
+SUB: Monitor adoption of the replacement and provide hands-on help to customers who are stuck
+
+DOMAIN: work
+TASK: Develop an event marketing strategy
+SUB: Define the mix of owned, partner, and industry events that will drive pipeline
+SUB: Build the event calendar and allocate budget across the priority events
+SUB: Design the event experience from booth design to follow-up sequences
+SUB: Track pipeline influenced and sourced from events to measure ROI
+
+DOMAIN: work
+TASK: Build an investor relations program
+SUB: Define the messaging and metrics that matter most to your investor audience
+SUB: Create a regular cadence of investor updates with consistent reporting
+SUB: Prepare for and manage due diligence requests efficiently
+SUB: Build relationships with prospective investors ahead of the next fundraise
+
+DOMAIN: work
+TASK: Implement a headcount planning process
+SUB: Gather hiring plans from each department tied to their annual goals
+SUB: Model the cost impact of proposed headcount against the budget
+SUB: Prioritize hires based on business impact and time to productivity
+SUB: Track headcount actuals versus plan monthly and reforecast quarterly
