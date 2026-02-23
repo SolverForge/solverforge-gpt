@@ -38,7 +38,7 @@ impl Config {
             n_embd: 128,
             n_head: 4,
             n_layer: 4,
-            block_size: 256,
+            block_size: 512,
         }
     }
 
@@ -127,11 +127,11 @@ impl Model {
         }
     }
 
-    // ---- training forward pass ---------------------------------------------
+    // ---- TRAINING FORWARD PASS ---------------------------------------------
 
-    /// Full causal forward pass over a token sequence.
-    /// Returns the scalar cross-entropy loss averaged over labeled positions.
-    /// label_mask[i] = true means compute loss predicting tokens[i+1] from position i.
+    /* Full causal forward pass over a token sequence.
+     * Returns the scalar cross-entropy loss averaged over labeled positions.
+     * label_mask[i] = true means compute loss predicting tokens[i+1] from position i. */
     pub fn forward_train(&self, tokens: &[u32], label_mask: &[bool]) -> Tensor {
         let t = tokens.len();
         assert!(t >= 2);
@@ -153,8 +153,9 @@ impl Model {
         for li in 0..cfg.n_layer {
             let lw = &self.layers[li];
 
-            // Norm + Q/K/V projections for all positions
+            // Norm + Q/K/V projections for all position
             let normed: Vec<Tensor> = x.iter().map(|r| r.rmsnorm()).collect();
+
             // W is [n_embd, n_embd], x is [1, n_embd], output [1, n_embd]
             let qs: Vec<Tensor> = normed.iter().map(|r| r.matmul_t(&lw.attn_wq)).collect();
             let ks: Vec<Tensor> = normed.iter().map(|r| r.matmul_t(&lw.attn_wk)).collect();
@@ -246,7 +247,7 @@ impl Model {
         total.mul_scalar(1.0 / n)
     }
 
-    // ---- inference (autoregressive, no autograd) ----------------------------
+    // ---- INFERENCE (autoregressive, no autograd) ----------------------------
 
     pub fn generate(
         &self,
@@ -265,32 +266,28 @@ impl Model {
 
         let mut generated: Vec<u32> = vec![];
 
-        // Process prompt
+        // Process prompt — keep logits from last token
+        let mut logits = vec![];
         for (pos, &tok) in prompt_tokens.iter().enumerate() {
-            self.forward_infer(tok, pos, &mut k_cache, &mut v_cache, e, hd, cfg);
+            logits = self.forward_infer(tok, pos, &mut k_cache, &mut v_cache, e, hd, cfg);
         }
 
-        // Generate
-        for _ in 0..max_new_tokens {
-            let pos = prompt_tokens.len() + generated.len() - 1;
-            let last = if generated.is_empty() {
-                *prompt_tokens.last().unwrap()
-            } else {
-                *generated.last().unwrap()
-            };
+        // Generate — sample first token from last prompt logits, then continue
+        let mut next = sample_logits(&logits, temperature, rng);
+        generated.push(next);
 
-            let logits = self.forward_infer(last, pos, &mut k_cache, &mut v_cache, e, hd, cfg);
-            let next = sample_logits(&logits, temperature, rng);
-            generated.push(next);
-
+        for _ in 1..max_new_tokens {
             if next == crate::tokenizer::EOS_ID {
                 break;
             }
+            let pos = prompt_tokens.len() + generated.len() - 1;
+            logits = self.forward_infer(next, pos, &mut k_cache, &mut v_cache, e, hd, cfg);
+            next = sample_logits(&logits, temperature, rng);
+            generated.push(next);
         }
 
         generated
     }
-
     fn forward_infer(
         &self,
         token: u32,

@@ -47,12 +47,11 @@ pub struct Tokenizer {
     pub vocab: Vec<String>,
     // merge rules: (a, b) -> new_id, in priority order
     pub merges: Vec<(u32, u32, u32)>,
-    // encode: string -> id
-    str_to_id: HashMap<String, u32>,
+    // merge lookup: (a, b) -> (priority, new_id) for O(1) encode
+    merge_rank: HashMap<(u32, u32), (usize, u32)>,
 }
 
 impl Tokenizer {
-    /// Build a new tokenizer from a corpus string, targeting `vocab_size` tokens.
     pub fn train(corpus: &str, vocab_size: usize) -> Self {
         assert!(
             vocab_size > NUM_SPECIAL + 256,
@@ -60,7 +59,6 @@ impl Tokenizer {
             NUM_SPECIAL + 256
         );
 
-        // Initialize vocabulary with special tokens + 256 byte tokens
         let mut vocab: Vec<String> = Vec::with_capacity(vocab_size);
         vocab.push("<pad>".to_string());
         vocab.push("<bos>".to_string());
@@ -70,30 +68,18 @@ impl Tokenizer {
         vocab.push("<task>".to_string());
         vocab.push("</task>".to_string());
 
-        // Byte-level base vocab
         for b in 0u8..=255 {
             vocab.push(format!("b{}", b));
         }
 
-        let mut str_to_id: HashMap<String, u32> = vocab
-            .iter()
-            .enumerate()
-            .map(|(i, s)| (s.clone(), i as u32))
-            .collect();
-
-        // Tokenize corpus at byte level (skip special token sequences)
-        // We work with the actual text bytes, excluding lines that are metadata
         let mut words: Vec<Vec<u32>> = corpus
             .lines()
             .filter(|l| !l.trim().is_empty())
             .map(|line| {
-                // Encode line as byte ids (offset by NUM_SPECIAL)
                 let mut ids: Vec<u32> = line
                     .bytes()
                     .map(|b| NUM_SPECIAL as u32 + b as u32)
                     .collect();
-                // Add a space-separation token between words conceptually
-                // by treating each line as a separate word sequence
                 ids.push(NUM_SPECIAL as u32 + b' ' as u32); // space separator
                 ids
             })
@@ -103,7 +89,6 @@ impl Tokenizer {
         let num_merges = vocab_size - vocab.len();
 
         for merge_idx in 0..num_merges {
-            // Count all adjacent pairs
             let mut pair_counts: HashMap<(u32, u32), u64> = HashMap::new();
             for word in &words {
                 for pair in word.windows(2) {
@@ -115,7 +100,6 @@ impl Tokenizer {
                 break;
             }
 
-            // Find most frequent pair (tie-break by pair value for determinism)
             let best = pair_counts
                 .iter()
                 .max_by_key(|&(k, &v)| (v, std::cmp::Reverse(*k)))
@@ -124,11 +108,9 @@ impl Tokenizer {
 
             let new_id = vocab.len() as u32;
             let new_token = format!("{}{}", vocab[best.0 as usize], vocab[best.1 as usize]);
-            str_to_id.insert(new_token.clone(), new_id);
             vocab.push(new_token);
             merges.push((best.0, best.1, new_id));
 
-            // Apply merge to all words
             for word in words.iter_mut() {
                 let mut i = 0;
                 let mut new_word = Vec::with_capacity(word.len());
@@ -154,10 +136,16 @@ impl Tokenizer {
             }
         }
 
+        let merge_rank = merges
+            .iter()
+            .enumerate()
+            .map(|(i, &(a, b, new_id))| ((a, b), (i, new_id)))
+            .collect();
+
         Tokenizer {
             vocab,
             merges,
-            str_to_id,
+            merge_rank,
         }
     }
 
@@ -165,35 +153,94 @@ impl Tokenizer {
         self.vocab.len()
     }
 
-    /// Encode a raw text string into token ids (byte-level then apply merges)
     pub fn encode_raw(&self, text: &str) -> Vec<u32> {
-        // Start with byte-level encoding
+        use std::cmp::Reverse;
+        use std::collections::BinaryHeap;
+
         let mut ids: Vec<u32> = text
             .bytes()
             .map(|b| NUM_SPECIAL as u32 + b as u32)
             .collect();
 
-        // Apply merges in order
-        for &(a, b, new_id) in &self.merges {
-            let mut i = 0;
-            let mut new_ids = Vec::with_capacity(ids.len());
-            while i < ids.len() {
-                if i + 1 < ids.len() && ids[i] == a && ids[i + 1] == b {
-                    new_ids.push(new_id);
-                    i += 2;
-                } else {
-                    new_ids.push(ids[i]);
-                    i += 1;
-                }
-            }
-            ids = new_ids;
+        if ids.len() < 2 {
+            return ids;
         }
 
-        ids
+        let merge_rank = &self.merge_rank;
+
+        let n = ids.len();
+        let mut prev: Vec<usize> = (0..n)
+            .map(|i| if i == 0 { usize::MAX } else { i - 1 })
+            .collect();
+        let mut next: Vec<usize> = (0..n)
+            .map(|i| if i == n - 1 { usize::MAX } else { i + 1 })
+            .collect();
+
+        let mut heap: BinaryHeap<(Reverse<usize>, u32, u32, usize)> = BinaryHeap::new();
+
+        let push_pair = |heap: &mut BinaryHeap<(Reverse<usize>, u32, u32, usize)>,
+                         merge_rank: &HashMap<(u32, u32), (usize, u32)>,
+                         ids: &[u32],
+                         left: usize,
+                         right: usize| {
+            if right == usize::MAX {
+                return;
+            }
+            let pair = (ids[left], ids[right]);
+            if let Some(&(rank, _)) = merge_rank.get(&pair) {
+                heap.push((Reverse(rank), ids[left], ids[right], left));
+            }
+        };
+
+        for i in 0..n - 1 {
+            push_pair(&mut heap, &merge_rank, &ids, i, next[i]);
+        }
+
+        while let Some((Reverse(rank), expected_a, expected_b, left)) = heap.pop() {
+            let right = next[left];
+            if right == usize::MAX {
+                continue;
+            }
+
+            if ids[left] != expected_a || ids[right] != expected_b {
+                continue;
+            }
+            let pair = (ids[left], ids[right]);
+
+            if let Some(&(current_rank, new_id)) = merge_rank.get(&pair) {
+                if current_rank != rank {
+                    continue; // stale
+                }
+
+                ids[left] = new_id;
+
+                let right_next = next[right];
+                next[left] = right_next;
+
+                if right_next != usize::MAX {
+                    prev[right_next] = left;
+                }
+
+                push_pair(&mut heap, &merge_rank, &ids, left, next[left]);
+
+                if prev[left] != usize::MAX {
+                    push_pair(&mut heap, &merge_rank, &ids, prev[left], left);
+                }
+            }
+        }
+
+        let mut result = Vec::with_capacity(ids.len());
+        let mut cur = 0;
+        loop {
+            result.push(ids[cur]);
+            if next[cur] == usize::MAX {
+                break;
+            }
+            cur = next[cur];
+        }
+        result
     }
 
-    /// Encode a task string into the full training/inference format:
-    /// BOS <task> [task tokens] </task> <sub> [subtask1] </sub> ... EOS
     pub fn encode_training_example(&self, task: &str, subtasks: &[String]) -> Vec<u32> {
         let mut ids = vec![BOS_ID, OTASK_ID];
         ids.extend(self.encode_raw(task));
@@ -209,7 +256,6 @@ impl Tokenizer {
         ids
     }
 
-    /// Encode just the prompt prefix for inference (task input side only)
     pub fn encode_prompt(&self, task: &str) -> Vec<u32> {
         let mut ids = vec![BOS_ID, OTASK_ID];
         ids.extend(self.encode_raw(task));
@@ -219,50 +265,75 @@ impl Tokenizer {
         ids
     }
 
-    /// Decode a token id to its string representation
     pub fn decode_token(&self, id: u32) -> &str {
         &self.vocab[id as usize]
     }
 
-    /// Decode a sequence of ids back to a string, stripping byte encoding
     pub fn decode(&self, ids: &[u32]) -> String {
         let mut bytes: Vec<u8> = vec![];
         for &id in ids {
             let s = &self.vocab[id as usize];
-            // Byte tokens are stored as "b{N}" where N is 0..255
-            if let Some(rest) = s.strip_prefix('b') {
-                if let Ok(n) = rest.parse::<u8>() {
-                    bytes.push(n);
-                    continue;
-                }
-            }
-            // For merged tokens, decode by recursively expanding -- but since
-            // merged tokens store the concatenated string representation, we
-            // can just extract the bytes directly from the string content.
-            // The simplest correct approach: re-encode the string chars as bytes.
-            for b in s.bytes() {
-                bytes.push(b);
-            }
+            Self::decode_token_str(s, &mut bytes);
         }
         String::from_utf8_lossy(&bytes).to_string()
     }
 
-    /// Serialize to bytes for embedding/saving
+    fn decode_token_str(s: &str, out: &mut Vec<u8>) {
+        if s.starts_with('<') {
+            return;
+        }
+
+        let mut chars = s.char_indices().peekable();
+        let mut parsed_any = false;
+        let mut all_valid = true;
+
+        let mut tmp: Vec<u8> = vec![];
+
+        while let Some((i, ch)) = chars.next() {
+            if ch == 'b' {
+                let start = i + 1;
+                let mut end = start;
+                while let Some(&(j, c)) = chars.peek() {
+                    if c.is_ascii_digit() {
+                        end = j + 1;
+                        chars.next();
+                    } else {
+                        break;
+                    }
+                }
+                if end > start {
+                    let num_str = &s[start..end];
+                    if let Ok(n) = num_str.parse::<u8>() {
+                        tmp.push(n);
+                        parsed_any = true;
+                        continue;
+                    }
+                }
+                all_valid = false;
+                break;
+            } else {
+                all_valid = false;
+                break;
+            }
+        }
+
+        if parsed_any && all_valid {
+            out.extend_from_slice(&tmp);
+        }
+    }
+
     pub fn serialize(&self) -> Vec<u8> {
         let mut out = vec![];
 
-        // vocab size
         let vs = self.vocab.len() as u32;
         out.extend_from_slice(&vs.to_le_bytes());
 
-        // vocab entries: u16 length + bytes
         for s in &self.vocab {
             let b = s.as_bytes();
             out.extend_from_slice(&(b.len() as u16).to_le_bytes());
             out.extend_from_slice(b);
         }
 
-        // merges: count + (u32, u32, u32) triples
         let mc = self.merges.len() as u32;
         out.extend_from_slice(&mc.to_le_bytes());
         for &(a, b, c) in &self.merges {
@@ -274,7 +345,6 @@ impl Tokenizer {
         out
     }
 
-    /// Deserialize from bytes
     pub fn deserialize(data: &[u8]) -> Self {
         let mut pos = 0;
 
@@ -304,25 +374,23 @@ impl Tokenizer {
             merges.push((a, b, c));
         }
 
-        let str_to_id: HashMap<String, u32> = vocab
+        let merge_rank = merges
             .iter()
             .enumerate()
-            .map(|(i, s)| (s.clone(), i as u32))
+            .map(|(i, &(a, b, new_id))| ((a, b), (i, new_id)))
             .collect();
 
         Tokenizer {
             vocab,
             merges,
-            str_to_id,
+            merge_rank,
         }
     }
 
-    /// Save to file
     pub fn save(&self, path: &str) -> std::io::Result<()> {
         std::fs::write(path, self.serialize())
     }
 
-    /// Load from file
     pub fn load(path: &str) -> std::io::Result<Self> {
         let data = std::fs::read(path)?;
         Ok(Self::deserialize(&data))
@@ -385,7 +453,6 @@ pub fn parse_training_data(text: &str) -> Vec<Example> {
         }
     }
 
-    // flush last example
     flush(&current_domain, &current_task, &current_subs, &mut examples);
 
     examples

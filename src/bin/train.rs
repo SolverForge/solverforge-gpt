@@ -29,14 +29,10 @@ Data format (data/swe.txt):
   (blank line separates examples)
 */
 
-use microgpt::tensor::Adam;
-use microgpt::{parse_training_data, Config, Domain, Example, Model, Rng, Router, Tokenizer};
+use microgpt::tensor::{Adam, Tensor};
+use microgpt::{Config, Domain, Example, Model, Rng, Router, Tokenizer, parse_training_data};
 use std::io::Write;
 use std::time::Instant;
-
-// ---------------------------------------------------------------------------
-// Argument parsing (no external deps -- simple hand-rolled)
-// ---------------------------------------------------------------------------
 
 struct Args {
     domain: Domain,
@@ -119,7 +115,9 @@ fn parse_args() -> Args {
 }
 
 fn print_usage() {
-    eprintln!("Usage: train --domain <work|swe|creative> --data <path> [--out <dir>] [--steps N] [--vocab-size N] [--lr F]");
+    eprintln!(
+        "Usage: train --domain <work|swe|creative> --data <path> [--out <dir>] [--steps N] [--vocab-size N] [--lr F]"
+    );
 }
 
 // ---------------------------------------------------------------------------
@@ -137,10 +135,8 @@ fn main() {
     println!("Vocab size: {}", args.vocab_size);
     println!("LR:         {}", args.lr);
 
-    // Create output directory
     std::fs::create_dir_all(&args.out_dir).expect("Could not create output directory");
 
-    // Load and parse training data
     let raw = std::fs::read_to_string(&args.data_path).unwrap_or_else(|e| {
         eprintln!("Cannot read {}: {}", args.data_path, e);
         std::process::exit(1);
@@ -164,7 +160,7 @@ fn main() {
 
     let val_size = (examples.len() / 10).max(1).min(200);
     let val_indices: Vec<usize> = indices[..val_size].to_vec();
-    let train_indices: Vec<usize> = indices[val_size..].to_vec();
+    let mut train_indices: Vec<usize> = indices[val_size..].to_vec();
 
     println!("Train: {}  Val: {}", train_indices.len(), val_indices.len());
 
@@ -225,8 +221,7 @@ fn main() {
         train_step += 1;
         if train_step % train_indices.len() == 0 {
             // Reshuffle at epoch boundary
-            let mut ti = train_indices.clone();
-            rng.shuffle(&mut ti);
+            rng.shuffle(&mut train_indices);
         }
 
         let (tokens, mask) = &encoded[idx];
@@ -284,7 +279,6 @@ fn main() {
 
     println!("\n\nTraining complete. Best val loss: {:.4}", best_val_loss);
 
-    // Train and save domain router
     println!("\nUpdating domain router...");
     update_router(&args.out_dir, &examples, args.domain);
 }
@@ -322,6 +316,7 @@ fn evaluate(model: &Model, encoded: &[(Vec<u32>, Vec<bool>)], val_indices: &[usi
         }
         let loss = model.forward_train(tokens, mask);
         total += loss.item();
+        Tensor::clear_tape(); // Free the eval computation graph (no backward needed)
         count += 1;
     }
 
@@ -342,7 +337,7 @@ fn sample_and_print(model: &Model, tok: &Tokenizer, examples: &[Example], rng: &
         println!("  TASK: {}", example.task);
 
         // Parse subtasks from generated tokens
-        let mut in_sub = false;
+        let mut in_sub = true; // prompt ends with <sub>
         let mut current: Vec<u32> = vec![];
         let mut subtask_count = 0;
 

@@ -1,5 +1,5 @@
 /*!
-MicroGPT Task Decomposer
+solverforge-gpt - MicroGPT Task Decomposer
 
 A minimal, zero-dependency, CPU-trainable GPT that does one thing:
 takes a task description and returns required subtasks.
@@ -25,7 +25,7 @@ pub use model::Model;
 pub use rng::Rng;
 pub use router::Domain;
 pub use router::Router;
-pub use tokenizer::{parse_training_data, Example, Tokenizer};
+pub use tokenizer::{Example, Tokenizer, parse_training_data};
 
 use crate::model::Model as M;
 use crate::router::Router as R;
@@ -35,7 +35,6 @@ use crate::tokenizer::Tokenizer as Tok;
 // Simple non-static API: caller manages model instances
 // ---------------------------------------------------------------------------
 
-/// A loaded task decomposer for a single domain.
 pub struct Decomposer {
     pub domain: Domain,
     tokenizer: Tok,
@@ -72,7 +71,6 @@ impl Decomposer {
     }
 }
 
-/// A multi-domain task decomposer with automatic routing.
 pub struct MultiDecomposer {
     decomposers: Vec<Decomposer>,
     router: Option<R>,
@@ -142,7 +140,7 @@ fn parse_subtasks(tokens: &[u32], tok: &Tok) -> Result<Vec<String>, String> {
 
     let mut subtasks = vec![];
     let mut current: Vec<u32> = vec![];
-    let mut in_sub = false;
+    let mut in_sub = true; // prompt ends with <sub>, so first generated tokens are already inside a subtask
 
     for &t in tokens {
         if t == EOS_ID {

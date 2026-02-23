@@ -15,6 +15,12 @@ Zero external dependencies — pure Rust std only.
 use std::cell::RefCell;
 use std::rc::Rc;
 
+// Global tape: records every Tensor created, in creation order.
+// backward() drains this to walk the graph in reverse and break Rc cycles.
+thread_local! {
+    static TAPE: RefCell<Vec<Tensor>> = RefCell::new(Vec::new());
+}
+
 // ---------------------------------------------------------------------------
 // Core Tensor type
 // ---------------------------------------------------------------------------
@@ -31,16 +37,18 @@ struct TensorInner {
 pub struct Tensor(Rc<RefCell<TensorInner>>);
 
 impl Tensor {
-    // ---- constructors -------------------------------------------------------
+    // ---- CONSTRUCTORS -------------------------------------------------------
 
     pub fn new(data: Vec<f64>, shape: [usize; 2]) -> Self {
         assert_eq!(data.len(), shape[0] * shape[1], "data len != shape product");
-        Tensor(Rc::new(RefCell::new(TensorInner {
+        let t = Tensor(Rc::new(RefCell::new(TensorInner {
             grad: vec![0.0; data.len()],
             data,
             shape,
             backward: None,
-        })))
+        })));
+        TAPE.with(|tape| tape.borrow_mut().push(t.clone()));
+        t
     }
 
     pub fn zeros(shape: [usize; 2]) -> Self {
@@ -52,7 +60,7 @@ impl Tensor {
         Self::new(vec![v], [1, 1])
     }
 
-    // ---- accessors ----------------------------------------------------------
+    // ---- ACCESSORS ----------------------------------------------------------
 
     pub fn shape(&self) -> [usize; 2] {
         self.0.borrow().shape
@@ -105,58 +113,57 @@ impl Tensor {
         self.0.borrow_mut().backward = Some(Box::new(f));
     }
 
-    // ---- backward -----------------------------------------------------------
+    // ---- BACKWARD -----------------------------------------------------------
 
     /// Reverse-mode autodiff. Call on the scalar loss tensor.
+    ///
+    /// Drains the global tape, propagates gradients in reverse creation order,
+    /// then drops all backward closures to break `Rc` reference cycles so the
+    /// computation graph is freed.
     pub fn backward(&self) {
         assert_eq!(self.len(), 1, "backward() requires scalar tensor");
 
-        // Topological sort
-        let mut topo: Vec<Tensor> = vec![];
-        let mut visited: std::collections::HashSet<*const RefCell<TensorInner>> =
-            std::collections::HashSet::new();
-
-        // Simple approach: run backward closures in the order they were created.
-        // We do a DFS through the computation graph via a separate visitor list.
-        self.collect_topo(&mut topo, &mut visited);
+        // Drain the tape — every tensor created since the last backward/clear.
+        let tape = TAPE.with(|t| std::mem::take(&mut *t.borrow_mut()));
 
         // Seed the gradient of the loss
         self.0.borrow_mut().grad[0] = 1.0;
 
-        // Propagate in reverse topological order
-        for t in topo.iter().rev() {
-            let bwd = t.0.borrow().backward.as_ref().map(|_| ());
-            if bwd.is_some() {
-                // Extract and call without holding the borrow
+        // Propagate in reverse creation order (== valid reverse topological
+        // order because every op output is created after its inputs).
+        for t in tape.iter().rev() {
+            let has_bwd = t.0.borrow().backward.is_some();
+            if has_bwd {
                 let f = {
                     let inner = t.0.borrow();
-                    // Safety: we know backward is Some
                     inner.backward.as_ref().unwrap() as *const Box<dyn Fn()>
                 };
-                // SAFETY: The closure is owned by the Rc and lives as long as the
-                // Tensor. We borrow it only for the duration of this call.
+                // SAFETY: The closure is owned by the Rc and lives as long as
+                // the TensorInner. We borrow it only for the duration of this
+                // call and do not drop the Tensor until after.
                 unsafe { (*f)() };
             }
         }
-    }
 
-    fn collect_topo(
-        &self,
-        topo: &mut Vec<Tensor>,
-        visited: &mut std::collections::HashSet<*const RefCell<TensorInner>>,
-    ) {
-        let ptr = Rc::as_ptr(&self.0);
-        if visited.insert(ptr) {
-            // Closures capture input tensors; we can't enumerate them from outside.
-            // So we push self first (pre-order) and rely on the fact that
-            // closures will only accumulate gradients into already-visited tensors.
-            // The reversal at call site handles the ordering correctly because
-            // outputs are always pushed after inputs in op construction.
-            topo.push(self.clone());
+        // Break Rc cycles: every backward closure captures Rc<RefCell<TensorInner>>
+        // references (including to its own output tensor). Dropping the closures
+        // lets Rc reference counts reach zero so the graph is freed.
+        for t in tape.iter() {
+            t.0.borrow_mut().backward = None;
         }
     }
 
-    // ---- ops ----------------------------------------------------------------
+    /// Drain the tape and drop all backward closures without propagating
+    /// gradients. Use after forward-only passes (e.g. evaluation) to free
+    /// the computation graph.
+    pub fn clear_tape() {
+        let tape = TAPE.with(|t| std::mem::take(&mut *t.borrow_mut()));
+        for t in tape.iter() {
+            t.0.borrow_mut().backward = None;
+        }
+    }
+
+    // ---- OPS ----------------------------------------------------------------
 
     /// Matrix multiply: [M, K] x [K, N] -> [M, N]
     pub fn matmul(&self, other: &Tensor) -> Tensor {

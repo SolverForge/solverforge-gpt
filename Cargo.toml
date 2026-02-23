@@ -12,7 +12,11 @@ name = "train"
 path = "src/bin/train.rs"
 
 [[bin]]
-name = "microgpt-legacy"
-path = "src/main.rs"
+name = "build_router"
+path = "src/bin/build_router.rs"
+
+[[bin]]
+name = "infer"
+path = "src/bin/infer.rs"
 
 [dependencies]

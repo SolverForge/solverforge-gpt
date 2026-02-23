@@ -23,12 +23,10 @@ impl Rng {
         x
     }
 
-    /// Uniform [0, 1)
     pub fn uniform(&mut self) -> f64 {
         (self.next_u64() >> 11) as f64 / (1u64 << 53) as f64
     }
 
-    /// Standard normal via Box-Muller
     pub fn gauss(&mut self, mu: f64, sigma: f64) -> f64 {
         let u1 = self.uniform().max(1e-300);
         let u2 = self.uniform();
@@ -36,7 +34,6 @@ impl Rng {
         mu + sigma * z
     }
 
-    /// Fisher-Yates shuffle
     pub fn shuffle<T>(&mut self, v: &mut Vec<T>) {
         let n = v.len();
         for i in (1..n).rev() {
@@ -45,7 +42,6 @@ impl Rng {
         }
     }
 
-    /// Weighted categorical sample; returns index
     pub fn choices(&mut self, weights: &[f64]) -> usize {
         let total: f64 = weights.iter().sum();
         let mut r = self.uniform() * total;
