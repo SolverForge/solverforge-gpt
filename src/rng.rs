@@ -1,7 +1,5 @@
-/*!
-Random number generation — xorshift64 + Box-Muller.
-Zero external dependencies.
-*/
+/* Random number generation — xorshift64 + Box-Muller.
+Zero external dependencies. */
 
 pub struct Rng {
     state: u64,

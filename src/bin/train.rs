@@ -1,5 +1,4 @@
-/*!
-Training binary for domain-specific task decomposition models.
+/* Training binary for domain-specific task decomposition models.
 
 Usage:
   cargo run --bin train --release -- \
@@ -26,8 +25,7 @@ Data format (data/swe.txt):
   TASK: Set up CI/CD pipeline for a monorepo
   SUB: Choose CI platform and configure repository access
   ...
-  (blank line separates examples)
-*/
+  (blank line separates examples) */
 
 use microgpt::tensor::{Adam, Tensor};
 use microgpt::{Config, Domain, Example, Model, Rng, Router, Tokenizer, parse_training_data};
@@ -236,9 +234,17 @@ fn main() {
         // Backward
         loss.backward();
 
-        // Optimizer step with linear LR decay
-        let lr_scale = 1.0 - step as f64 / args.steps as f64;
-        let lr_scale = lr_scale.max(0.1); // don't decay below 10% of initial LR
+        // Gradient clipping
+        clip_grad_norm(&model.params(), 1.0);
+
+        // Optimizer step with warmup + cosine decay
+        let warmup_steps = 100;
+        let lr_scale = if step < warmup_steps {
+            (step + 1) as f64 / warmup_steps as f64
+        } else {
+            let progress = (step - warmup_steps) as f64 / (args.steps - warmup_steps).max(1) as f64;
+            0.1 + 0.9 * (1.0 + (progress * std::f64::consts::PI).cos()) / 2.0
+        };
         adam.step_params(&model.params(), lr_scale);
 
         // Print progress
@@ -281,6 +287,21 @@ fn main() {
 
     println!("\nUpdating domain router...");
     update_router(&args.out_dir, &examples, args.domain);
+}
+
+// ---------------------------------------------------------------------------
+// Gradient clipping
+// ---------------------------------------------------------------------------
+
+fn clip_grad_norm(params: &[Tensor], max_norm: f64) {
+    let total_sq: f64 = params.iter().map(|p| p.grad_norm_sq()).sum();
+    let norm = total_sq.sqrt();
+    if norm > max_norm {
+        let scale = max_norm / norm;
+        for p in params {
+            p.scale_grad(scale);
+        }
+    }
 }
 
 // ---------------------------------------------------------------------------

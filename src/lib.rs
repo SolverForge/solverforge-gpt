@@ -1,5 +1,4 @@
-/*!
-solverforge-gpt - MicroGPT Task Decomposer
+/* solverforge-gpt - MicroGPT Task Decomposer
 
 A minimal, zero-dependency, CPU-trainable GPT that does one thing:
 takes a task description and returns required subtasks.
@@ -11,8 +10,7 @@ Public API:
 Models are trained per-domain (work, software, creative) and loaded lazily.
 The domain router automatically selects the best model if not specified.
 
-@karpathy (original Python GPT), extended to task decomposition in Rust.
-*/
+@karpathy (original Python GPT), extended to task decomposition in Rust. */
 
 pub mod model;
 pub mod rng;

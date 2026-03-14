@@ -1,5 +1,4 @@
-/*!
-Build the domain router from all three training data files.
+/* Build the domain router from all three training data files.
 
 This must be run after training all three domain models, so the router
 knows about all domains. Running training in parallel means each training
@@ -16,8 +15,7 @@ Or with custom file names:
     --swe  data/swe.txt \
     --work data/work.txt \
     --creative data/creative.txt \
-    --out weights/
-*/
+    --out weights/ */
 
 use microgpt::{Domain, Router, parse_training_data};
 

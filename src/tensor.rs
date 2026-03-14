@@ -1,5 +1,4 @@
-/*!
-Tensor autograd engine.
+/* Tensor autograd engine.
 
 Replaces the scalar Value engine with matrix-level operations so that
 training is tractable. Every Tensor owns its data and gradient as flat
@@ -9,8 +8,7 @@ All ops that participate in the computation graph return a new Tensor
 and record the backward closure needed to propagate gradients. Backward
 is triggered by calling `.backward()` on the loss scalar (a 1×1 Tensor).
 
-Zero external dependencies — pure Rust std only.
-*/
+Zero external dependencies — pure Rust std only. */
 
 use std::cell::RefCell;
 use std::rc::Rc;
@@ -508,6 +506,70 @@ impl Tensor {
         });
 
         out
+    }
+
+    /// Transpose: [M, N] -> [N, M]
+    pub fn transpose(&self) -> Tensor {
+        let (m, n) = (self.rows(), self.cols());
+        let data = self.data();
+        let mut out_data = vec![0.0; m * n];
+        for i in 0..m {
+            for j in 0..n {
+                out_data[j * m + i] = data[i * n + j];
+            }
+        }
+        let out = Tensor::new(out_data, [n, m]);
+        let a = self.clone();
+        let out_c = out.clone();
+        out.set_backward(move || {
+            let og = out_c.0.borrow().grad.clone();
+            let mut da = vec![0.0; m * n];
+            for i in 0..n {
+                for j in 0..m {
+                    da[j * n + i] += og[i * m + j];
+                }
+            }
+            a.add_grad_vec(&da);
+        });
+        out
+    }
+
+    /// Horizontal concatenation: takes [1, d_i] tensors -> [1, sum(d_i)]
+    pub fn hcat(tensors: &[Tensor]) -> Tensor {
+        if tensors.is_empty() {
+            panic!("hcat: empty slice");
+        }
+        assert!(tensors.iter().all(|t| t.rows() == 1), "hcat: all tensors must have 1 row");
+        let total_cols: usize = tensors.iter().map(|t| t.cols()).sum();
+        let data: Vec<f64> = tensors.iter().flat_map(|t| t.data()).collect();
+        let out = Tensor::new(data, [1, total_cols]);
+
+        let ts: Vec<Tensor> = tensors.to_vec();
+        let out_c = out.clone();
+        out.set_backward(move || {
+            let og = out_c.0.borrow().grad.clone();
+            let mut offset = 0;
+            for t in &ts {
+                let nc = t.cols();
+                let slice = og[offset..offset + nc].to_vec();
+                t.add_grad_vec(&slice);
+                offset += nc;
+            }
+        });
+
+        out
+    }
+
+    /// Scale all gradients by a scalar (for gradient clipping)
+    pub fn scale_grad(&self, s: f64) {
+        let mut inner = self.0.borrow_mut();
+        inner.grad.iter_mut().for_each(|g| *g *= s);
+    }
+
+    /// Sum of squared gradients (for gradient clipping)
+    pub fn grad_norm_sq(&self) -> f64 {
+        let inner = self.0.borrow();
+        inner.grad.iter().map(|g| g * g).sum()
     }
 
     /// Slice rows [start, end)

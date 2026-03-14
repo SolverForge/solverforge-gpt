@@ -7,6 +7,6 @@ cargo run --bin train --release -- \
   --data data/creative.txt \
   --out weights \
   --steps "${STEPS:-30000}" \
-  --vocab-size "${VOCAB_SIZE:-400}" \
+  --vocab-size "${VOCAB_SIZE:-1000}" \
   --lr "${LR:-5e-4}" \
   --eval-every "${EVAL_EVERY:-500}"

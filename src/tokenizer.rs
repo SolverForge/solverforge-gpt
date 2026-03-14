@@ -1,5 +1,4 @@
-/*!
-Byte-Pair Encoding (BPE) tokenizer.
+/* Byte-Pair Encoding (BPE) tokenizer.
 
 Trained on a corpus in a single pass using the standard BPE algorithm:
 1. Start with byte-level vocabulary (256 tokens)
@@ -19,8 +18,7 @@ Special tokens:
   <task> = 5
   </task> = 6
 
-Zero external dependencies — pure Rust std only.
-*/
+Zero external dependencies — pure Rust std only. */
 
 use std::collections::HashMap;
 

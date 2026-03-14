@@ -15,9 +15,10 @@ The entire stack -- autograd, transformer, BPE tokenizer, Adam optimizer, RNG, b
 Each domain model is a decoder-only transformer (~1.5M parameters, ~4.3 MB on disk):
 
 - 4 layers, 4 attention heads, 128-dimensional embeddings
-- RMSNorm (pre-norm), GELU MLP, residual connections
+- RMSNorm (pre-norm), ReLU MLP, residual connections
 - Block size of 512 tokens
 - KV cache for efficient autoregressive inference
+- Gradient clipping (max norm 1.0) and warmup + cosine LR decay
 - Custom BPE tokenizer per domain (~1000 merges)
 
 The domain router uses TF-IDF cosine similarity to classify incoming tasks.
@@ -130,7 +131,7 @@ let subtasks = md.split_in_domain("Write a sonnet about rain", Domain::Creative)
 src/
   lib.rs          Public API (Decomposer, MultiDecomposer)
   model.rs        Transformer model (training + inference with KV cache)
-  tensor.rs       Autograd engine (reverse-mode autodiff, Adam optimizer)
+  tensor.rs       Autograd engine (reverse-mode autodiff, Adam optimizer, gradient clipping)
   tokenizer.rs    BPE tokenizer (training + encode/decode)
   router.rs       TF-IDF domain classifier
   rng.rs          xorshift64 PRNG with Box-Muller sampling

@@ -1,5 +1,4 @@
-/*!
-Inference CLI for the solverforge-gpt MicroGPT Task Decomposer.
+/* Inference CLI for the solverforge-gpt MicroGPT Task Decomposer.
 
 Loads all trained domain models and either auto-routes the task to the
 best domain, or uses the domain you specify.
@@ -15,8 +14,7 @@ Usage:
   echo "Plan a team offsite" | cargo run --bin infer --release -- --weights weights/
 
   # Interactive mode (prompts for input)
-  cargo run --bin infer --release -- --weights weights/ --interactive
-*/
+  cargo run --bin infer --release -- --weights weights/ --interactive */
 
 use microgpt::{Domain, MultiDecomposer};
 use std::io::{self, BufRead, Write};

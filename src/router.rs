@@ -1,5 +1,4 @@
-/*!
-TF-IDF domain classifier.
+/* TF-IDF domain classifier.
 
 Given a task string, returns the most likely Domain. This is a simple
 bag-of-words cosine similarity classifier -- no neural network, no autograd.
@@ -8,8 +7,7 @@ Each domain has a TF-IDF weight vector over a shared vocabulary.
 The classifier is trained from the same data as the generative models.
 Training output is a small binary file (~50-100KB) that ships with the app.
 
-Zero external dependencies — pure Rust std only.
-*/
+Zero external dependencies — pure Rust std only. */
 
 use std::collections::HashMap;
 

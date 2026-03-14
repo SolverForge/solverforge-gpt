@@ -1,5 +1,4 @@
-/*!
-GPT-style transformer model using the tensor autograd engine.
+/* GPT-style transformer model using the tensor autograd engine.
 
 Architecture:
   - Decoder-only transformer
@@ -12,8 +11,7 @@ Hyperparameters for task-decomposition models:
   n_layer = 4, n_embd = 128, n_head = 4, block_size = 256
   ~1.5M parameters per domain model.
 
-Zero external dependencies — pure Rust std only.
-*/
+Zero external dependencies — pure Rust std only. */
 
 use crate::rng::Rng;
 use crate::tensor::Tensor;
@@ -153,7 +151,7 @@ impl Model {
         for li in 0..cfg.n_layer {
             let lw = &self.layers[li];
 
-            // Norm + Q/K/V projections for all position
+            // Norm + Q/K/V projections for all positions
             let normed: Vec<Tensor> = x.iter().map(|r| r.rmsnorm()).collect();
 
             // W is [n_embd, n_embd], x is [1, n_embd], output [1, n_embd]
@@ -165,6 +163,17 @@ impl Model {
             let scale = (head_dim as f64).sqrt();
 
             // Causal self-attention for each position
+            let mut k_per_head: Vec<Tensor> = Vec::with_capacity(cfg.n_head);
+            let mut v_per_head: Vec<Tensor> = Vec::with_capacity(cfg.n_head);
+            for h in 0..cfg.n_head {
+                let hs = h * head_dim;
+                let he = hs + head_dim;
+                let k_slices: Vec<Tensor> = ks.iter().map(|k| k.slice_cols(hs, he)).collect();
+                let v_slices: Vec<Tensor> = vs.iter().map(|v| v.slice_cols(hs, he)).collect();
+                k_per_head.push(Tensor::vcat(&k_slices)); // [t, head_dim]
+                v_per_head.push(Tensor::vcat(&v_slices)); // [t, head_dim]
+            }
+
             let mut attn_outs: Vec<Tensor> = Vec::with_capacity(t);
             for pos in 0..t {
                 let seq = pos + 1;
@@ -175,35 +184,16 @@ impl Model {
                     let he = hs + head_dim;
 
                     let q_h = qs[pos].slice_cols(hs, he); // [1, head_dim]
+                    let k_causal = k_per_head[h].slice_rows(0, seq);
+                    let v_causal = v_per_head[h].slice_rows(0, seq);
 
-                    // Attention scores: dot q with each past k
-                    let mut score_data = vec![0.0f64; seq];
-                    let q_data = q_h.data();
-                    for t2 in 0..seq {
-                        let k_data = ks[t2].data();
-                        let mut s = 0.0;
-                        for j in 0..head_dim {
-                            s += q_data[j] * k_data[hs + j];
-                        }
-                        score_data[t2] = s / scale;
-                    }
-                    let scores = Tensor::new(score_data, [1, seq]).softmax();
-                    let sw = scores.data();
-
-                    // Weighted sum of values
-                    let mut val_data = vec![0.0f64; head_dim];
-                    for t2 in 0..seq {
-                        let v_data = vs[t2].data();
-                        for j in 0..head_dim {
-                            val_data[j] += sw[t2] * v_data[hs + j];
-                        }
-                    }
-                    heads.push(Tensor::new(val_data, [1, head_dim]));
+                    let scores = q_h.matmul(&k_causal.transpose()).mul_scalar(1.0 / scale).softmax();
+                    let head_out = scores.matmul(&v_causal);
+                    heads.push(head_out);
                 }
 
                 // Concatenate heads [1, e]
-                let concat_data: Vec<f64> = heads.iter().flat_map(|h| h.data()).collect();
-                attn_outs.push(Tensor::new(concat_data, [1, e]));
+                attn_outs.push(Tensor::hcat(&heads));
             }
 
             // Output projection + residual
