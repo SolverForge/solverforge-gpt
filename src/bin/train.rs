@@ -286,7 +286,7 @@ fn main() {
     println!("\n\nTraining complete. Best val loss: {:.4}", best_val_loss);
 
     println!("\nUpdating domain router...");
-    update_router(&args.out_dir, &examples, args.domain);
+    update_router(&args.out_dir, &args.data_path);
 }
 
 // ---------------------------------------------------------------------------
@@ -393,12 +393,36 @@ fn sample_and_print(model: &Model, tok: &Tokenizer, examples: &[Example], rng: &
     println!("  ---");
 }
 
-fn update_router(out_dir: &str, examples: &[Example], domain: Domain) {
-    // Collect all available domain data
-    let training_pairs: Vec<(String, Domain)> =
-        examples.iter().map(|e| (e.task.clone(), domain)).collect();
+fn update_router(out_dir: &str, data_path: &str) {
+    let data_dir = std::path::Path::new(data_path)
+        .parent()
+        .unwrap_or_else(|| std::path::Path::new("data"));
 
-    // If router already exists, we'd ideally merge -- for now just rebuild from current data
+    let domain_files = [
+        ("swe.txt", Domain::Software),
+        ("work.txt", Domain::Work),
+        ("creative.txt", Domain::Creative),
+    ];
+
+    let mut training_pairs: Vec<(String, Domain)> = vec![];
+    for (file_name, domain) in domain_files {
+        let path = data_dir.join(file_name);
+        let Ok(raw) = std::fs::read_to_string(&path) else {
+            continue;
+        };
+        for example in parse_training_data(&raw) {
+            training_pairs.push((example.task, domain));
+        }
+    }
+
+    if training_pairs.is_empty() {
+        println!(
+            "  Skipped router rebuild: no sibling domain datasets found near {}",
+            data_path
+        );
+        return;
+    }
+
     let router = Router::train(&training_pairs);
     let router_path = format!("{}/router.bin", out_dir);
     router.save(&router_path).expect("Could not save router");

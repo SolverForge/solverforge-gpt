@@ -25,6 +25,8 @@ struct Args {
     domain: Option<Domain>,
     interactive: bool,
     show_domain: bool,
+    max_new_tokens: usize,
+    temperature: f64,
 }
 
 fn parse_args() -> Args {
@@ -34,6 +36,8 @@ fn parse_args() -> Args {
     let mut domain = None;
     let mut interactive = false;
     let mut show_domain = true;
+    let mut max_new_tokens = 128usize;
+    let mut temperature = 0.2f64;
 
     let mut i = 0;
     while i < args.len() {
@@ -55,6 +59,14 @@ fn parse_args() -> Args {
             }
             "--interactive" | "-i" => {
                 interactive = true;
+            }
+            "--max-new-tokens" => {
+                i += 1;
+                max_new_tokens = args[i].parse().expect("--max-new-tokens must be int");
+            }
+            "--temperature" => {
+                i += 1;
+                temperature = args[i].parse().expect("--temperature must be float");
             }
             "--no-domain-info" => {
                 show_domain = false;
@@ -78,22 +90,33 @@ fn parse_args() -> Args {
         domain,
         interactive,
         show_domain,
+        max_new_tokens,
+        temperature,
     }
 }
 
 fn print_help() {
     eprintln!(
-        "Usage: infer [--weights <dir>] [--task <text>] [--domain <work|swe|creative>] [--interactive]"
+        "Usage: infer [--weights <dir>] [--task <text>] [--domain <work|swe|creative>] [--interactive] [--max-new-tokens N] [--temperature F]"
     );
     eprintln!();
     eprintln!("  --weights / -w     Directory with trained weights (default: weights/)");
     eprintln!("  --task    / -t     Task description (or pipe via stdin)");
     eprintln!("  --domain  / -d     Force domain instead of auto-detecting");
     eprintln!("  --interactive / -i Prompt for tasks repeatedly until Ctrl+D");
+    eprintln!("  --max-new-tokens   Maximum tokens to generate (default: 128)");
+    eprintln!("  --temperature      Sampling temperature; use 0 for greedy decode (default: 0.2)");
     eprintln!("  --no-domain-info   Suppress domain routing info in output");
 }
 
-fn run_task(md: &MultiDecomposer, task: &str, forced_domain: Option<Domain>, show_domain: bool) {
+fn run_task(
+    md: &MultiDecomposer,
+    task: &str,
+    forced_domain: Option<Domain>,
+    show_domain: bool,
+    max_new_tokens: usize,
+    temperature: f64,
+) {
     let detected = match forced_domain {
         Some(d) => d,
         None => md.detect_domain(task),
@@ -104,9 +127,9 @@ fn run_task(md: &MultiDecomposer, task: &str, forced_domain: Option<Domain>, sho
     }
 
     let result = if forced_domain.is_some() {
-        md.split_in_domain(task, detected)
+        md.split_in_domain_with_options(task, detected, max_new_tokens, temperature)
     } else {
-        md.split(task)
+        md.split_with_options(task, max_new_tokens, temperature)
     };
 
     match result {
@@ -151,7 +174,14 @@ fn main() {
                     if task.is_empty() {
                         continue;
                     }
-                    run_task(&md, task, args.domain, args.show_domain);
+                    run_task(
+                        &md,
+                        task,
+                        args.domain,
+                        args.show_domain,
+                        args.max_new_tokens,
+                        args.temperature,
+                    );
                     println!();
                 }
                 Err(e) => {
@@ -162,7 +192,14 @@ fn main() {
         }
     } else if let Some(ref task) = args.task {
         // Single task from --task flag
-        run_task(&md, task, args.domain, args.show_domain);
+        run_task(
+            &md,
+            task,
+            args.domain,
+            args.show_domain,
+            args.max_new_tokens,
+            args.temperature,
+        );
     } else {
         // Read from stdin (pipe or single line)
         let stdin = io::stdin();
@@ -173,7 +210,14 @@ fn main() {
             if task.is_empty() {
                 continue;
             }
-            run_task(&md, &task, args.domain, args.show_domain);
+            run_task(
+                &md,
+                &task,
+                args.domain,
+                args.show_domain,
+                args.max_new_tokens,
+                args.temperature,
+            );
             any = true;
         }
         if !any {

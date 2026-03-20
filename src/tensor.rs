@@ -539,7 +539,10 @@ impl Tensor {
         if tensors.is_empty() {
             panic!("hcat: empty slice");
         }
-        assert!(tensors.iter().all(|t| t.rows() == 1), "hcat: all tensors must have 1 row");
+        assert!(
+            tensors.iter().all(|t| t.rows() == 1),
+            "hcat: all tensors must have 1 row"
+        );
         let total_cols: usize = tensors.iter().map(|t| t.cols()).sum();
         let data: Vec<f64> = tensors.iter().flat_map(|t| t.data()).collect();
         let out = Tensor::new(data, [1, total_cols]);

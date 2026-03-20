@@ -404,7 +404,6 @@ impl Tokenizer {
 pub struct Example {
     pub task: String,
     pub subtasks: Vec<String>,
-    pub domain: String,
 }
 
 /// Parse training data file. Each example is:
@@ -421,13 +420,12 @@ pub fn parse_training_data(text: &str) -> Vec<Example> {
     let mut current_subs: Vec<String> = vec![];
 
     let flush =
-        |domain: &str, task: &Option<String>, subs: &Vec<String>, out: &mut Vec<Example>| {
+        |_domain: &str, task: &Option<String>, subs: &Vec<String>, out: &mut Vec<Example>| {
             if let Some(t) = task {
                 if !subs.is_empty() {
                     out.push(Example {
                         task: t.clone(),
                         subtasks: subs.clone(),
-                        domain: domain.to_string(),
                     });
                 }
             }

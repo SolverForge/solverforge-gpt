@@ -136,14 +136,13 @@ impl Model {
         assert_eq!(label_mask.len(), t - 1);
 
         let cfg = &self.cfg;
-        let e = cfg.n_embd;
 
         // Embed each position: [1, e]
         let mut x: Vec<Tensor> = (0..t)
             .map(|pos| {
                 let tok = self.wte.row(tokens[pos] as usize);
                 let pe = self.wpe.row(pos.min(cfg.block_size - 1));
-                tok.tensor_add(&pe)
+                tok.add(&pe)
             })
             .collect();
 
@@ -187,7 +186,10 @@ impl Model {
                     let k_causal = k_per_head[h].slice_rows(0, seq);
                     let v_causal = v_per_head[h].slice_rows(0, seq);
 
-                    let scores = q_h.matmul(&k_causal.transpose()).mul_scalar(1.0 / scale).softmax();
+                    let scores = q_h
+                        .matmul(&k_causal.transpose())
+                        .mul_scalar(1.0 / scale)
+                        .softmax();
                     let head_out = scores.matmul(&v_causal);
                     heads.push(head_out);
                 }
@@ -200,14 +202,14 @@ impl Model {
             let mut new_x: Vec<Tensor> = Vec::with_capacity(t);
             for pos in 0..t {
                 let proj = attn_outs[pos].matmul_t(&lw.attn_wo);
-                let after_attn = proj.tensor_add(&x[pos]);
+                let after_attn = proj.add(&x[pos]);
 
                 // MLP
                 let normed2 = after_attn.rmsnorm();
                 let fc1 = normed2.matmul_t(&lw.mlp_fc1);
                 let act = fc1.relu();
                 let fc2 = act.matmul_t(&lw.mlp_fc2);
-                let after_mlp = fc2.tensor_add(&after_attn);
+                let after_mlp = fc2.add(&after_attn);
                 new_x.push(after_mlp);
             }
             x = new_x;
@@ -233,7 +235,7 @@ impl Model {
         let total = losses
             .iter()
             .skip(1)
-            .fold(losses[0].clone(), |a, b| a.tensor_add(&b));
+            .fold(losses[0].clone(), |a, b| a.add(&b));
         total.mul_scalar(1.0 / n)
     }
 
@@ -456,11 +458,6 @@ impl Tensor {
         out
     }
 
-    /// Element-wise add (non-consuming, for use in training loops)
-    pub fn tensor_add(&self, other: &Tensor) -> Tensor {
-        self.add(other)
-    }
-
     /// Get a single row as raw f64 Vec (no grad, for inference)
     pub fn row_data(&self, idx: usize) -> Vec<f64> {
         let n = self.cols();
@@ -525,10 +522,17 @@ fn softmax_inplace(x: &mut Vec<f64>) {
 }
 
 fn sample_logits(logits: &[f64], temperature: f64, rng: &mut Rng) -> u32 {
-    let mut probs = logits.to_vec();
-    if temperature > 0.0 {
-        probs.iter_mut().for_each(|v| *v /= temperature);
+    if temperature <= 0.0 {
+        return logits
+            .iter()
+            .enumerate()
+            .max_by(|a, b| a.1.partial_cmp(b.1).unwrap())
+            .map(|(idx, _)| idx as u32)
+            .unwrap_or(0);
     }
+
+    let mut probs = logits.to_vec();
+    probs.iter_mut().for_each(|v| *v /= temperature);
     softmax_inplace(&mut probs);
     rng.choices(&probs) as u32
 }
