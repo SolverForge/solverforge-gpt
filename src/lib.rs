@@ -195,16 +195,48 @@ fn parse_subtasks(tokens: &[u32], tok: &Tok) -> Result<Vec<String>, String> {
         }
     }
 
-    if in_sub && !current.is_empty() {
-        let text = tok.decode(&current).trim().to_string();
-        if !text.is_empty() {
-            subtasks.push(text);
-        }
-    }
-
     if subtasks.is_empty() {
         return Err("Model generated no subtasks".to_string());
     }
 
     Ok(subtasks)
+}
+
+#[cfg(test)]
+mod tests {
+    use super::parse_subtasks;
+    use crate::tokenizer::{CSUB_ID, EOS_ID, OSUB_ID, Tokenizer};
+
+    fn test_tokenizer() -> Tokenizer {
+        Tokenizer::train("first task\nsecond task\nsubtask text", 264)
+    }
+
+    #[test]
+    fn parse_subtasks_returns_closed_items() {
+        let tok = test_tokenizer();
+        let mut tokens = Vec::new();
+        tokens.extend(tok.encode_raw("first item"));
+        tokens.push(CSUB_ID);
+        tokens.push(OSUB_ID);
+        tokens.extend(tok.encode_raw("second item"));
+        tokens.push(CSUB_ID);
+        tokens.push(EOS_ID);
+
+        let subtasks = parse_subtasks(&tokens, &tok).unwrap();
+        assert_eq!(subtasks, vec!["first item", "second item"]);
+    }
+
+    #[test]
+    fn parse_subtasks_drops_truncated_trailing_item() {
+        let tok = test_tokenizer();
+        let mut tokens = Vec::new();
+        tokens.extend(tok.encode_raw("complete item"));
+        tokens.push(CSUB_ID);
+        tokens.push(OSUB_ID);
+        tokens.extend(tok.encode_raw("unfinished item"));
+        tokens.push(EOS_ID);
+
+        let subtasks = parse_subtasks(&tokens, &tok).unwrap();
+        assert_eq!(subtasks, vec!["complete item"]);
+    }
 }

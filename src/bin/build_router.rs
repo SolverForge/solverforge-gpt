@@ -18,7 +18,6 @@ Or with custom file names:
     --out weights/ */
 
 use microgpt::{Domain, Router, parse_training_data};
-
 struct Args {
     swe_path: String,
     work_path: String,

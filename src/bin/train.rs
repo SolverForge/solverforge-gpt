@@ -30,6 +30,8 @@ Data format (data/swe.txt):
 use microgpt::tensor::{Adam, Tensor};
 use microgpt::{Config, Domain, Example, Model, Rng, Router, Tokenizer, parse_training_data};
 use std::io::Write;
+use std::path::{Path, PathBuf};
+use std::str::FromStr;
 use std::time::Instant;
 
 struct Args {
@@ -57,7 +59,7 @@ fn parse_args() -> Args {
         match args[i].as_str() {
             "--domain" => {
                 i += 1;
-                domain = Domain::from_str(&args[i]).unwrap_or_else(|| {
+                domain = Domain::from_str(&args[i]).unwrap_or_else(|_| {
                     eprintln!("Unknown domain '{}'. Valid: work, swe, creative", args[i]);
                     std::process::exit(1);
                 });
@@ -124,6 +126,14 @@ fn print_usage() {
 
 fn main() {
     let args = parse_args();
+    let router_sources = resolve_router_sources(&args.data_path, args.domain).unwrap_or_else(|e| {
+        eprintln!("Router preflight failed: {}", e);
+        eprintln!(
+            "Provide the missing sibling datasets or rebuild later with: cargo run --bin build_router -- --swe <path> --work <path> --creative <path> --out {}",
+            args.out_dir
+        );
+        std::process::exit(1);
+    });
 
     println!("=== MicroGPT Task Decomposer — Training ===");
     println!("Domain:     {:?}", args.domain);
@@ -156,7 +166,7 @@ fn main() {
     let mut indices: Vec<usize> = (0..examples.len()).collect();
     rng.shuffle(&mut indices);
 
-    let val_size = (examples.len() / 10).max(1).min(200);
+    let val_size = (examples.len() / 10).clamp(1, 200);
     let val_indices: Vec<usize> = indices[..val_size].to_vec();
     let mut train_indices: Vec<usize> = indices[val_size..].to_vec();
 
@@ -217,7 +227,7 @@ fn main() {
         // Pick a training example
         let idx = train_indices[train_step % train_indices.len()];
         train_step += 1;
-        if train_step % train_indices.len() == 0 {
+        if train_step.is_multiple_of(train_indices.len()) {
             // Reshuffle at epoch boundary
             rng.shuffle(&mut train_indices);
         }
@@ -286,7 +296,7 @@ fn main() {
     println!("\n\nTraining complete. Best val loss: {:.4}", best_val_loss);
 
     println!("\nUpdating domain router...");
-    update_router(&args.out_dir, &args.data_path);
+    update_router(&args.out_dir, &router_sources);
 }
 
 // ---------------------------------------------------------------------------
@@ -393,38 +403,139 @@ fn sample_and_print(model: &Model, tok: &Tokenizer, examples: &[Example], rng: &
     println!("  ---");
 }
 
-fn update_router(out_dir: &str, data_path: &str) {
-    let data_dir = std::path::Path::new(data_path)
-        .parent()
-        .unwrap_or_else(|| std::path::Path::new("data"));
-
-    let domain_files = [
-        ("swe.txt", Domain::Software),
-        ("work.txt", Domain::Work),
-        ("creative.txt", Domain::Creative),
-    ];
-
-    let mut training_pairs: Vec<(String, Domain)> = vec![];
-    for (file_name, domain) in domain_files {
-        let path = data_dir.join(file_name);
-        let Ok(raw) = std::fs::read_to_string(&path) else {
-            continue;
-        };
-        for example in parse_training_data(&raw) {
-            training_pairs.push((example.task, domain));
-        }
-    }
-
-    if training_pairs.is_empty() {
-        println!(
-            "  Skipped router rebuild: no sibling domain datasets found near {}",
-            data_path
-        );
-        return;
-    }
-
+fn update_router(out_dir: &str, router_sources: &[(Domain, PathBuf)]) {
+    let training_pairs = load_router_training_pairs(router_sources)
+        .expect("router sources were preflight-validated before training");
     let router = Router::train(&training_pairs);
     let router_path = format!("{}/router.bin", out_dir);
     router.save(&router_path).expect("Could not save router");
     println!("  Saved router: {}", router_path);
+}
+
+fn resolve_router_sources(
+    data_path: &str,
+    current_domain: Domain,
+) -> Result<Vec<(Domain, PathBuf)>, String> {
+    let current_path = PathBuf::from(data_path);
+    let data_dir = current_path.parent().unwrap_or_else(|| Path::new("."));
+    let mut sources = Vec::with_capacity(Domain::all().len());
+
+    for &domain in Domain::all() {
+        let path = if domain == current_domain {
+            current_path.clone()
+        } else {
+            data_dir.join(format!("{}.txt", domain.name()))
+        };
+        sources.push((domain, path));
+    }
+
+    validate_router_sources(&sources)?;
+    Ok(sources)
+}
+
+fn validate_router_sources(router_sources: &[(Domain, PathBuf)]) -> Result<(), String> {
+    load_router_training_pairs(router_sources).map(|_| ())
+}
+
+fn load_router_training_pairs(
+    router_sources: &[(Domain, PathBuf)],
+) -> Result<Vec<(String, Domain)>, String> {
+    let mut training_pairs = Vec::new();
+
+    for &(domain, ref path) in router_sources {
+        let raw = std::fs::read_to_string(path).map_err(|e| {
+            format!(
+                "missing {} dataset at {}: {}",
+                domain.name(),
+                path.display(),
+                e
+            )
+        })?;
+        let examples = parse_training_data(&raw);
+        if examples.is_empty() {
+            return Err(format!(
+                "{} dataset at {} contained no examples",
+                domain.name(),
+                path.display()
+            ));
+        }
+        training_pairs.extend(examples.into_iter().map(|example| (example.task, domain)));
+    }
+
+    Ok(training_pairs)
+}
+
+#[cfg(test)]
+mod tests {
+    use super::{load_router_training_pairs, resolve_router_sources};
+    use microgpt::Domain;
+    use std::fs;
+    use std::path::{Path, PathBuf};
+    use std::time::{SystemTime, UNIX_EPOCH};
+
+    fn temp_dir(name: &str) -> PathBuf {
+        let unique = SystemTime::now()
+            .duration_since(UNIX_EPOCH)
+            .unwrap()
+            .as_nanos();
+        let dir = std::env::temp_dir().join(format!("solverforge-{name}-{unique}"));
+        fs::create_dir_all(&dir).unwrap();
+        dir
+    }
+
+    fn write_dataset(dir: &Path, name: &str, task: &str) -> PathBuf {
+        let path = dir.join(name);
+        fs::write(
+            &path,
+            format!("DOMAIN: test\nTASK: {task}\nSUB: first step\n"),
+        )
+        .unwrap();
+        path
+    }
+
+    #[test]
+    fn resolve_router_sources_uses_exact_current_data_file() {
+        let dir = temp_dir("router-sources");
+        let current = write_dataset(&dir, "my_swe_corpus.txt", "custom swe task");
+        write_dataset(&dir, "work.txt", "work task");
+        write_dataset(&dir, "creative.txt", "creative task");
+
+        let sources = resolve_router_sources(current.to_str().unwrap(), Domain::Software).unwrap();
+
+        let swe_path = sources
+            .iter()
+            .find(|(domain, _)| *domain == Domain::Software)
+            .unwrap()
+            .1
+            .clone();
+        assert_eq!(swe_path, current);
+    }
+
+    #[test]
+    fn resolve_router_sources_fails_when_other_domain_is_missing() {
+        let dir = temp_dir("router-missing");
+        let current = write_dataset(&dir, "custom_work.txt", "work task");
+        write_dataset(&dir, "swe.txt", "swe task");
+
+        let err = resolve_router_sources(current.to_str().unwrap(), Domain::Work).unwrap_err();
+        assert!(err.contains("creative"));
+    }
+
+    #[test]
+    fn load_router_training_pairs_rejects_empty_domain_data() {
+        let dir = temp_dir("router-empty");
+        let swe = write_dataset(&dir, "custom_swe.txt", "swe task");
+        let work = write_dataset(&dir, "work.txt", "work task");
+        let creative = dir.join("creative.txt");
+        fs::write(&creative, "DOMAIN: creative\n").unwrap();
+
+        let err = load_router_training_pairs(&[
+            (Domain::Software, swe),
+            (Domain::Work, work),
+            (Domain::Creative, creative),
+        ])
+        .unwrap_err();
+
+        assert!(err.contains("contained no examples"));
+    }
 }

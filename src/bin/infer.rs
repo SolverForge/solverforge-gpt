@@ -18,6 +18,7 @@ Usage:
 
 use microgpt::{Domain, MultiDecomposer};
 use std::io::{self, BufRead, Write};
+use std::str::FromStr;
 
 struct Args {
     weights_dir: String,
@@ -52,7 +53,7 @@ fn parse_args() -> Args {
             }
             "--domain" | "-d" => {
                 i += 1;
-                domain = Some(Domain::from_str(&args[i]).unwrap_or_else(|| {
+                domain = Some(Domain::from_str(&args[i]).unwrap_or_else(|_| {
                     eprintln!("Unknown domain '{}'. Valid: work, swe, creative", args[i]);
                     std::process::exit(1);
                 }));
