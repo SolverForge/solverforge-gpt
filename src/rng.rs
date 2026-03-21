@@ -32,7 +32,7 @@ impl Rng {
         mu + sigma * z
     }
 
-    pub fn shuffle<T>(&mut self, v: &mut Vec<T>) {
+    pub fn shuffle<T>(&mut self, v: &mut [T]) {
         let n = v.len();
         for i in (1..n).rev() {
             let j = (self.next_u64() as usize) % (i + 1);

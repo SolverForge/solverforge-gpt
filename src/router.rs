@@ -10,6 +10,7 @@ Training output is a small binary file (~50-100KB) that ships with the app.
 Zero external dependencies — pure Rust std only. */
 
 use std::collections::HashMap;
+use std::str::FromStr;
 
 // ---------------------------------------------------------------------------
 // Domain enum
@@ -31,7 +32,7 @@ impl Domain {
         }
     }
 
-    pub fn from_str(s: &str) -> Option<Self> {
+    fn parse_name(s: &str) -> Option<Self> {
         match s.to_lowercase().as_str() {
             "work" | "professional" | "business" => Some(Domain::Work),
             "swe" | "software" | "engineering" | "tech" => Some(Domain::Software),
@@ -42,6 +43,14 @@ impl Domain {
 
     pub fn all() -> &'static [Domain] {
         &[Domain::Work, Domain::Software, Domain::Creative]
+    }
+}
+
+impl FromStr for Domain {
+    type Err = String;
+
+    fn from_str(s: &str) -> Result<Self, Self::Err> {
+        Self::parse_name(s).ok_or_else(|| format!("Unknown domain '{}'", s))
     }
 }
 
@@ -242,7 +251,7 @@ impl Router {
             pos += 1;
             let name = std::str::from_utf8(&data[pos..pos + nlen]).unwrap();
             pos += nlen;
-            let domain = Domain::from_str(name).unwrap();
+            let domain = Domain::parse_name(name).unwrap();
             let mut vec = vec![0.0f64; vsize];
             for v in vec.iter_mut() {
                 *v = f32::from_le_bytes(data[pos..pos + 4].try_into().unwrap()) as f64;
@@ -276,7 +285,7 @@ fn tokenize_words(text: &str) -> Vec<String> {
         .collect()
 }
 
-fn l2_normalize(v: &mut Vec<f64>) {
+fn l2_normalize(v: &mut [f64]) {
     let norm = v.iter().map(|&x| x * x).sum::<f64>().sqrt();
     if norm > 1e-10 {
         v.iter_mut().for_each(|x| *x /= norm);

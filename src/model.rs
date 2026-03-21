@@ -136,14 +136,13 @@ impl Model {
         assert_eq!(label_mask.len(), t - 1);
 
         let cfg = &self.cfg;
-        let e = cfg.n_embd;
 
         // Embed each position: [1, e]
         let mut x: Vec<Tensor> = (0..t)
             .map(|pos| {
                 let tok = self.wte.row(tokens[pos] as usize);
                 let pe = self.wpe.row(pos.min(cfg.block_size - 1));
-                tok.tensor_add(&pe)
+                tok.add(&pe)
             })
             .collect();
 
@@ -175,7 +174,7 @@ impl Model {
             }
 
             let mut attn_outs: Vec<Tensor> = Vec::with_capacity(t);
-            for pos in 0..t {
+            for (pos, q) in qs.iter().enumerate() {
                 let seq = pos + 1;
                 let mut heads: Vec<Tensor> = Vec::with_capacity(cfg.n_head);
 
@@ -183,11 +182,14 @@ impl Model {
                     let hs = h * head_dim;
                     let he = hs + head_dim;
 
-                    let q_h = qs[pos].slice_cols(hs, he); // [1, head_dim]
+                    let q_h = q.slice_cols(hs, he); // [1, head_dim]
                     let k_causal = k_per_head[h].slice_rows(0, seq);
                     let v_causal = v_per_head[h].slice_rows(0, seq);
 
-                    let scores = q_h.matmul(&k_causal.transpose()).mul_scalar(1.0 / scale).softmax();
+                    let scores = q_h
+                        .matmul(&k_causal.transpose())
+                        .mul_scalar(1.0 / scale)
+                        .softmax();
                     let head_out = scores.matmul(&v_causal);
                     heads.push(head_out);
                 }
@@ -200,14 +202,14 @@ impl Model {
             let mut new_x: Vec<Tensor> = Vec::with_capacity(t);
             for pos in 0..t {
                 let proj = attn_outs[pos].matmul_t(&lw.attn_wo);
-                let after_attn = proj.tensor_add(&x[pos]);
+                let after_attn = proj.add(&x[pos]);
 
                 // MLP
                 let normed2 = after_attn.rmsnorm();
                 let fc1 = normed2.matmul_t(&lw.mlp_fc1);
                 let act = fc1.relu();
                 let fc2 = act.matmul_t(&lw.mlp_fc2);
-                let after_mlp = fc2.tensor_add(&after_attn);
+                let after_mlp = fc2.add(&after_attn);
                 new_x.push(after_mlp);
             }
             x = new_x;
@@ -233,7 +235,7 @@ impl Model {
         let total = losses
             .iter()
             .skip(1)
-            .fold(losses[0].clone(), |a, b| a.tensor_add(&b));
+            .fold(losses[0].clone(), |a, b| a.add(b));
         total.mul_scalar(1.0 / n)
     }
 
@@ -247,8 +249,6 @@ impl Model {
         rng: &mut Rng,
     ) -> Vec<u32> {
         let cfg = &self.cfg;
-        let e = cfg.n_embd;
-        let hd = cfg.head_dim();
 
         // KV cache: [layer][pos] -> Vec<f64> of length e
         let mut k_cache: Vec<Vec<Vec<f64>>> = vec![vec![]; cfg.n_layer];
@@ -259,7 +259,7 @@ impl Model {
         // Process prompt — keep logits from last token
         let mut logits = vec![];
         for (pos, &tok) in prompt_tokens.iter().enumerate() {
-            logits = self.forward_infer(tok, pos, &mut k_cache, &mut v_cache, e, hd, cfg);
+            logits = self.forward_infer(tok, pos, &mut k_cache, &mut v_cache);
         }
 
         // Generate — sample first token from last prompt logits, then continue
@@ -271,7 +271,7 @@ impl Model {
                 break;
             }
             let pos = prompt_tokens.len() + generated.len() - 1;
-            logits = self.forward_infer(next, pos, &mut k_cache, &mut v_cache, e, hd, cfg);
+            logits = self.forward_infer(next, pos, &mut k_cache, &mut v_cache);
             next = sample_logits(&logits, temperature, rng);
             generated.push(next);
         }
@@ -282,12 +282,12 @@ impl Model {
         &self,
         token: u32,
         pos: usize,
-        k_cache: &mut Vec<Vec<Vec<f64>>>,
-        v_cache: &mut Vec<Vec<Vec<f64>>>,
-        e: usize,
-        head_dim: usize,
-        cfg: &Config,
+        k_cache: &mut [Vec<Vec<f64>>],
+        v_cache: &mut [Vec<Vec<f64>>],
     ) -> Vec<f64> {
+        let cfg = &self.cfg;
+        let e = cfg.n_embd;
+        let head_dim = cfg.head_dim();
         let tok_emb = self.wte.row_data(token as usize);
         let pos_emb = self.wpe.row_data(pos.min(cfg.block_size - 1));
         let mut x: Vec<f64> = tok_emb.iter().zip(&pos_emb).map(|(a, b)| a + b).collect();
@@ -385,8 +385,8 @@ impl Model {
         for p in model.params() {
             let n = p.len();
             let mut data = vec![0.0f64; n];
-            for i in 0..n {
-                data[i] = f32::from_le_bytes(bytes[pos..pos + 4].try_into().unwrap()) as f64;
+            for value in data.iter_mut().take(n) {
+                *value = f32::from_le_bytes(bytes[pos..pos + 4].try_into().unwrap()) as f64;
                 pos += 4;
             }
             p.set_data_vec(data);
@@ -456,11 +456,6 @@ impl Tensor {
         out
     }
 
-    /// Element-wise add (non-consuming, for use in training loops)
-    pub fn tensor_add(&self, other: &Tensor) -> Tensor {
-        self.add(other)
-    }
-
     /// Get a single row as raw f64 Vec (no grad, for inference)
     pub fn row_data(&self, idx: usize) -> Vec<f64> {
         let n = self.cols();
@@ -517,7 +512,7 @@ fn dot(a: &[f64], b: &[f64]) -> f64 {
     a.iter().zip(b).map(|(&x, &y)| x * y).sum()
 }
 
-fn softmax_inplace(x: &mut Vec<f64>) {
+fn softmax_inplace(x: &mut [f64]) {
     let max = x.iter().cloned().fold(f64::NEG_INFINITY, f64::max);
     x.iter_mut().for_each(|v| *v = (*v - max).exp());
     let sum: f64 = x.iter().sum();
@@ -525,10 +520,17 @@ fn softmax_inplace(x: &mut Vec<f64>) {
 }
 
 fn sample_logits(logits: &[f64], temperature: f64, rng: &mut Rng) -> u32 {
-    let mut probs = logits.to_vec();
-    if temperature > 0.0 {
-        probs.iter_mut().for_each(|v| *v /= temperature);
+    if temperature <= 0.0 {
+        return logits
+            .iter()
+            .enumerate()
+            .max_by(|a, b| a.1.partial_cmp(b.1).unwrap())
+            .map(|(idx, _)| idx as u32)
+            .unwrap_or(0);
     }
+
+    let mut probs = logits.to_vec();
+    probs.iter_mut().for_each(|v| *v /= temperature);
     softmax_inplace(&mut probs);
     rng.choices(&probs) as u32
 }

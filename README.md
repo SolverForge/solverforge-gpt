@@ -25,7 +25,7 @@ The domain router uses TF-IDF cosine similarity to classify incoming tasks.
 
 ## Quick start
 
-Pre-trained weights for all three domains ship in `weights/`. To run inference immediately:
+This repository does not currently include pre-trained `weights/`; you need to train or provide them first. To run inference after training:
 
 ```bash
 # build
@@ -86,6 +86,15 @@ All configurable via environment variables or Make arguments:
 ```bash
 make train STEPS=50000 LR=3e-4
 ```
+
+For more stable inference, you can lower sampling randomness or force greedy decoding:
+
+```bash
+cargo run --bin infer --release -- --weights weights/ --task "Build a REST API for user authentication" --temperature 0.2
+cargo run --bin infer --release -- --task "Build a REST API for user authentication" --temperature 0
+```
+
+> **Reality check:** each domain dataset in `data/` only contains roughly 100–200 examples. Training a ~1M-parameter transformer from scratch on that little data is useful for experimentation, but it is not production-grade and will often produce incoherent output unless you substantially increase data volume and evaluation rigor.
 
 ## Training data format
 

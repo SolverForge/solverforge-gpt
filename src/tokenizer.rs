@@ -190,8 +190,8 @@ impl Tokenizer {
             }
         };
 
-        for i in 0..n - 1 {
-            push_pair(&mut heap, &merge_rank, &ids, i, next[i]);
+        for (i, &right) in next.iter().enumerate().take(n - 1) {
+            push_pair(&mut heap, merge_rank, &ids, i, right);
         }
 
         while let Some((Reverse(rank), expected_a, expected_b, left)) = heap.pop() {
@@ -219,10 +219,10 @@ impl Tokenizer {
                     prev[right_next] = left;
                 }
 
-                push_pair(&mut heap, &merge_rank, &ids, left, next[left]);
+                push_pair(&mut heap, merge_rank, &ids, left, next[left]);
 
                 if prev[left] != usize::MAX {
-                    push_pair(&mut heap, &merge_rank, &ids, prev[left], left);
+                    push_pair(&mut heap, merge_rank, &ids, prev[left], left);
                 }
             }
         }
@@ -404,7 +404,6 @@ impl Tokenizer {
 pub struct Example {
     pub task: String,
     pub subtasks: Vec<String>,
-    pub domain: String,
 }
 
 /// Parse training data file. Each example is:
@@ -421,15 +420,14 @@ pub fn parse_training_data(text: &str) -> Vec<Example> {
     let mut current_subs: Vec<String> = vec![];
 
     let flush =
-        |domain: &str, task: &Option<String>, subs: &Vec<String>, out: &mut Vec<Example>| {
-            if let Some(t) = task {
-                if !subs.is_empty() {
-                    out.push(Example {
-                        task: t.clone(),
-                        subtasks: subs.clone(),
-                        domain: domain.to_string(),
-                    });
-                }
+        |_domain: &str, task: &Option<String>, subs: &Vec<String>, out: &mut Vec<Example>| {
+            if let Some(t) = task
+                && !subs.is_empty()
+            {
+                out.push(Example {
+                    task: t.clone(),
+                    subtasks: subs.clone(),
+                });
             }
         };
 

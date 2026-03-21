@@ -62,9 +62,21 @@ impl Decomposer {
 
     /// Split a task description into subtasks.
     pub fn split(&self, task: &str) -> Result<Vec<String>, String> {
+        self.split_with_options(task, 128, 0.2)
+    }
+
+    /// Split a task description into subtasks with explicit generation controls.
+    pub fn split_with_options(
+        &self,
+        task: &str,
+        max_new_tokens: usize,
+        temperature: f64,
+    ) -> Result<Vec<String>, String> {
         let mut rng = Rng::new(42);
         let prompt = self.tokenizer.encode_prompt(task);
-        let generated = self.model.generate(&prompt, 200, 0.7, &mut rng);
+        let generated = self
+            .model
+            .generate(&prompt, max_new_tokens, temperature, &mut rng);
         parse_subtasks(&generated, &self.tokenizer)
     }
 }
@@ -99,19 +111,40 @@ impl MultiDecomposer {
 
     /// Split a task, auto-detecting the domain.
     pub fn split(&self, task: &str) -> Result<Vec<String>, String> {
+        self.split_with_options(task, 128, 0.2)
+    }
+
+    /// Split a task, auto-detecting the domain, with explicit generation controls.
+    pub fn split_with_options(
+        &self,
+        task: &str,
+        max_new_tokens: usize,
+        temperature: f64,
+    ) -> Result<Vec<String>, String> {
         let domain = self.detect_domain(task);
-        self.split_in_domain(task, domain)
+        self.split_in_domain_with_options(task, domain, max_new_tokens, temperature)
     }
 
     /// Split a task in a specific domain.
     pub fn split_in_domain(&self, task: &str, domain: Domain) -> Result<Vec<String>, String> {
+        self.split_in_domain_with_options(task, domain, 128, 0.2)
+    }
+
+    /// Split a task in a specific domain with explicit generation controls.
+    pub fn split_in_domain_with_options(
+        &self,
+        task: &str,
+        domain: Domain,
+        max_new_tokens: usize,
+        temperature: f64,
+    ) -> Result<Vec<String>, String> {
         let decomposer = self
             .decomposers
             .iter()
             .find(|d| d.domain == domain)
             .or_else(|| self.decomposers.first())
             .ok_or("No decomposers loaded")?;
-        decomposer.split(task)
+        decomposer.split_with_options(task, max_new_tokens, temperature)
     }
 
     /// Detect domain, falling back to the first available.
@@ -167,4 +200,43 @@ fn parse_subtasks(tokens: &[u32], tok: &Tok) -> Result<Vec<String>, String> {
     }
 
     Ok(subtasks)
+}
+
+#[cfg(test)]
+mod tests {
+    use super::parse_subtasks;
+    use crate::tokenizer::{CSUB_ID, EOS_ID, OSUB_ID, Tokenizer};
+
+    fn test_tokenizer() -> Tokenizer {
+        Tokenizer::train("first task\nsecond task\nsubtask text", 264)
+    }
+
+    #[test]
+    fn parse_subtasks_returns_closed_items() {
+        let tok = test_tokenizer();
+        let mut tokens = Vec::new();
+        tokens.extend(tok.encode_raw("first item"));
+        tokens.push(CSUB_ID);
+        tokens.push(OSUB_ID);
+        tokens.extend(tok.encode_raw("second item"));
+        tokens.push(CSUB_ID);
+        tokens.push(EOS_ID);
+
+        let subtasks = parse_subtasks(&tokens, &tok).unwrap();
+        assert_eq!(subtasks, vec!["first item", "second item"]);
+    }
+
+    #[test]
+    fn parse_subtasks_drops_truncated_trailing_item() {
+        let tok = test_tokenizer();
+        let mut tokens = Vec::new();
+        tokens.extend(tok.encode_raw("complete item"));
+        tokens.push(CSUB_ID);
+        tokens.push(OSUB_ID);
+        tokens.extend(tok.encode_raw("unfinished item"));
+        tokens.push(EOS_ID);
+
+        let subtasks = parse_subtasks(&tokens, &tok).unwrap();
+        assert_eq!(subtasks, vec!["complete item"]);
+    }
 }

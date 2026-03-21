@@ -16,7 +16,7 @@ use std::rc::Rc;
 // Global tape: records every Tensor created, in creation order.
 // backward() drains this to walk the graph in reverse and break Rc cycles.
 thread_local! {
-    static TAPE: RefCell<Vec<Tensor>> = RefCell::new(Vec::new());
+    static TAPE: RefCell<Vec<Tensor>> = const { RefCell::new(Vec::new()) };
 }
 
 // ---------------------------------------------------------------------------
@@ -72,6 +72,9 @@ impl Tensor {
     pub fn len(&self) -> usize {
         let s = self.shape();
         s[0] * s[1]
+    }
+    pub fn is_empty(&self) -> bool {
+        self.len() == 0
     }
 
     pub fn data(&self) -> Vec<f64> {
@@ -539,7 +542,10 @@ impl Tensor {
         if tensors.is_empty() {
             panic!("hcat: empty slice");
         }
-        assert!(tensors.iter().all(|t| t.rows() == 1), "hcat: all tensors must have 1 row");
+        assert!(
+            tensors.iter().all(|t| t.rows() == 1),
+            "hcat: all tensors must have 1 row"
+        );
         let total_cols: usize = tensors.iter().map(|t| t.cols()).sum();
         let data: Vec<f64> = tensors.iter().flat_map(|t| t.data()).collect();
         let out = Tensor::new(data, [1, total_cols]);
