@@ -1,0 +1,34 @@
+=== Jev calibration report ===
+
+kind            n     mean   | kept at threshold
+                             | >=0.50  >=0.70  >=0.80  >=0.90  >=0.95
+same_verbatim    360   0.242  |    68     32     24      4      1
+splice           630   0.222  |    89     42     25      7      1
+tech_tail        180   0.198  |    21      6      4      0      0
+wrong_domain     180   0.196  |    26     18     12      4      0
+
+task realism: n=45 mean=0.827 min=0.300 tasks<0.5=3
+
+top-5 spliced candidates (novel combinations):
+  0.950  Choose artwork, design the layout, and prepare files for print or digital publishing
+  0.930  Develop the judging criteria and tailor the narrative to address each criterion directly
+  0.920  Analyze the target market including customer needs, competitors, and regulations
+  0.920  Design your unique value proposition and key differentiators
+  0.920  Define the topic thoroughly and gather supporting data and case studies
+
+bottom-5 same-domain verbatim (should be rare):
+  0.020  Document the verification process for webhook receivers
+  0.020  Include the signature in a request header such as X-Signature
+  0.020  Run the test suite on every PR and publish results to the pull request
+  0.020  Implement supervised actions such as refunds and account modifications with approval
+  0.020  Choose a message broker such as RabbitMQ, Redis, or SQS
+
+bottom-3 wrong-domain (sanity: all should be low):
+  0.010  Include audience engagement moments and timing cues throughout the script
+  0.010  Map the story arc from the customer's struggle through to transformation with the brand's help
+  0.010  Define the target time-to-hire and interview-to-offer conversion rate
+
+tasks judged unrealistic (task_ok<0.5): 3
+  0.300  [splice] Build token refresh for long-lived sessions
+  0.420  [splice] Implement a press and media relations strategy
+  0.460  [tech] Build a customer health scoring model using a shared calendar

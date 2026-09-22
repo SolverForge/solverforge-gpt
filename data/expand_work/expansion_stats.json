@@ -1,0 +1,26 @@
+{
+  "swe": {
+    "groups_judged": 4449,
+    "accepted": 2028,
+    "canary_n": 8894,
+    "canary_false_pass": 11,
+    "tokens_in": 9432743,
+    "tokens_out": 1178773
+  },
+  "work": {
+    "groups_judged": 2743,
+    "accepted": 1417,
+    "canary_n": 5483,
+    "canary_false_pass": 103,
+    "tokens_in": 5857631,
+    "tokens_out": 729495
+  },
+  "creative": {
+    "groups_judged": 5105,
+    "accepted": 2474,
+    "canary_n": 10204,
+    "canary_false_pass": 107,
+    "tokens_in": 11086816,
+    "tokens_out": 1365673
+  }
+}
