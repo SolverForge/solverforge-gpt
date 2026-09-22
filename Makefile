@@ -5,7 +5,7 @@ EVAL_EVERY ?= 500
 WEIGHTS    ?= weights
 DATA       ?= data
 
-export STEPS VOCAB_SIZE LR EVAL_EVERY
+export STEPS VOCAB_SIZE LR EVAL_EVERY DATA
 
 # ---------------------------------------------------------------------------
 # Top-level targets

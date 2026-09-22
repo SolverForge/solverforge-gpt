@@ -4,7 +4,7 @@ cd "$(dirname "$0")/.."
 
 cargo run --bin train --release -- \
   --domain work \
-  --data data/work.txt \
+  --data "${DATA:-data}/work.txt" \
   --out weights \
   --steps "${STEPS:-30000}" \
   --vocab-size "${VOCAB_SIZE:-1000}" \
