@@ -94,7 +94,7 @@ cargo run --bin infer --release -- --weights weights/ --task "Build a REST API f
 cargo run --bin infer --release -- --task "Build a REST API for user authentication" --temperature 0
 ```
 
-> **Reality check:** each domain dataset in `data/` only contains roughly 100–200 examples. Training a ~1M-parameter transformer from scratch on that little data is useful for experimentation, but it is not production-grade and will often produce incoherent output unless you substantially increase data volume and evaluation rigor.
+> **Reality check:** the corpora in `data/` combine 535 hand-written examples with synthetic examples accepted by a Jev relevance gate, taking each domain to 1,537–2,693 examples (12× overall, see [Dataset generation](#dataset-generation)). That is enough for the ~1.5M-parameter decoder to learn coherent task→subtask structure, but the synthetic examples are template-derived, so the models stay domain-shaped rather than general.
 
 ## Training data format
 
@@ -114,6 +114,17 @@ SUB: Rewrite PostgreSQL-specific SQL to MySQL dialect
 ```
 
 Examples are separated by blank lines.
+
+### Dataset generation
+
+`data/{swe,work,creative}.txt` are the canonical training corpora and the only data path `make train` reads. They combine 535 hand-written examples with synthetic examples accepted by a TypeSafe Jev relevance gate (Noul ≥ 0.84 against the paired task, task realism ≥ 0.6). The pipeline lives in `scripts/`:
+
+- `gen_candidates.py` — mines task/subtask fragments from `data/` and synthesizes candidate variants
+- `jev_gate.py` — judges candidates in batched requests; `controls` mode samples the corpus and other domains to check judge discrimination
+- `expand_dataset.py` — runs the gated expansion; every judgment is journaled to `data/expand_work/`
+- `assemble_expanded.py` — rebuilds `data/{swe,work,creative}.txt` from the journals at any `--threshold`, with no API calls
+
+`data/expand_work/` and `data/gen/` are the provenance record: each judged candidate is stored with its score and the source task it was paired with, so the corpus can be re-assembled or audited after the fact without re-spending API tokens.
 
 ## Library usage
 
@@ -148,9 +159,9 @@ src/
     train.rs      Training CLI
     infer.rs      Inference CLI (single / interactive / pipe)
     build_router.rs  Router construction CLI
-data/             Training datasets (swe, work, creative)
+data/             Canonical training corpora (swe, work, creative) and generation artifacts
 weights/          Pre-trained model weights and tokenizers
-scripts/          Per-domain training shell scripts
+scripts/          Training shell scripts and the Jev-gated dataset pipeline
 ```
 
 ## Make targets
