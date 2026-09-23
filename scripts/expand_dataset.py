@@ -6,7 +6,7 @@ family verb-splices) and candidate subtask lists drawn from the task's
 token-overlap family (own subs, family subs, family splices, tailed variants).
 Each group is judged in one batched TypeSafe request (Noul per candidate +
 task-realism Noul). Accepted examples are assembled into DOMAIN/TASK/SUB text
-under data/expanded/{domain}.txt, preserving original examples.
+under data/{domain}.txt, preserving original examples.
 
 Canary wrong-domain candidates ride along in every group to monitor judge
 drift; they are never emitted. Judged groups are journaled to
@@ -266,7 +266,6 @@ def main():
     args = ap.parse_args()
 
     GEN.mkdir(parents=True, exist_ok=True)
-    (ROOT / "data" / "expanded").mkdir(parents=True, exist_ok=True)
     rng = random.Random(2026)
     key = jg.api_key()
 
@@ -291,14 +290,18 @@ def main():
         n_req = sum(1 for _ in done)
         budget = max(0, budget - n_req)
         acc = assemble_accepted(done.values(), args.threshold, target)[:target]
-        out = ROOT / "data" / "expanded" / f"{d}.txt"
+        out = ROOT / "data" / f"{d}.txt"
+        source = all_examples[d]
+        source_sigs = {(ex["task"], tuple(sorted(ex["subs"]))) for ex in source}
+        added = [ex for ex in acc
+                 if (ex["task"], tuple(sorted(ex["subs"]))) not in source_sigs]
         with out.open("w") as f:
-            for ex in all_examples[d]:
+            for ex in source:
                 f.write(f"DOMAIN: {d}\nTASK: {ex['task']}\n")
                 for s in ex["subs"]:
                     f.write(f"SUB: {s}\n")
                 f.write("\n")
-            for ex in acc:
+            for ex in added:
                 f.write(f"DOMAIN: {d}\nTASK: {ex['task']}\n")
                 for s in ex["subs"]:
                     f.write(f"SUB: {s}\n")

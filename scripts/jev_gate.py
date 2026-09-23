@@ -25,6 +25,7 @@ from concurrent.futures import ThreadPoolExecutor, as_completed
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
+DATA = ROOT / "data"
 GEN = ROOT / "data" / "gen"
 KEY_PATH = Path.home() / "Documents" / "jevapi.txt"
 API_URL = "https://api.typesafe.ai/v1/systemone"
@@ -216,7 +217,7 @@ def write_report(results):
 
 def parse_original_examples(domain, limit):
     examples = []
-    for block in (ROOT / "data" / f"{domain}.txt").read_text().split("\n\n"):
+    for block in (DATA / f"{domain}.txt").read_text().split("\n\n"):
         task, subs = None, []
         for line in block.splitlines():
             line = line.strip()
@@ -230,16 +231,24 @@ def parse_original_examples(domain, limit):
 
 
 def controls(limit_per_domain=10):
+    """Sample positives from the canonical corpus and negatives from other domains.
+
+    Positives are now drawn from data/<domain>.txt, which includes examples Jev
+    itself accepted, so this is a drift check rather than an independent
+    calibration. The independent calibration (human-only positives, mean 0.964
+    vs 0.124) is recorded in data/gen/controls_report.txt from before the
+    single-corpus change.
+    """
     key = api_key()
     rng = random.Random(7)
     groups = []
     for d in DOMAINS:
         others = [o for o in DOMAINS if o != d]
         for ex in parse_original_examples(d, limit_per_domain):
-            cands = [{"kind": "original_pair", "text": s} for s in ex["subs"]]
+            cands = [{"kind": "corpus_pair", "text": s} for s in ex["subs"]]
             pool = []
             for o in others:
-                for line in (ROOT / "data" / f"{o}.txt").read_text().split("\n\n"):
+                for line in (DATA / f"{o}.txt").read_text().split("\n\n"):
                     for line2 in line.splitlines():
                         if line2.strip().startswith("SUB:"):
                             pool.append(line2.strip()[4:].strip())
@@ -260,16 +269,16 @@ def controls(limit_per_domain=10):
         for r in results:
             f.write(json.dumps(r) + "\n")
 
-    lines = ["=== control experiment: original pairs vs wrong-domain ===", ""]
-    for kind in ["original_pair", "wrong_domain"]:
+    lines = ["=== drift check: corpus pairs vs wrong-domain ===", ""]
+    for kind in ["corpus_pair", "wrong_domain"]:
         vals = [c["noul"] for r in results for c in r["candidates"] if c["kind"] == kind]
         mean = sum(vals) / len(vals)
         kept = "  ".join(f">={t:.2f}: {sum(v >= t for v in vals):4d}/{len(vals)}"
                          for t in THRESHOLDS)
         lines.append(f"{kind:14s} n={len(vals):4d} mean={mean:.3f}  {kept}")
     orig = sorted((c["noul"] for r in results for c in r["candidates"]
-                   if c["kind"] == "original_pair"))
-    lines.append(f"original_pair deciles: {[round(orig[int(i*len(orig)/10)],3) for i in range(10)]}")
+                   if c["kind"] == "corpus_pair"))
+    lines.append(f"corpus_pair deciles: {[round(orig[int(i*len(orig)/10)],3) for i in range(10)]}")
     out2 = GEN / "controls_report.txt"
     out2.write_text("\n".join(lines) + "\n")
     print("\n".join(lines))
